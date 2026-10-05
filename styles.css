@@ -13115,3 +13115,107 @@ h1, h2, h3, h4, h5, h6,
 .s7-statement-text {
     font-size: 14px !important;
 }
+
+
+/* ============================================================
+   SLIDE 6 - ENLARGE & FILL HEIGHT
+   ============================================================ */
+
+.security-response-slide {
+    justify-content: space-between !important;
+    padding: 40px 60px 40px !important;
+}
+
+.security-response-header {
+    margin-bottom: 20px !important;
+}
+
+.security-response-header h1 {
+    font-size: 54px !important;
+}
+
+.security-response-header .slide-subtitle {
+    font-size: 16px !important;
+}
+
+.security-loop {
+    flex: 1 !important;
+}
+
+.security-step {
+    min-height: 380px !important; /* was 310px */
+    padding: 32px 30px 24px !important;
+}
+
+.security-step h2 {
+    font-size: 26px !important; /* was 22px */
+    margin: 20px 0 12px !important;
+}
+
+.security-step p {
+    font-size: 14px !important; /* was 13px */
+    line-height: 1.5 !important;
+}
+
+.security-icon {
+    width: 60px !important;
+    height: 60px !important;
+}
+
+.security-icon svg {
+    width: 28px !important;
+    height: 28px !important;
+}
+
+.security-number {
+    font-size: 14px !important; /* was 12px */
+}
+
+.security-stage {
+    font-size: 10px !important; /* was 8px */
+}
+
+.security-tags span {
+    font-size: 10px !important; /* was 8.5px */
+    padding: 6px 12px !important;
+}
+
+.response-path {
+    min-height: 130px !important; /* was 100px */
+    margin-top: 20px !important;
+}
+
+.path-label {
+    font-size: 11px !important; /* was 9px */
+    padding: 0 30px !important;
+}
+
+.path-node-text strong {
+    font-size: 15px !important; /* was 13px */
+}
+
+.path-node-text span {
+    font-size: 11px !important; /* was 9px */
+}
+
+.security-principle {
+    margin-top: 20px !important;
+}
+
+.principle-label {
+    font-size: 11px !important; /* was 9px */
+}
+
+.principle-core {
+    font-size: 16px !important; /* was 14px */
+}
+
+.principle-sub {
+    font-size: 13px !important; /* was 11.5px */
+}
+
+/* Adjust connector lines slightly if needed */
+.security-connector {
+    font-size: 20px !important;
+    padding: 0 10px !important;
+}
