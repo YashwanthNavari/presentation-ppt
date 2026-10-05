@@ -1,0 +1,3398 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SecureDesktop Shield - Academic Defense Presentation" name="description"/>
+<title>SecureDesktop Shield - Academic Defense Presentation</title>
+<!-- Google Fonts: Outfit, Inter, JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css?v=1790943994" rel="stylesheet"/>
+<!-- ============================================================
+       REDESIGNED MAIN COVER TITLE SLIDE COMPONENT STYLES
+       ============================================================ -->
+<style id="cover-slide-styles">
+    /* 1. Layout & Full Slide Container with Cybersecurity Cover Background */
+    .slide.main-cover-slide {
+      padding: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      overflow: hidden !important;
+      background-color: #070c18 !important;
+      background-image:
+        linear-gradient(135deg, rgba(7, 12, 24, 0.65) 0%, rgba(15, 23, 42, 0.82) 100%),
+        url('images/cover_bg_v2_1784699885589.png'),
+        url('cover_bg.png') !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .cover-grid-container {
+      display: grid !important;
+      grid-template-columns: 1.15fr 0.85fr !important;
+      gap: 5rem !important;
+      width: 95% !important;
+      max-width: 1780px !important;
+      padding: 0 4rem !important;
+      align-items: center !important;
+      z-index: 2 !important;
+      box-sizing: border-box !important;
+    }
+
+    /* 2. Typography & Hierarchy (Modern Crisp Sans-Serif) */
+    .cover-left-col {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+    }
+
+    .cover-pill-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      background: rgba(37, 99, 235, 0.25) !important;
+      color: #93c5fd !important;
+      border: 1px solid rgba(59, 130, 246, 0.5) !important;
+      font-family: 'Courier New', monospace !important;
+      font-size: 0.95rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 2px !important;
+      text-transform: uppercase !important;
+      padding: 10px 28px !important;
+      border-radius: 40px !important;
+      margin-bottom: 2.2rem !important;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.15) !important;
+    }
+
+    .cover-main-title {
+      font-family: Georgia, serif !important;
+      font-size: clamp(3.2rem, 4.5vw, 4.8rem) !important;
+      font-weight: 800 !important;
+      line-height: 1.15 !important;
+      color: #ffffff !important;
+      letter-spacing: -0.8px !important;
+      margin: 0 0 1.8rem 0 !important;
+      text-align: left !important;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    .cover-accent-line {
+      width: 160px !important;
+      height: 5px !important;
+      background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%) !important;
+      border-radius: 4px !important;
+      margin-bottom: 1.8rem !important;
+    }
+
+    .cover-tagline {
+      font-family: 'Times New Roman', serif !important;
+      font-size: 1.25rem !important;
+      color: #cbd5e1 !important;
+      line-height: 1.6 !important;
+      font-weight: 400 !important;
+      max-width: 680px !important;
+      text-align: left !important;
+    }
+
+    /* 3. Visual Polish & Dark Glassmorphism Card */
+    .cover-right-col {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+
+    .cover-glass-card {
+      background: rgba(15, 23, 42, 0.82) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 24px !important;
+      padding: 3rem 3.5rem !important;
+      width: 100% !important;
+      max-width: 650px !important;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .card-header-tag {
+      color: #60a5fa !important;
+      font-family: 'Courier New', monospace !important;
+      font-size: 0.9rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 2px !important;
+      text-transform: uppercase !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+      padding-bottom: 16px !important;
+      margin-bottom: 16px !important;
+      text-align: left !important;
+    }
+
+    .team-members-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0 !important;
+      margin-bottom: 1.8rem !important;
+    }
+
+    .team-member-row {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 14px 0 !important;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.1) !important;
+      font-family: 'Times New Roman', serif !important;
+    }
+
+    .team-member-row:last-child {
+      border-bottom: none !important;
+    }
+
+    .member-name {
+      color: #f1f5f9 !important;
+      font-size: 1.12rem !important;
+      font-weight: 500 !important;
+      font-family: 'Times New Roman', serif !important;
+      text-align: left !important;
+    }
+
+    .member-id {
+      color: #93c5fd !important;
+      font-size: 1.12rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.5px !important;
+      font-family: 'Courier New', monospace !important;
+      text-align: right !important;
+    }
+
+    /* Mentor Section Inside Card */
+    .mentor-badge-card {
+      background: rgba(37, 99, 235, 0.18) !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 18px 24px !important;
+      border-radius: 10px !important;
+      font-family: 'Times New Roman', serif !important;
+      text-align: left !important;
+    }
+
+    .mentor-label {
+      color: #60a5fa !important;
+      font-weight: 700 !important;
+      font-size: 0.78rem !important;
+      text-transform: uppercase !important;
+      letter-spacing: 1.5px !important;
+      font-family: 'Courier New', monospace !important;
+      margin-bottom: 6px !important;
+    }
+
+    .mentor-name {
+      color: #ffffff !important;
+      font-size: 1.18rem !important;
+      font-weight: 700 !important;
+      line-height: 1.35 !important;
+      font-family: Georgia, serif !important;
+    }
+
+    /* 4. Slide Navigation Dots (Fixed & Vertically Centered) */
+    .side-dots {
+      position: fixed !important;
+      right: 28px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 10px !important;
+      z-index: 100 !important;
+    }
+  </style>
+
+<style id="slide4-fix">
+  /* Slide 4: align header & result bar with left edge of auth-stage cards */
+  .slide[data-slide-index="3"] .slide-header {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .slide[data-slide-index="3"] .authentication-flow {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 1.2rem !important;
+    padding-left: 0 !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+  }
+  .slide[data-slide-index="3"] .secure-session-result {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .slide[data-slide-index="3"] .authentication-failure {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+</style>
+<style id="slide3-box-fix">
+  .slide[data-slide-index="2"] .slide-content {
+    width: 94% !important;
+    min-height: 79% !important; height: auto !important; padding-bottom: 30px !important;
+    margin: 0 auto !important;
+    /* keep existing background, border, radius, shadow */
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 6px 20px rgba(15,23,42,0.06) !important;
+    box-sizing: border-box !important;
+  }
+</style>
+
+
+
+<style id="sp-overlap-fix" data-verified="active">
+/* VERIFIED FINAL FIX — Slide 3 Security Principle */
+.security-principle-box,
+.security-principle-fix {
+    position: static !important;
+    display: grid !important;
+    grid-template-columns: 210px 1fr !important;
+    column-gap: 28px !important;
+    align-items: center !important;
+
+    width: 100% !important;
+    min-height: 48px !important;
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+    padding: 0 22px !important;
+
+    transform: none !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+
+    box-sizing: border-box !important;
+    background: #F8FAFC !important;
+    border: 1px solid #D5DDE7 !important;
+    border-radius: 10px !important;
+}
+
+.security-label,
+.security-principle-label {
+    display: flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    color: #64748B !important;
+    text-align: left !important;
+    text-transform: uppercase !important;
+    line-height: 1 !important;
+}
+
+.security-message,
+.security-principle-text {
+    display: flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #334155 !important;
+    text-align: left !important;
+    line-height: 1 !important;
+}
+
+.architecture-stack {
+    position: static !important;
+    margin-bottom: 0 !important;
+}
+
+.architecture-step:last-child {
+    margin-bottom: 0 !important;
+}
+</style>
+
+
+<!-- ACADEMIC UI FIXES FOR SLIDES 4, 8, 9, 10, 11 -->
+<style id="academic-ui-fixes">
+/* SLIDE 4 FIXES */
+.slide[data-slide-index="3"] .authentication-flow {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 0 !important;
+    margin: 2rem 0 !important;
+}
+.slide[data-slide-index="3"] .auth-stage {
+    width: 100% !important;
+    margin: 0 !important;
+}
+.slide[data-slide-index="3"] .auth-stage-card {
+    background: #E4E9F0 !important;
+    border: 1px solid #D5DDE7 !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+.slide[data-slide-index="3"] .auth-stage-card h3 {
+    color: #1E293B !important;
+}
+.slide[data-slide-index="3"] .auth-stage-card p {
+    color: #475569 !important;
+}
+.slide[data-slide-index="3"] .auth-arrow {
+    margin: 0 10px !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+.slide[data-slide-index="3"] .secure-session-result {
+    width: 100% !important;
+    margin: 1rem 0 0 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* SLIDE 5 FIXES (Handled in HTML below) */
+
+/* SLIDE 8 FIXES */
+.slide[data-slide-index="7"] .slide-title-table {
+    color: #111827 !important;
+}
+.slide[data-slide-index="7"] .slide-subtitle-table {
+    color: #334155 !important;
+}
+.slide[data-slide-index="7"] table {
+    margin-bottom: 30px !important;
+}
+
+/* SLIDE 9 FIXES */
+.slide[data-slide-index="8"] .slide-header h2 {
+    color: #111827 !important;
+}
+.slide[data-slide-index="8"] .slide-header p {
+    color: #475569 !important;
+}
+.slide[data-slide-index="8"] > .slide-content > div:nth-of-type(2) > div {
+    background: #E4E9F0 !important;
+    flex: 1 1 0 !important;
+}
+.slide[data-slide-index="8"] > .slide-content > div:nth-of-type(2) > div > div:nth-child(1) {
+    color: #172033 !important;
+}
+.slide[data-slide-index="8"] > .slide-content > div:nth-of-type(2) > div > div:nth-child(3) {
+    color: #475569 !important;
+}
+/* SLIDE 10 FIXES */
+.slide[data-slide-index="9"] .slide-header h2 {
+    color: #111827 !important;
+}
+.slide[data-slide-index="9"] .slide-header p {
+    color: #475569 !important;
+}
+.slide[data-slide-index="9"] .challenge-card {
+    background: #E4E9F0 !important;
+    border: 1px solid #D5DDE7 !important;
+    box-sizing: border-box !important;
+}
+.slide[data-slide-index="9"] .challenge-card h3 {
+    color: #172033 !important;
+}
+.slide[data-slide-index="9"] .challenge-card p {
+    color: #475569 !important;
+    padding-right: 1.5rem !important;
+}
+
+/* SLIDE 11 FIXES */
+.slide[data-slide-index="10"] > .slide-content > div:nth-of-type(2) {
+    display: flex !important;
+    align-items: stretch !important;
+}
+.slide[data-slide-index="10"] > .slide-content > div:nth-of-type(2) > div {
+    flex: 1 1 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* SLIDE 7 FLOWCHART FIXES */
+.demo-frame {
+    width: 82%;
+    max-width: 1150px;
+    min-height: 360px;
+    margin: 28px auto 26px;
+    background: #0F1B31;
+    border-radius: 16px;
+    border: 1px solid #263652;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.16);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.demo-side {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    border-left: 1px solid #334155;
+}
+.demo-main,
+.demo-side-top,
+.demo-side-bottom {
+    min-height: 0;
+    position: relative;
+}
+.demo-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.7);
+    text-align: center;
+    line-height: 1.8;
+}
+.flow-stage {
+    text-align: center;
+    margin-bottom: 24px;
+    width: 100%;
+}
+.flow-stage + .flow-stage {
+    margin-top: 24px;
+}
+.step-1 .demo-frame {
+    margin-top: 28px;
+    margin-bottom: 28px;
+}
+
+.slide[data-slide-index="6"] .slide-content {
+    overflow: hidden !important;
+}
+.flow-scroll-container {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    flex-grow: 1 !important;
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    scroll-behavior: smooth;
+}
+.flow-scroll-container::-webkit-scrollbar {
+    width: 6px;
+}
+.flow-scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+.flow-scroll-container::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 999px;
+}
+.flow-stage {
+    margin-bottom: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.flow-stage + .flow-stage {
+    margin-top: 28px;
+}
+.flow-stage-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2563EB;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+.flow-stage-subtitle {
+    margin-top: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #64748B;
+}
+.flow-arrow {
+    margin: 12px auto;
+    color: #2563EB;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+</style>
+</head>
+
+<body>
+<!-- ==========================================
+       MINIMAL SLIDE NUMBER WATERMARK DISPLAY
+       ========================================== -->
+<div class="slide-number-display">
+    SLIDE <span id="current-slide-num">1</span> / <span id="total-slides-num">17</span>
+</div>
+<!-- Navigation Side Dots (17 Slides) -->
+<div class="side-dots">
+<div class="dot active" data-slide-target="0"></div>
+<div class="dot" data-slide-target="1"></div>
+<div class="dot" data-slide-target="2"></div>
+<div class="dot" data-slide-target="3"></div>
+<div class="dot" data-slide-target="4"></div>
+<div class="dot" data-slide-target="5"></div>
+<div class="dot" data-slide-target="6"></div>
+<div class="dot" data-slide-target="7"></div>
+<div class="dot" data-slide-target="8"></div>
+<div class="dot" data-slide-target="9"></div>
+<div class="dot" data-slide-target="10"></div>
+<div class="dot" data-slide-target="11"></div>
+</div>
+<div class="dot" data-slide-target="1"></div>
+<div class="dot" data-slide-target="2"></div>
+<div class="dot" data-slide-target="3"></div>
+<div class="dot" data-slide-target="4"></div>
+<div class="dot" data-slide-target="5"></div>
+<div class="dot" data-slide-target="6"></div>
+<div class="dot" data-slide-target="7"></div>
+<div class="dot" data-slide-target="8"></div>
+<div class="dot" data-slide-target="9"></div>
+<div class="dot" data-slide-target="10"></div>
+<div class="dot" data-slide-target="11"></div>
+<div class="dot" data-slide-target="12"></div>
+<div class="dot" data-slide-target="13"></div>
+<div class="dot" data-slide-target="14"></div>
+<div class="dot" data-slide-target="15"></div>
+<div class="dot" data-slide-target="16"></div>
+</div>
+<!-- Main Presentation Widescreen Canvas -->
+<main id="presentation-viewport">
+<div class="light-grid-bg"></div>
+<!-- ==========================================
+         SLIDE 1: MAIN COVER TITLE SLIDE
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 2: SECTION 01 DIVIDER
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 3: PROJECT JOURNEY ROADMAP (MCKINSEY / APPLE EDITORIAL)
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 3: PROJECT JOURNEY ROADMAP (EDITORIAL STORYTELLING)
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 4: INTRODUCTION: EVOLUTION OF DESKTOP AUTHENTICATION & SECURITY
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 5: THREAT LANDSCAPE & DIFFERENTIATION
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 5: SECURITY SYSTEM COMPARISON (EDITORIAL ACADEMIC)
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 6: PROJECT GOALS & OBJECTIVES
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 7: PROPOSED METHODOLOGY
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 8: SECTION 02 DIVIDER
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 8: LITERATURE REVIEW & COMPARISON
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 9: SYSTEM ARCHITECTURE
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 9: SYSTEM ARCHITECTURE (9-MODULE PIPELINE)
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 10: END-TO-END SECURITY EXECUTION FLOW (CONFERENCE 3-LAYER PIPELINE)
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 11: LOCAL DATA STORAGE ARCHITECTURE (IEEE RICH ARCHITECTURE)
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 12: SECTION 03 DIVIDER
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 13: END-TO-END AUTHENTICATION PROCESS
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 14: PROPOSED TECHNOLOGY STACK (ARCHITECTURE LAYERS)
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 15: SECURITY MONITORING & EVENT LOGGING
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 16: SECURE USER AUTHENTICATION
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 17: EXPECTED OUTCOMES & BENEFITS
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 19: LITERATURE REFERENCES
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 20: CONCLUSION & FUTURE SCOPE
+         ========================================== -->
+<!-- ==========================================
+         SLIDE 21: STANDALONE THANK YOU & Q&A SLIDE
+         ========================================== -->
+<section class="slide active main-cover-slide" data-slide-index="0">
+  <div class="cover-grid-container">
+    <!-- LEFT COLUMN -->
+    <div class="cover-left-col">
+      <div class="cover-pill-badge">
+        FINAL ACADEMIC REVIEW • REVIEW 3
+      </div>
+      <h1 class="cover-main-title">
+        Secure Desktop<br/>
+        Authentication and System<br/>
+        Protection Application
+      </h1>
+      <div class="cover-accent-line"></div>
+      <p style="
+        font-size: 1.6rem;
+        color: #94a3b8;
+        font-family: 'Times New Roman', serif;
+        margin-top: 1.8rem;
+        font-style: italic;
+        letter-spacing: 0.5px;
+        line-height: 1.5;
+      ">
+        Final System • Validation • Demonstration &amp; Outcomes
+      </p>
+    </div>
+    <!-- RIGHT COLUMN -->
+    <div class="cover-right-col">
+      <div class="cover-glass-card">
+        <div class="card-header-tag">
+          PROJECT DEVELOPMENT TEAM
+        </div>
+        <div class="team-members-list">
+
+          <div class="team-member-row">
+            <span class="member-name">Yogamruth Reddy Guggilla</span>
+            <span class="member-id">24WU0103019</span>
+          </div>
+          <div class="team-member-row">
+            <span class="member-name">Navari Yashwanth Reddy</span>
+            <span class="member-id">24WU0104009</span>
+          </div>
+          <div class="team-member-row">
+            <span class="member-name">Gayathri Pocharam</span>
+            <span class="member-id">24WU0104034</span>
+          </div>
+          <div class="team-member-row">
+            <span class="member-name">Chakradhar Muppuri</span>
+            <span class="member-id">24WU0103020</span>
+          </div>
+        </div>
+        <div class="mentor-badge-card">
+          <div class="mentor-label">
+            PROJECT MENTOR
+          </div>
+          <div class="mentor-name">
+            Professor Meher Gayatri Devi Tiwari
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- =========================================================
+     SLIDE 2 — PROJECT JOURNEY
+     ========================================================= -->
+<section class="slide project-journey-slide" data-slide-index="1">
+
+    <div class="journey-shell">
+
+        <!-- HEADER -->
+        <header class="journey-header">
+
+            <div class="journey-eyebrow">
+                PROJECT JOURNEY
+            </div>
+
+            <h1>
+                From Proposal to <span>Final System</span>
+            </h1>
+
+            <p class="journey-subtitle">
+                Three reviews. One evolving authentication system.
+            </p>
+
+        </header>
+
+
+        <!-- PROGRESSION LINE -->
+        <div class="journey-progress">
+
+            <div class="journey-progress-line"></div>
+
+            <div class="journey-progress-step completed">
+                <div class="progress-node">01</div>
+                <span>FOUNDATION</span>
+            </div>
+
+            <div class="journey-progress-step completed">
+                <div class="progress-node">02</div>
+                <span>IMPLEMENTATION</span>
+            </div>
+
+            <div class="journey-progress-step active">
+                <div class="progress-node">03</div>
+                <span>VALIDATION</span>
+            </div>
+
+        </div>
+
+
+        <!-- REVIEW CARDS -->
+        <div class="journey-cards">
+
+
+            <!-- REVIEW 1 -->
+            <article class="journey-card">
+
+                <div class="journey-card-top">
+                    <span class="journey-number">01</span>
+
+                    <span class="journey-review">
+                        REVIEW 1
+                    </span>
+                </div>
+
+                <div class="journey-card-body">
+
+                    <h2>
+                        Foundation
+                    </h2>
+
+                    <p class="journey-card-description">
+                        Defined the security problem, objectives,
+                        architecture and proposed authentication approach.
+                    </p>
+
+                    <div class="journey-divider"></div>
+
+                    <ul>
+                        <li>
+                            <span class="bullet"></span>
+                            Problem & motivation
+                        </li>
+
+                        <li>
+                            <span class="bullet"></span>
+                            Objectives & scope
+                        </li>
+
+                        <li>
+                            <span class="bullet"></span>
+                            System architecture
+                        </li>
+
+                        <li>
+                            <span class="bullet"></span>
+                            Security approach
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="journey-card-footer">
+                    <span>DEFINED</span>
+                </div>
+
+            </article>
+
+
+            <!-- CONNECTOR -->
+            <div class="journey-connector">
+                <span></span>
+                <svg viewBox="0 0 40 20" aria-hidden="true">
+                    <path d="M2 10H34M26 3L34 10L26 17"></path>
+                </svg>
+            </div>
+
+
+            <!-- REVIEW 2 -->
+            <article class="journey-card">
+
+                <div class="journey-card-top">
+                    <span class="journey-number">02</span>
+
+                    <span class="journey-review">
+                        REVIEW 2
+                    </span>
+                </div>
+
+                <div class="journey-card-body">
+
+                    <h2>
+                        Implementation
+                    </h2>
+
+                    <p class="journey-card-description">
+                        Transformed the proposed architecture into a
+                        functional multimodal authentication application.
+                    </p>
+
+                    <div class="journey-divider"></div>
+
+                    <ul>
+                        <li>
+                            <span class="bullet"></span>
+                            Core application development
+                        </li>
+
+                        <li>
+                            <span class="bullet"></span>
+                            Credential authentication
+                        </li>
+
+                        <li>
+                            <span class="bullet"></span>
+                            Face & voice verification
+                        </li>
+
+                        <li>
+                            <span class="bullet"></span>
+                            Monitoring & security modules
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="journey-card-footer">
+                    <span>IMPLEMENTED</span>
+                </div>
+
+            </article>
+
+
+            <!-- CONNECTOR -->
+            <div class="journey-connector">
+                <span></span>
+                <svg viewBox="0 0 40 20" aria-hidden="true">
+                    <path d="M2 10H34M26 3L34 10L26 17"></path>
+                </svg>
+            </div>
+
+
+            <!-- REVIEW 3 -->
+            <article class="journey-card journey-card-final">
+
+                <div class="journey-card-glow"></div>
+
+                <div class="journey-card-top">
+
+                    <span class="journey-number">
+                        03
+                    </span>
+
+                    <span class="journey-review">
+                        REVIEW 3
+                    </span>
+
+                    <span class="final-badge">
+                        FINAL
+                    </span>
+
+                </div>
+
+                <div class="journey-card-body">
+
+                    <h2>
+                        Final System
+                    </h2>
+
+                    <p class="journey-card-description">
+                        Consolidated the complete workflow and verified
+                        the system through testing and live demonstration.
+                    </p>
+
+                    <div class="journey-divider"></div>
+
+                    <ul>
+                        <li>
+                            <span class="bullet"></span>
+                            Integrated authentication workflow
+                        </li>
+
+                        <li>
+                            <span class="bullet"></span>
+                            Multimodal verification
+                        </li>
+
+                        <li>
+                            <span class="bullet"></span>
+                            Security & risk response
+                        </li>
+
+                        <li>
+                            <span class="bullet"></span>
+                            Testing & validation
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="journey-card-footer">
+                    <span>VALIDATED</span>
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- BOTTOM OUTCOME -->
+        <div class="journey-outcome">
+
+            <div class="outcome-label">
+                PROJECT EVOLUTION
+            </div>
+
+            <div class="outcome-flow">
+
+                <div class="outcome-item">
+                    <strong>DEFINE</strong>
+                    <span>the security problem</span>
+                </div>
+
+                <div class="outcome-arrow">&rarr;</div>
+
+                <div class="outcome-item">
+                    <strong>BUILD</strong>
+                    <span>the authentication system</span>
+                </div>
+
+                <div class="outcome-arrow">&rarr;</div>
+
+                <div class="outcome-item">
+                    <strong>VERIFY</strong>
+                    <span>the final implementation</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section><section class="slide final-architecture-slide" data-slide-index="2">
+
+    <div class="architecture-shell">
+
+        <!-- HEADER -->
+        <header class="architecture-header">
+
+            <div class="architecture-eyebrow">
+                SYSTEM DESIGN
+            </div>
+
+            <h1>
+                Final System <span>Architecture</span>
+            </h1>
+
+            <p>
+                A local-first authentication and continuous security pipeline
+            </p>
+
+        </header>
+
+
+        <!-- MAIN ARCHITECTURE -->
+        <div class="architecture-pipeline">
+
+
+            <!-- 01 APPLICATION -->
+            <article class="architecture-stage">
+
+                <div class="stage-index">
+                    01
+                </div>
+
+                <div class="stage-main">
+
+                    <div class="stage-title-row">
+
+                        <div>
+                            <span class="stage-kicker">
+                                ENTRY LAYER
+                            </span>
+
+                            <h2>
+                                Application
+                            </h2>
+                        </div>
+
+                        <div class="stage-purpose">
+                            User-facing access
+                        </div>
+
+                    </div>
+
+                    <div class="stage-components">
+
+                        <span>Login</span>
+                        <span>Dashboard</span>
+                        <span>Security Interface</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CONNECTOR -->
+            <div class="architecture-connector">
+                <div class="connector-line"></div>
+                <div class="connector-arrow">↓</div>
+            </div>
+
+
+            <!-- 02 AUTHENTICATION -->
+            <article class="architecture-stage architecture-stage-primary">
+
+                <div class="stage-index">
+                    02
+                </div>
+
+                <div class="stage-main">
+
+                    <div class="stage-title-row">
+
+                        <div>
+                            <span class="stage-kicker">
+                                TRUST ESTABLISHMENT
+                            </span>
+
+                            <h2>
+                                Identity & Authentication
+                            </h2>
+                        </div>
+
+                        <div class="stage-purpose">
+                            Verify the user
+                        </div>
+
+                    </div>
+
+
+                    <div class="authentication-factors">
+
+                        <div class="auth-factor">
+                            <div class="factor-number">01</div>
+                            <div>
+                                <strong>Credentials</strong>
+                                <small>Identity input</small>
+                            </div>
+                        </div>
+
+                        <div class="factor-connector">
+                            +
+                        </div>
+
+                        <div class="auth-factor">
+                            <div class="factor-number">02</div>
+                            <div>
+                                <strong>Face Verification</strong>
+                                <small>Biometric match</small>
+                            </div>
+                        </div>
+
+                        <div class="factor-connector">
+                            +
+                        </div>
+
+                        <div class="auth-factor">
+                            <div class="factor-number">03</div>
+                            <div>
+                                <strong>Voice Verification</strong>
+                                <small>Biometric match</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CONNECTOR -->
+            <div class="architecture-connector">
+                <div class="connector-line"></div>
+                <div class="connector-arrow">↓</div>
+            </div>
+
+
+            <!-- 03 CONTINUOUS SECURITY -->
+            <article class="architecture-stage">
+
+                <div class="stage-index">
+                    03
+                </div>
+
+                <div class="stage-main">
+
+                    <div class="stage-title-row">
+
+                        <div>
+                            <span class="stage-kicker">
+                                POST-AUTHENTICATION
+                            </span>
+
+                            <h2>
+                                Continuous Security
+                            </h2>
+                        </div>
+
+                        <div class="stage-purpose">
+                            Maintain trust
+                        </div>
+
+                    </div>
+
+                    <div class="stage-components">
+
+                        <span>System Activity</span>
+                        <span>Security Events</span>
+                        <span>Session State</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CONNECTOR -->
+            <div class="architecture-connector">
+                <div class="connector-line"></div>
+                <div class="connector-arrow">↓</div>
+            </div>
+
+
+            <!-- 04 RISK -->
+            <article class="architecture-stage architecture-stage-risk">
+
+                <div class="stage-index">
+                    04
+                </div>
+
+                <div class="stage-main">
+
+                    <div class="stage-title-row">
+
+                        <div>
+                            <span class="stage-kicker">
+                                DECISION LAYER
+                            </span>
+
+                            <h2>
+                                Risk & Trust
+                            </h2>
+                        </div>
+
+                        <div class="stage-purpose">
+                            Evaluate security state
+                        </div>
+
+                    </div>
+
+                    <div class="risk-flow">
+
+                        <div class="risk-item">
+                            <strong>Event</strong>
+                            <small>Detected</small>
+                        </div>
+
+                        <div class="risk-arrow">
+                            &rarr;
+                        </div>
+
+                        <div class="risk-item">
+                            <strong>Risk</strong>
+                            <small>Assessed</small>
+                        </div>
+
+                        <div class="risk-arrow">
+                            &rarr;
+                        </div>
+
+                        <div class="risk-item">
+                            <strong>Decision</strong>
+                            <small>Generated</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CONNECTOR -->
+            <div class="architecture-connector">
+                <div class="connector-line"></div>
+                <div class="connector-arrow">↓</div>
+            </div>
+
+
+            <!-- 05 RESPONSE -->
+            <article class="architecture-stage architecture-stage-response">
+
+                <div class="stage-index">
+                    05
+                </div>
+
+                <div class="stage-main">
+
+                    <div class="stage-title-row">
+
+                        <div>
+                            <span class="stage-kicker">
+                                RESPONSE LAYER
+                            </span>
+
+                            <h2>
+                                Response & Local Data
+                            </h2>
+                        </div>
+
+                        <div class="stage-purpose">
+                            Enforce the decision
+                        </div>
+
+                    </div>
+
+
+                    <div class="response-actions">
+
+                        <div class="response-action response-allow">
+                            <span class="response-dot"></span>
+                            <strong>Continue</strong>
+                        </div>
+
+                        <div class="response-action response-review">
+                            <span class="response-dot"></span>
+                            <strong>Re-verify</strong>
+                        </div>
+
+                        <div class="response-action response-block">
+                            <span class="response-dot"></span>
+                            <strong>Restrict / Lock</strong>
+                        </div>
+
+                        <div class="response-storage">
+                            <span>Profiles</span>
+                            <span>Logs</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- BOTTOM PRINCIPLE -->
+        <div class="architecture-principle">
+
+            <div class="principle-label">
+                SECURITY PRINCIPLE
+            </div>
+
+            <div class="principle-content">
+
+                <strong>
+                    Authentication establishes trust.
+                </strong>
+
+                <span>
+                    Continuous monitoring helps maintain it.
+                </span>
+
+            </div>
+
+            <div class="principle-flow">
+
+                <span>AUTHENTICATE</span>
+                <b>&rarr;</b>
+                <span>MONITOR</span>
+                <b>&rarr;</b>
+                <span>ASSESS</span>
+                <b>&rarr;</b>
+                <span>RESPOND</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section><section class="slide" data-slide-index="3">
+
+    <div class="slide-content auth-slide">
+
+        <!-- HEADER -->
+        <div class="auth-header">
+            <div>
+                <div class="eyebrow">IDENTITY SECURITY</div>
+
+                <h1 class="auth-title">
+                    Core Authentication &amp;<br>
+                    Biometric Verification
+                </h1>
+
+                <p class="auth-subtitle">
+                    A sequential verification pipeline establishes identity
+                    before a secure session is granted.
+                </p>
+            </div>
+
+            <div class="auth-header-badge">
+                <span class="badge-dot"></span>
+                MULTI-STAGE VERIFICATION
+            </div>
+        </div>
+
+
+        <!-- MAIN PIPELINE -->
+        <div class="auth-pipeline">
+
+            <!-- STEP 01 -->
+            <div class="auth-step">
+
+                <div class="step-number">01</div>
+
+                <div class="step-card">
+
+                    <div class="step-label">
+                        IDENTITY
+                    </div>
+
+                    <h2>User Identity</h2>
+
+                    <p>
+                        Select the registered user and load the
+                        corresponding local identity profile.
+                    </p>
+
+                    <div class="step-footer">
+                        <span>REGISTERED PROFILE</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONNECTOR -->
+            <div class="auth-connector">
+                <span></span>
+                <span class="connector-arrow">&rarr;</span>
+            </div>
+
+
+            <!-- STEP 02 -->
+            <div class="auth-step">
+
+                <div class="step-number">02</div>
+
+                <div class="step-card">
+
+                    <div class="step-label">
+                        CREDENTIALS
+                    </div>
+
+                    <h2>Credential Verification</h2>
+
+                    <p>
+                        Validate the account credentials before
+                        biometric verification proceeds.
+                    </p>
+
+                    <div class="step-footer">
+                        <span>ACCOUNT VALIDATION</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONNECTOR -->
+            <div class="auth-connector">
+                <span></span>
+                <span class="connector-arrow">&rarr;</span>
+            </div>
+
+
+            <!-- STEP 03 -->
+            <div class="auth-step">
+
+                <div class="step-number">03</div>
+
+                <div class="step-card biometric-card">
+
+                    <div class="step-label">
+                        BIOMETRIC 01
+                    </div>
+
+                    <h2>Face Verification</h2>
+
+                    <p>
+                        Capture camera input and compare the
+                        detected face against the enrolled identity.
+                    </p>
+
+                    <div class="step-footer">
+                        <span>CAMERA · FACE MATCH</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONNECTOR -->
+            <div class="auth-connector">
+                <span></span>
+                <span class="connector-arrow">&rarr;</span>
+            </div>
+
+
+            <!-- STEP 04 -->
+            <div class="auth-step">
+
+                <div class="step-number">04</div>
+
+                <div class="step-card biometric-card">
+
+                    <div class="step-label">
+                        BIOMETRIC 02
+                    </div>
+
+                    <h2>Voice Verification</h2>
+
+                    <p>
+                        Capture microphone input and compare it
+                        against the enrolled voice identity.
+                    </p>
+
+                    <div class="step-footer">
+                        <span>MICROPHONE · VOICE MATCH</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- VERIFICATION GATE -->
+        <div class="verification-gate">
+
+            <div class="gate-left">
+
+                <div class="gate-icon">
+                    ✓
+                </div>
+
+                <div>
+                    <div class="gate-label">
+                        VERIFICATION GATE
+                    </div>
+
+                    <div class="gate-title">
+                        All required checks pass
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="gate-arrow">
+                &rarr;
+            </div>
+
+            <div class="gate-result">
+
+                <strong>SECURE SESSION</strong>
+
+                <span>
+                    Identity verified · Access granted
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- FAIL CLOSED -->
+        <div class="fail-closed">
+
+            <div class="fail-label">
+                FAIL-CLOSED POLICY
+            </div>
+
+            <div class="fail-line"></div>
+
+            <div class="fail-text">
+                Failure at any verification stage
+            </div>
+
+            <div class="fail-arrow">
+                &rarr;
+            </div>
+
+            <div class="fail-result">
+                Access denied / Re-verification
+            </div>
+
+        </div>
+
+    </div>
+
+</section><section class="slide review3-slide5" data-slide-index="4">
+
+    <div class="review3-s5-wrap">
+
+        <!-- HEADER -->
+        <header class="review3-s5-header">
+
+            <div class="review3-s5-kicker">
+                IMPLEMENTATION
+            </div>
+
+            <div class="review3-s5-title-row">
+
+                <div>
+                    <h1>Implemented Solution</h1>
+
+                    <p>
+                        From proposed architecture to an integrated
+                        local-first authentication and security workflow.
+                    </p>
+                </div>
+
+                <div class="review3-s5-status">
+                    <span class="review3-s5-status-dot"></span>
+                    SYSTEM INTEGRATED
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- MAIN PIPELINE -->
+        <main class="review3-s5-main">
+
+            <div class="review3-s5-pipeline-label">
+                <span>IMPLEMENTED WORKFLOW</span>
+                <span>01 — 05</span>
+            </div>
+
+
+            <div class="review3-s5-pipeline">
+
+
+                <!-- 01 -->
+                <article class="review3-s5-node">
+
+                    <div class="review3-s5-node-top">
+                        <span class="review3-s5-index">01</span>
+
+                        <div class="review3-s5-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 3 5 6v5c0 4.7 2.9 8.8 7 10 4.1-1.2 7-5.3 7-10V6l-7-3Z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <h2>Authentication</h2>
+
+                    <p>
+                        User credentials establish the initial
+                        authentication state.
+                    </p>
+
+                    <div class="review3-s5-node-meta">
+                        <span>INPUT</span>
+                        <strong>Credentials</strong>
+                    </div>
+
+                </article>
+
+
+                <div class="review3-s5-flow">
+                    <span></span>
+                    <b>›</b>
+                </div>
+
+
+                <!-- 02 -->
+                <article class="review3-s5-node">
+
+                    <div class="review3-s5-node-top">
+                        <span class="review3-s5-index">02</span>
+
+                        <div class="review3-s5-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="9" cy="8" r="3"/>
+                                <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+                                <path d="M16 5.5a3 3 0 0 1 0 5.8"/>
+                                <path d="M18 14c1.8.8 3 2.6 3 5"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <h2>Identity</h2>
+
+                    <p>
+                        The registered user profile and identity
+                        context are loaded locally.
+                    </p>
+
+                    <div class="review3-s5-node-meta">
+                        <span>CONTEXT</span>
+                        <strong>User Profile</strong>
+                    </div>
+
+                </article>
+
+
+                <div class="review3-s5-flow">
+                    <span></span>
+                    <b>›</b>
+                </div>
+
+
+                <!-- 03 -->
+                <article class="review3-s5-node review3-s5-continuous">
+
+                    <div class="review3-s5-node-top">
+                        <span class="review3-s5-index">03</span>
+
+                        <div class="review3-s5-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3 12h4l2-6 4 12 2-6h6"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <h2>Monitoring</h2>
+
+                    <p>
+                        Session activity and security events are
+                        continuously observed.
+                    </p>
+
+                    <div class="review3-s5-node-meta">
+                        <span>OBSERVE</span>
+                        <strong>Session Activity</strong>
+                    </div>
+
+                </article>
+
+
+                <div class="review3-s5-flow">
+                    <span></span>
+                    <b>›</b>
+                </div>
+
+
+                <!-- 04 -->
+                <article class="review3-s5-node review3-s5-continuous">
+
+                    <div class="review3-s5-node-top">
+                        <span class="review3-s5-index">04</span>
+
+                        <div class="review3-s5-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="8"/>
+                                <path d="M12 7v5l3 2"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <h2>Risk Evaluation</h2>
+
+                    <p>
+                        Security events are evaluated before an
+                        appropriate response is selected.
+                    </p>
+
+                    <div class="review3-s5-node-meta">
+                        <span>EVALUATE</span>
+                        <strong>Risk Decision</strong>
+                    </div>
+
+                </article>
+
+
+                <div class="review3-s5-flow">
+                    <span></span>
+                    <b>›</b>
+                </div>
+
+
+                <!-- 05 -->
+                <article class="review3-s5-node review3-s5-response">
+
+                    <div class="review3-s5-node-top">
+                        <span class="review3-s5-index">05</span>
+
+                        <div class="review3-s5-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="5" y="10" width="14" height="10" rx="2"/>
+                                <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <h2>Response</h2>
+
+                    <p>
+                        The system continues, re-verifies, restricts,
+                        or locks the active session.
+                    </p>
+
+                    <div class="review3-s5-node-meta">
+                        <span>DECISION</span>
+                        <strong>Access Control</strong>
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- SECURITY TRANSITION -->
+            <div class="review3-s5-transition">
+
+                <div class="review3-s5-transition-line"></div>
+
+                <div class="review3-s5-transition-text">
+                    <span>AUTHENTICATION ESTABLISHES TRUST</span>
+                    <b>&rarr;</b>
+                    <span>CONTINUOUS SECURITY MAINTAINS IT</span>
+                </div>
+
+                <div class="review3-s5-transition-line"></div>
+
+            </div>
+
+
+            <!-- BOTTOM EVIDENCE -->
+            <div class="review3-s5-bottom">
+
+                <div class="review3-s5-bottom-item">
+                    <span class="review3-s5-bottom-number">01</span>
+
+                    <div>
+                        <strong>Identity Verification</strong>
+                        <p>
+                            Credentials and biometric checks precede
+                            secure session establishment.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="review3-s5-bottom-divider"></div>
+
+
+                <div class="review3-s5-bottom-item">
+                    <span class="review3-s5-bottom-number">02</span>
+
+                    <div>
+                        <strong>Continuous Security</strong>
+                        <p>
+                            Security events can trigger evaluation
+                            and controlled response.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="review3-s5-bottom-divider"></div>
+
+
+                <div class="review3-s5-bottom-item">
+                    <span class="review3-s5-bottom-number">03</span>
+
+                    <div>
+                        <strong>Local-First Operation</strong>
+                        <p>
+                            Authentication and security state remain
+                            centred around the local application.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="review3-s5-footer">
+
+            <span>IMPLEMENTATION</span>
+
+            <i></i>
+
+            <span>INTEGRATION</span>
+
+            <i></i>
+
+            <span>VALIDATION</span>
+
+            <div class="review3-s5-footer-note">
+                FINAL SYSTEM
+            </div>
+
+        </footer>
+
+    </div>
+
+</section><section class="slide review3-slide6" data-slide-index="5">
+
+    <div class="security-response-slide">
+
+        <!-- HEADER -->
+        <div class="slide-header security-response-header">
+            <div class="eyebrow">CONTINUOUS SECURITY</div>
+
+            <h1>Continuous Security &amp; Risk Response</h1>
+
+            <p class="slide-subtitle">
+                Authentication establishes trust. Continuous monitoring helps maintain it.
+            </p>
+        </div>
+
+
+        <!-- SECURITY LOOP -->
+        <div class="security-loop">
+
+            <!-- STEP 01 -->
+            <div class="security-step">
+
+                <div class="security-step-top">
+                    <span class="security-number">01</span>
+                    <span class="security-stage">OBSERVE</span>
+                </div>
+
+                <div class="security-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6Z"/>
+                        <circle cx="12" cy="12" r="2.5"/>
+                    </svg>
+                </div>
+
+                <h2>Monitor</h2>
+
+                <p>
+                    Observe system activity, session state and security events
+                    throughout the authenticated session.
+                </p>
+
+                <div class="security-tags">
+                    <span>System Activity</span>
+                    <span>Session State</span>
+                </div>
+
+            </div>
+
+
+            <!-- CONNECTOR -->
+            <div class="security-connector">
+                <span></span>
+            </div>
+
+
+            <!-- STEP 02 -->
+            <div class="security-step">
+
+                <div class="security-step-top">
+                    <span class="security-number">02</span>
+                    <span class="security-stage">ANALYSE</span>
+                </div>
+
+                <div class="security-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 14h3l2-7 4 12 2-7h5"/>
+                    </svg>
+                </div>
+
+                <h2>Evaluate</h2>
+
+                <p>
+                    Analyse observed events against the active security
+                    conditions and authentication state.
+                </p>
+
+                <div class="security-tags">
+                    <span>Security Events</span>
+                    <span>Event Evaluation</span>
+                </div>
+
+            </div>
+
+
+            <!-- CONNECTOR -->
+            <div class="security-connector">
+                <span></span>
+            </div>
+
+
+            <!-- STEP 03 -->
+            <div class="security-step">
+
+                <div class="security-step-top">
+                    <span class="security-number">03</span>
+                    <span class="security-stage">DECIDE</span>
+                </div>
+
+                <div class="security-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 3v18"/>
+                        <path d="M5 8h14"/>
+                        <path d="M5 8l-3 5h6l-3-5Z"/>
+                        <path d="M19 8l-3 5h6l-3-5Z"/>
+                    </svg>
+                </div>
+
+                <h2>Decide</h2>
+
+                <p>
+                    Determine the appropriate security response based on
+                    the evaluated event and current trust state.
+                </p>
+
+                <div class="security-tags">
+                    <span>Risk Assessment</span>
+                    <span>Security Decision</span>
+                </div>
+
+            </div>
+
+
+            <!-- CONNECTOR -->
+            <div class="security-connector">
+                <span></span>
+            </div>
+
+
+            <!-- STEP 04 -->
+            <div class="security-step security-step-final">
+
+                <div class="security-step-top">
+                    <span class="security-number">04</span>
+                    <span class="security-stage">ENFORCE</span>
+                </div>
+
+                <div class="security-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="5" y="10" width="14" height="11" rx="2"/>
+                        <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+                    </svg>
+                </div>
+
+                <h2>Respond</h2>
+
+                <p>
+                    Continue the session, request re-verification,
+                    restrict access or lock the session.
+                </p>
+
+                <div class="security-tags">
+                    <span>Re-verify</span>
+                    <span>Restrict / Lock</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESPONSE PATH -->
+        <div class="response-path">
+
+            <div class="response-path-label">
+                <span>SECURITY RESPONSE PATH</span>
+            </div>
+
+            <div class="response-path-flow">
+
+                <div class="response-item">
+                    <span class="response-dot neutral"></span>
+                    <div>
+                        <strong>Normal</strong>
+                        <small>Continue session</small>
+                    </div>
+                </div>
+
+                <div class="response-arrow">&rarr;</div>
+
+                <div class="response-item">
+                    <span class="response-dot review"></span>
+                    <div>
+                        <strong>Suspicious</strong>
+                        <small>Re-verify identity</small>
+                    </div>
+                </div>
+
+                <div class="response-arrow">&rarr;</div>
+
+                <div class="response-item">
+                    <span class="response-dot restrict"></span>
+                    <div>
+                        <strong>High Risk</strong>
+                        <small>Restrict or lock access</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRINCIPLE -->
+        <div class="security-principle">
+
+            <div class="principle-label">
+                SECURITY PRINCIPLE
+            </div>
+
+            <div class="principle-content">
+                <strong>Authenticate &rarr; Monitor &rarr; Evaluate &rarr; Respond</strong>
+                <span>
+                    Security is maintained throughout the session, not only at login.
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ============================================================
+     SLIDE 6 — FINAL APPLICATION & LIVE DEMONSTRATION
+     ============================================================ -->
+<!-- =========================================================
+     SLIDE 7 - FINAL APPLICATION & SYSTEM WORKFLOW
+     ========================================================= -->
+<!-- =========================================================
+     SLIDE 7 - FINAL APPLICATION & SYSTEM WORKFLOW
+     ========================================================= -->
+<section class="slide s7-workflow-slide" data-slide-index="6">
+<div class="s7-inner">
+
+    <!-- HEADER -->
+    <header class="s7-header">
+        <div class="s7-kicker">FINAL SYSTEM</div>
+        <h1>Final Application &amp; System Workflow</h1>
+        <p>End-to-end execution from identity verification to continuous security response</p>
+    </header>
+
+    <!-- PHASE LABEL: IDENTITY ESTABLISHMENT -->
+    <div class="s7-phase-label">
+        <span class="s7-phase-tag">IDENTITY ESTABLISHMENT</span>
+        <span class="s7-phase-sub">Credentials &rarr; Face &rarr; Voice</span>
+    </div>
+
+    <!-- TOP ROW: 3 authentication stages -->
+    <div class="s7-auth-row">
+
+        <div class="s7-card s7-card-cred">
+            <div class="s7-card-num">01</div>
+            <div class="s7-card-label">CREDENTIALS</div>
+            <h3>Identity Authentication</h3>
+            <p>Validate account credentials before biometric verification is reached.</p>
+            <div class="s7-card-tag">ACCOUNT VALIDATED</div>
+        </div>
+
+        <div class="s7-arrow-h">&rarr;</div>
+
+        <div class="s7-card s7-card-face">
+            <div class="s7-card-num">02</div>
+            <div class="s7-card-label">BIOMETRIC FACTOR 01</div>
+            <h3>Face Verification</h3>
+            <p>Compare live camera input against the enrolled face identity.</p>
+            <div class="s7-card-tag">FACE MATCH</div>
+        </div>
+
+        <div class="s7-arrow-h">&rarr;</div>
+
+        <div class="s7-card s7-card-voice">
+            <div class="s7-card-num">03</div>
+            <div class="s7-card-label">BIOMETRIC FACTOR 02</div>
+            <h3>Voice Verification</h3>
+            <p>Compare microphone input against the enrolled voice identity.</p>
+            <div class="s7-card-tag">VOICE MATCH</div>
+        </div>
+
+    </div>
+
+    <!-- DOWN ARROW -->
+    <div class="s7-arrow-v-wrap">
+        <div class="s7-arrow-v">&darr;</div>
+    </div>
+
+    <!-- PHASE LABEL: POST-AUTH SECURITY -->
+    <div class="s7-phase-label">
+        <span class="s7-phase-tag s7-phase-sec">POST-AUTHENTICATION SECURITY</span>
+        <span class="s7-phase-sub">Monitor &rarr; Evaluate &rarr; Respond</span>
+    </div>
+
+    <!-- STAGE 04: CONTINUOUS SECURITY (wide) -->
+    <div class="s7-wide-card s7-wide-monitor">
+        <div class="s7-wide-left">
+            <div class="s7-card-num">04</div>
+            <div class="s7-card-label">CONTINUOUS SECURITY</div>
+            <h3>Monitor &amp; Evaluate</h3>
+        </div>
+        <div class="s7-wide-pipeline">
+            <div class="s7-pipe-step">
+                <span class="s7-pipe-name">SESSION ACTIVITY</span>
+                <span class="s7-pipe-desc">Observe continuously</span>
+            </div>
+            <div class="s7-pipe-arr">&rarr;</div>
+            <div class="s7-pipe-step">
+                <span class="s7-pipe-name">SECURITY EVENT</span>
+                <span class="s7-pipe-desc">Detect changes</span>
+            </div>
+            <div class="s7-pipe-arr">&rarr;</div>
+            <div class="s7-pipe-step">
+                <span class="s7-pipe-name">RISK STATE</span>
+                <span class="s7-pipe-desc">Evaluate risk</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOWN ARROW -->
+    <div class="s7-arrow-v-wrap">
+        <div class="s7-arrow-v">&darr;</div>
+    </div>
+
+    <!-- STAGE 05: SECURITY RESPONSE (wide) -->
+    <div class="s7-wide-card s7-wide-response">
+        <div class="s7-wide-left">
+            <div class="s7-card-num">05</div>
+            <div class="s7-card-label">SECURITY RESPONSE</div>
+            <h3>Enforce Security Decision</h3>
+        </div>
+        <div class="s7-response-pills">
+            <span class="s7-pill s7-pill-continue">CONTINUE</span>
+            <span class="s7-pill-sep">&middot;</span>
+            <span class="s7-pill s7-pill-reverify">RE-VERIFY</span>
+            <span class="s7-pill-sep">&middot;</span>
+            <span class="s7-pill s7-pill-lock">RESTRICT / LOCK</span>
+        </div>
+    </div>
+
+    <!-- BOTTOM SUMMARY -->
+    <div class="s7-summary">
+        <div class="s7-summary-card">
+            <div class="s7-summary-label">LOCAL-FIRST APPLICATION</div>
+            <p>Login &rarr; Dashboard &rarr; Security Interface</p>
+        </div>
+        <div class="s7-summary-card">
+            <div class="s7-summary-label">MULTIMODAL IDENTITY</div>
+            <p>Credentials + Face + Voice</p>
+        </div>
+        <div class="s7-summary-card">
+            <div class="s7-summary-label">CONTINUOUS RISK CONTROL</div>
+            <p>Monitor &rarr; Evaluate &rarr; Respond</p>
+        </div>
+    </div>
+
+    <!-- FINAL STATEMENT -->
+    <div class="s7-statement">
+        <div class="s7-statement-flow">
+            <span>AUTHENTICATE</span><b>&rarr;</b><span>MONITOR</span><b>&rarr;</b><span>EVALUATE</span><b>&rarr;</b><span>RESPOND</span>
+        </div>
+        <div class="s7-statement-text">
+            Trust is established at login and <strong>continuously enforced throughout the session.</strong>
+        </div>
+    </div>
+
+</div>
+</section>
+</section>
+
+<!-- Slide 7: Testing & Validation -->
+<!-- =========================================================
+     SLIDE 8 — TESTING & VALIDATION
+     ========================================================= -->
+<section class="slide review3-validation-slide" data-slide-index="7">
+
+    <div class="review3-validation-inner">
+
+        <!-- Slide Header -->
+        <header class="review3-validation-header">
+
+            <div class="review3-section-label">
+                SYSTEM VALIDATION
+            </div>
+
+            <h1>
+                Testing &amp; Validation
+            </h1>
+
+            <p>
+                Functional, biometric, and security-response validation
+                of the implemented authentication system.
+            </p>
+
+        </header>
+
+
+        <!-- KPI STRIP -->
+        <div class="review3-validation-kpis">
+
+            <div class="review3-validation-kpi">
+                <div class="review3-kpi-number">08</div>
+                <div class="review3-kpi-label">TEST SCENARIOS</div>
+                <div class="review3-kpi-detail">
+                    Authentication &amp; security cases
+                </div>
+            </div>
+
+            <div class="review3-validation-kpi review3-kpi-highlight">
+                <div class="review3-kpi-number">08/08</div>
+                <div class="review3-kpi-label">PASSED</div>
+                <div class="review3-kpi-detail">
+                    Expected behaviour observed
+                </div>
+            </div>
+
+            <div class="review3-validation-kpi">
+                <div class="review3-kpi-number">03</div>
+                <div class="review3-kpi-label">AUTHENTICATION LAYERS</div>
+                <div class="review3-kpi-detail">
+                    Credentials · Face · Voice
+                </div>
+            </div>
+
+            <div class="review3-validation-kpi">
+                <div class="review3-kpi-number">01</div>
+                <div class="review3-kpi-label">RISK RESPONSE PATH</div>
+                <div class="review3-kpi-detail">
+                    Detection &rarr; security action
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- VALIDATION TABLE -->
+        <div class="review3-validation-table-wrap">
+
+            <table class="review3-validation-table">
+
+                <thead>
+                    <tr>
+                        <th class="validation-area-col">AREA</th>
+                        <th class="validation-condition-col">
+                            TEST CONDITION
+                        </th>
+                        <th class="validation-expected-col">
+                            EXPECTED
+                        </th>
+                        <th class="validation-observed-col">
+                            OBSERVED EVIDENCE
+                        </th>
+                        <th class="validation-result-col">
+                            RESULT
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <!-- Credentials — Valid -->
+                    <tr>
+                        <td>
+                            <span class="validation-area">
+                                Credentials
+                            </span>
+                        </td>
+
+                        <td>
+                            Valid credentials
+                        </td>
+
+                        <td>
+                            Access granted
+                        </td>
+
+                        <td>
+                            <span class="validation-evidence validation-positive">
+                                Access granted
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="validation-status validation-pass">
+                                PASS
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <!-- Credentials — Invalid -->
+                    <tr>
+                        <td>
+                            <span class="validation-area">
+                                Credentials
+                            </span>
+                        </td>
+
+                        <td>
+                            Invalid credentials
+                        </td>
+
+                        <td>
+                            Access denied
+                        </td>
+
+                        <td>
+                            <span class="validation-evidence validation-negative">
+                                403 / Access Denied
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="validation-status validation-pass">
+                                PASS
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <!-- Face — Valid -->
+                    <tr>
+                        <td>
+                            <span class="validation-area">
+                                Face
+                            </span>
+                        </td>
+
+                        <td>
+                            Enrolled face
+                        </td>
+
+                        <td>
+                            Verification succeeds
+                        </td>
+
+                        <td>
+                            <span class="validation-evidence validation-positive">
+                                Verified: True
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="validation-status validation-pass">
+                                PASS
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <!-- Face — Invalid -->
+                    <tr>
+                        <td>
+                            <span class="validation-area">
+                                Non-matching face
+                            </span>
+                        </td>
+
+                        <td>
+                            Face mismatch
+                        </td>
+
+                        <td>
+                            Verification fails
+                        </td>
+
+                        <td>
+                            <span class="validation-evidence validation-negative">
+                                Verified: False
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="validation-status validation-pass">
+                                PASS
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <!-- Voice — Valid -->
+                    <tr>
+                        <td>
+                            <span class="validation-area">
+                                Voice
+                            </span>
+                        </td>
+
+                        <td>
+                            Enrolled voice
+                        </td>
+
+                        <td>
+                            Verification succeeds
+                        </td>
+
+                        <td>
+                            <span class="validation-evidence validation-positive">
+                                Verified: True
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="validation-status validation-pass">
+                                PASS
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <!-- Voice — Invalid -->
+                    <tr>
+                        <td>
+                            <span class="validation-area">
+                                Non-matching voice
+                            </span>
+                        </td>
+
+                        <td>
+                            Voice mismatch
+                        </td>
+
+                        <td>
+                            Verification fails
+                        </td>
+
+                        <td>
+                            <span class="validation-evidence validation-negative">
+                                Verified: False
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="validation-status validation-pass">
+                                PASS
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <!-- Monitoring -->
+                    <tr>
+                        <td>
+                            <span class="validation-area">
+                                Monitoring
+                            </span>
+                        </td>
+
+                        <td>
+                            Security event
+                        </td>
+
+                        <td>
+                            Event detected
+                        </td>
+
+                        <td>
+                            <span class="validation-evidence validation-risk">
+                                Risk Score &gt; 80
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="validation-status validation-pass">
+                                PASS
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <!-- Response -->
+                    <tr>
+                        <td>
+                            <span class="validation-area">
+                                Response
+                            </span>
+                        </td>
+
+                        <td>
+                            Elevated risk
+                        </td>
+
+                        <td>
+                            Security action
+                        </td>
+
+                        <td>
+                            <span class="validation-evidence validation-action">
+                                MFA Required / Block
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="validation-status validation-pass">
+                                PASS
+                            </span>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- VALIDATION OUTCOME -->
+        <div class="review3-validation-outcome">
+
+            <div class="review3-outcome-label">
+                VALIDATION OUTCOME
+            </div>
+
+            <div class="review3-outcome-content">
+
+                <div class="review3-outcome-title">
+                    Expected security behaviour was observed across
+                    authentication and risk-response scenarios.
+                </div>
+
+                <div class="review3-outcome-description">
+                    The system correctly distinguishes valid and invalid
+                    authentication attempts and escalates elevated-risk
+                    conditions through the security response layer.
+                </div>
+
+            </div>
+
+            <div class="review3-outcome-score">
+                <span class="outcome-score-number">08/08</span>
+                <span class="outcome-score-label">SCENARIOS PASSED</span>
+            </div>
+
+        </div>
+
+
+        <!-- Bottom methodology line -->
+        <div class="review3-validation-footer">
+
+            <span>FUNCTIONAL VALIDATION</span>
+            <i></i>
+            <span>BIOMETRIC VERIFICATION</span>
+            <i></i>
+            <span>SECURITY RESPONSE</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Slide 8: Final Security Test Cases -->
+<section class="slide security-test-slide" data-slide-index="8">
+
+    <div class="slide-content">
+
+        <!-- Header -->
+        <div class="security-test-header">
+            <div class="section-kicker">SECURITY VALIDATION</div>
+
+            <h2>Final Security Test Cases</h2>
+
+            <p>
+                Systematic verification of authentication outcomes,
+                fail-closed behaviour, and risk-aware response.
+            </p>
+        </div>
+
+
+        <!-- Test Case Grid -->
+        <div class="security-test-grid">
+
+            <!-- TEST 01 -->
+            <article class="security-test-card outcome-success">
+
+                <div class="test-card-top">
+                    <span class="test-number">01</span>
+                    <span class="test-status status-pass">PASS</span>
+                </div>
+
+                <div class="test-icon">✓</div>
+
+                <div class="test-category">AUTHENTICATION</div>
+
+                <h3>Valid User</h3>
+
+                <div class="test-flow">
+                    <span>Credentials</span>
+                    <span class="flow-arrow">&rarr;</span>
+                    <span>Biometrics</span>
+                </div>
+
+                <div class="test-result">
+                    <span class="result-label">SYSTEM OUTCOME</span>
+                    <strong>SECURE SESSION</strong>
+                </div>
+
+                <p class="test-description">
+                    Valid credentials and enrolled biometric inputs
+                    satisfy the authentication requirements.
+                </p>
+
+            </article>
+
+
+            <!-- TEST 02 -->
+            <article class="security-test-card outcome-reject">
+
+                <div class="test-card-top">
+                    <span class="test-number">02</span>
+                    <span class="test-status status-pass">PASS</span>
+                </div>
+
+                <div class="test-icon">×</div>
+
+                <div class="test-category">CREDENTIAL SECURITY</div>
+
+                <h3>Invalid Credential</h3>
+
+                <div class="test-flow">
+                    <span>Credential Check</span>
+                    <span class="flow-arrow">&rarr;</span>
+                    <span>Failure</span>
+                </div>
+
+                <div class="test-result">
+                    <span class="result-label">SYSTEM OUTCOME</span>
+                    <strong>ACCESS REJECTED</strong>
+                </div>
+
+                <p class="test-description">
+                    Invalid account credentials prevent the session
+                    from progressing to authenticated access.
+                </p>
+
+            </article>
+
+
+            <!-- TEST 03 -->
+            <article class="security-test-card outcome-reverify">
+
+                <div class="test-card-top">
+                    <span class="test-number">03</span>
+                    <span class="test-status status-pass">PASS</span>
+                </div>
+
+                <div class="test-icon">F</div>
+
+                <div class="test-category">BIOMETRIC SECURITY</div>
+
+                <h3>Face Mismatch</h3>
+
+                <div class="test-flow">
+                    <span>Face Capture</span>
+                    <span class="flow-arrow">&rarr;</span>
+                    <span>Mismatch</span>
+                </div>
+
+                <div class="test-result">
+                    <span class="result-label">SYSTEM OUTCOME</span>
+                    <strong>REJECT / RE-VERIFY</strong>
+                </div>
+
+                <p class="test-description">
+                    A non-matching facial input prevents successful
+                    identity verification.
+                </p>
+
+            </article>
+
+
+            <!-- TEST 04 -->
+            <article class="security-test-card outcome-reverify">
+
+                <div class="test-card-top">
+                    <span class="test-number">04</span>
+                    <span class="test-status status-pass">PASS</span>
+                </div>
+
+                <div class="test-icon">V</div>
+
+                <div class="test-category">BIOMETRIC SECURITY</div>
+
+                <h3>Voice Mismatch</h3>
+
+                <div class="test-flow">
+                    <span>Voice Capture</span>
+                    <span class="flow-arrow">&rarr;</span>
+                    <span>Mismatch</span>
+                </div>
+
+                <div class="test-result">
+                    <span class="result-label">SYSTEM OUTCOME</span>
+                    <strong>REJECT / RE-VERIFY</strong>
+                </div>
+
+                <p class="test-description">
+                    A non-matching voice sample prevents the system
+                    from establishing trusted identity.
+                </p>
+
+            </article>
+
+
+            <!-- TEST 05 -->
+            <article class="security-test-card outcome-risk">
+
+                <div class="test-card-top">
+                    <span class="test-number">05</span>
+                    <span class="test-status status-pass">PASS</span>
+                </div>
+
+                <div class="test-icon">!</div>
+
+                <div class="test-category">CONTINUOUS SECURITY</div>
+
+                <h3>Security Event</h3>
+
+                <div class="test-flow">
+                    <span>Event Detection</span>
+                    <span class="flow-arrow">&rarr;</span>
+                    <span>Risk Evaluation</span>
+                </div>
+
+                <div class="test-result">
+                    <span class="result-label">SYSTEM OUTCOME</span>
+                    <strong>RESPOND / RESTRICT</strong>
+                </div>
+
+                <p class="test-description">
+                    Elevated-risk activity triggers a security response
+                    instead of allowing unrestricted continuation.
+                </p>
+
+            </article>
+
+        </div>
+
+
+        <!-- Validation Summary -->
+        <div class="security-validation-summary">
+
+            <div class="validation-summary-label">
+                VALIDATION PRINCIPLE
+            </div>
+
+            <div class="validation-summary-main">
+                <strong>Every abnormal condition produces a controlled response.</strong>
+                <span>
+                    Reject invalid identity, re-verify uncertain identity,
+                    and restrict elevated-risk sessions.
+                </span>
+            </div>
+
+            <div class="validation-badge">
+                <span class="validation-dot"></span>
+                FAIL-CLOSED
+            </div>
+
+        </div>
+
+
+        <!-- Bottom Metrics -->
+        <div class="security-test-metrics">
+
+            <div class="security-metric">
+                <strong>05</strong>
+                <span>SECURITY SCENARIOS</span>
+            </div>
+
+            <div class="security-metric">
+                <strong>05</strong>
+                <span>EXPECTED DECISIONS</span>
+            </div>
+
+            <div class="security-metric">
+                <strong>100%</strong>
+                <span>CONTROLLED OUTCOMES</span>
+            </div>
+
+            <div class="security-metric metric-final">
+                <strong>PASS</strong>
+                <span>VALIDATION STATUS</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Slide 9: Challenges & Resolutions -->
+<section class="slide challenges-slide" data-slide-index="9">
+
+    <div class="slide-content">
+
+        <!-- HEADER -->
+        <header class="challenges-header">
+
+            <div class="section-kicker">
+                ENGINEERING REVIEW
+            </div>
+
+            <h2>Challenges &amp; Resolutions</h2>
+
+            <p>
+                Key engineering constraints encountered during system integration
+                and the decisions used to address them.
+            </p>
+
+        </header>
+
+
+        <!-- CHALLENGE → RESOLUTION PIPELINE -->
+        <div class="challenge-list">
+
+            <!-- 01 -->
+            <article class="challenge-row challenge-biometric">
+
+                <div class="challenge-index">
+                    01
+                </div>
+
+                <div class="challenge-icon">
+                    <span>01</span>
+                </div>
+
+                <div class="challenge-content">
+
+                    <div class="challenge-label">
+                        BIOMETRIC RELIABILITY
+                    </div>
+
+                    <h3>
+                        Variable capture conditions
+                    </h3>
+
+                    <p class="challenge-description">
+                        Camera and microphone inputs can vary with lighting,
+                        background noise, distance, and capture quality.
+                    </p>
+
+                </div>
+
+                <div class="challenge-arrow">
+                    &rarr;
+                </div>
+
+                <div class="resolution-content">
+
+                    <div class="resolution-label">
+                        ENGINEERING RESPONSE
+                    </div>
+
+                    <h3>
+                        Controlled verification
+                    </h3>
+
+                    <p>
+                        Use controlled capture windows and preprocessing
+                        before biometric comparison.
+                    </p>
+
+                </div>
+
+                <div class="challenge-outcome">
+                    <span>OUTCOME</span>
+                    <strong>MORE CONSISTENT VERIFICATION</strong>
+                </div>
+
+            </article>
+
+
+            <!-- 02 -->
+            <article class="challenge-row challenge-monitoring">
+
+                <div class="challenge-index">
+                    02
+                </div>
+
+                <div class="challenge-icon">
+                    <span>02</span>
+                </div>
+
+                <div class="challenge-content">
+
+                    <div class="challenge-label">
+                        CONTINUOUS SECURITY
+                    </div>
+
+                    <h3>
+                        Security vs. usability
+                    </h3>
+
+                    <p class="challenge-description">
+                        Continuous monitoring must detect security events
+                        without unnecessarily interrupting normal interaction.
+                    </p>
+
+                </div>
+
+                <div class="challenge-arrow">
+                    &rarr;
+                </div>
+
+                <div class="resolution-content">
+
+                    <div class="resolution-label">
+                        ENGINEERING RESPONSE
+                    </div>
+
+                    <h3>
+                        Decoupled monitoring
+                    </h3>
+
+                    <p>
+                        Separate monitoring and risk evaluation from the
+                        primary authentication flow.
+                    </p>
+
+                </div>
+
+                <div class="challenge-outcome">
+                    <span>OUTCOME</span>
+                    <strong>CONTINUOUS RISK AWARENESS</strong>
+                </div>
+
+            </article>
+
+
+            <!-- 03 -->
+            <article class="challenge-row challenge-privacy">
+
+                <div class="challenge-index">
+                    03
+                </div>
+
+                <div class="challenge-icon">
+                    <span>03</span>
+                </div>
+
+                <div class="challenge-content">
+
+                    <div class="challenge-label">
+                        PRIVACY &amp; LOCAL PROCESSING
+                    </div>
+
+                    <h3>
+                        Protecting sensitive identity data
+                    </h3>
+
+                    <p class="challenge-description">
+                        Biometric and identity information requires careful
+                        handling to minimise unnecessary data exposure.
+                    </p>
+
+                </div>
+
+                <div class="challenge-arrow">
+                    &rarr;
+                </div>
+
+                <div class="resolution-content">
+
+                    <div class="resolution-label">
+                        ENGINEERING RESPONSE
+                    </div>
+
+                    <h3>
+                        Local-first processing
+                    </h3>
+
+                    <p>
+                        Keep identity profiles and biometric processing local
+                        wherever supported by the implemented system.
+                    </p>
+
+                </div>
+
+                <div class="challenge-outcome">
+                    <span>OUTCOME</span>
+                    <strong>REDUCED DATA EXPOSURE</strong>
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- ENGINEERING TAKEAWAY -->
+        <div class="engineering-takeaway">
+
+            <div class="takeaway-label">
+                ENGINEERING TAKEAWAY
+            </div>
+
+            <div class="takeaway-main">
+                <strong>
+                    Security was treated as an integrated system constraint.
+                </strong>
+
+                <span>
+                    Authentication, biometrics, monitoring, privacy, and
+                    response were designed to work together rather than
+                    as isolated features.
+                </span>
+            </div>
+
+            <div class="takeaway-flow">
+                <span>CHALLENGE</span>
+                <b>&rarr;</b>
+                <span>DESIGN DECISION</span>
+                <b>&rarr;</b>
+                <span>VALIDATED OUTCOME</span>
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM PRINCIPLES -->
+        <div class="challenge-principles">
+
+            <span>LOCAL-FIRST</span>
+            <i></i>
+            <span>MULTIMODAL</span>
+            <i></i>
+            <span>CONTINUOUS SECURITY</span>
+            <i></i>
+            <span>FAIL-CLOSED</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Slide 10: Final Outcomes & Future Scope -->
+<!-- =========================================================
+     SLIDE 11 - FINAL OUTCOMES & FUTURE SCOPE
+     ========================================================= -->
+
+<section class="slide s11-slide" data-slide-index="10">
+
+    <!-- Slide number -->
+    <div class="slide-number">
+        <span>SLIDE 11</span>
+        <span>/ 12</span>
+    </div>
+
+    <!-- Header -->
+    <div class="s11-header">
+        <div class="s11-kicker">FINAL STAGE</div>
+        <h1>Final Outcomes <span>&amp;</span> Future Scope</h1>
+        <p>What the project delivered &mdash; and how the system can evolve toward stronger, broader, production-ready security.</p>
+    </div>
+
+    <!-- Main content -->
+    <div class="s11-main">
+
+        <!-- LEFT - SYSTEM ACHIEVED -->
+        <div class="s11-achieved">
+
+            <div class="s11-section-head">
+                <div>
+                    <div class="s11-label achieved-label">DELIVERED</div>
+                    <h2>Final System Achieved</h2>
+                </div>
+                <div class="s11-status">
+                    <span class="s11-status-dot"></span>
+                    INTEGRATED
+                </div>
+            </div>
+
+            <p class="s11-section-description">
+                The proposed security architecture was implemented as an
+                integrated authentication and continuous-monitoring workflow.
+            </p>
+
+            <!-- Outcome cards -->
+            <div class="s11-outcomes">
+
+                <div class="s11-outcome-card">
+                    <div class="s11-outcome-icon">01</div>
+                    <div>
+                        <h3>Multi-Factor Authentication</h3>
+                        <p>Credentials are combined with biometric identity verification before access is established.</p>
+                    </div>
+                </div>
+
+                <div class="s11-outcome-card">
+                    <div class="s11-outcome-icon">02</div>
+                    <div>
+                        <h3>Face Verification</h3>
+                        <p>Camera-based identity verification is integrated into the authentication workflow.</p>
+                    </div>
+                </div>
+
+                <div class="s11-outcome-card">
+                    <div class="s11-outcome-icon">03</div>
+                    <div>
+                        <h3>Voice Verification</h3>
+                        <p>Voice-based verification provides an additional biometric authentication factor.</p>
+                    </div>
+                </div>
+
+                <div class="s11-outcome-card">
+                    <div class="s11-outcome-icon">04</div>
+                    <div>
+                        <h3>Continuous Security Monitoring</h3>
+                        <p>Session activity and security events remain under observation after authentication.</p>
+                    </div>
+                </div>
+
+                <div class="s11-outcome-card">
+                    <div class="s11-outcome-icon">05</div>
+                    <div>
+                        <h3>Risk-Aware Response</h3>
+                        <p>Security conditions can trigger continuation, re-verification, restriction or blocking.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RIGHT - FUTURE SCOPE -->
+        <div class="s11-future">
+
+            <div class="s11-section-head">
+                <div>
+                    <div class="s11-label future-label">NEXT STAGE</div>
+                    <h2>Future Scope</h2>
+                </div>
+                <div class="s11-arrow-mark">&rarr;</div>
+            </div>
+
+            <p class="s11-section-description">
+                The next development stage focuses on improving resilience,
+                expanding compatibility and preparing the system for real-world deployment.
+            </p>
+
+            <div class="s11-roadmap">
+
+                <div class="s11-roadmap-item">
+                    <div class="s11-roadmap-number">01</div>
+                    <div class="s11-roadmap-content">
+                        <div class="s11-roadmap-title">HARDEN</div>
+                        <h3>Stronger biometric security</h3>
+                        <p>Improve liveness detection, anti-spoofing and robustness under difficult capture conditions.</p>
+                    </div>
+                </div>
+
+                <div class="s11-roadmap-item">
+                    <div class="s11-roadmap-number">02</div>
+                    <div class="s11-roadmap-content">
+                        <div class="s11-roadmap-title">EXPAND</div>
+                        <h3>Broader evaluation</h3>
+                        <p>Extend device compatibility, datasets and testing environments for wider validation.</p>
+                    </div>
+                </div>
+
+                <div class="s11-roadmap-item">
+                    <div class="s11-roadmap-number">03</div>
+                    <div class="s11-roadmap-content">
+                        <div class="s11-roadmap-title">DEPLOY</div>
+                        <h3>Production readiness</h3>
+                        <p>Strengthen scalability, operational monitoring, deployment hardening and maintainability.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- KPI STRIP -->
+    <div class="s11-kpi-strip">
+
+        <div class="s11-kpi">
+            <div class="s11-kpi-number">01</div>
+            <div>
+                <strong>Integrated Workflow</strong>
+                <span>Authentication &rarr; Monitoring &rarr; Response</span>
+            </div>
+        </div>
+
+        <div class="s11-kpi">
+            <div class="s11-kpi-number">02</div>
+            <div>
+                <strong>Biometric Modalities</strong>
+                <span>Face + Voice verification</span>
+            </div>
+        </div>
+
+        <div class="s11-kpi">
+            <div class="s11-kpi-number">03</div>
+            <div>
+                <strong>Security Loop</strong>
+                <span>Monitor &rarr; Evaluate &rarr; Decide &rarr; Respond</span>
+            </div>
+        </div>
+
+        <div class="s11-kpi">
+            <div class="s11-kpi-number">04</div>
+            <div>
+                <strong>Validation</strong>
+                <span>Authentication + security scenarios</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FINAL OUTCOME -->
+    <div class="s11-final">
+        <div class="s11-final-label">FINAL OUTCOME</div>
+        <div class="s11-final-text">
+            An integrated <strong>local-first authentication system</strong>
+            that combines identity verification with <strong>continuous security monitoring.</strong>
+        </div>
+    </div>
+
+</section>
+
+<!-- Slide 11: Conclusion -->
+<section class="slide main-cover-slide" data-slide-index="11">
+  <div style="
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  ">
+    <div style="
+      background: #172033;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      width: 71%;
+      max-width: 980px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.22);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 52px 3rem 48px 3rem;
+    ">
+      <!-- Small label -->
+      <p style="
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #60A5FA;
+        text-transform: uppercase;
+        margin: 0 0 24px 0;
+      ">FINAL SYSTEM &bull; REVIEW 3</p>
+
+      <!-- Main statement -->
+      <h2 style="
+        font-family: 'Georgia', serif;
+        font-size: 46px;
+        font-weight: 700;
+        color: #FFFFFF;
+        line-height: 1.1;
+        margin: 0 0 30px 0;
+        text-transform: uppercase;
+        text-align: center;
+      ">AUTHENTICATION THAT<br>DOESN&rsquo;T STOP AT LOGIN.</h2>
+
+      <!-- Blue divider -->
+      <div style="width: 80px; height: 4px; background: #3B82F6; border-radius: 999px; margin: 0 0 28px 0;"></div>
+
+      <!-- Thank You -->
+      <h3 style="
+        font-family: 'Inter', sans-serif;
+        font-size: 31px;
+        font-weight: 700;
+        color: #60A5FA;
+        margin: 0 0 10px 0;
+        letter-spacing: normal;
+      ">THANK YOU</h3>
+
+      <!-- Questions -->
+      <p style="
+        font-family: 'Inter', sans-serif;
+        font-size: 15.5px;
+        font-weight: 500;
+        color: #CBD5E1;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin: 0 0 24px 0;
+      ">Questions &amp; Discussion</p>
+
+      <!-- Subtle bottom line -->
+      <div style="width: 200px; height: 1px; background: rgba(148,163,184,0.25);"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- ==========================================
+       SLIDE OVERVIEW DRAWER (20 SLIDES)
+       ========================================== -->
+<aside class="overview-drawer" id="slide-overview-drawer">
+<div class="drawer-header">
+<h3>Slide Deck Overview</h3>
+<button class="btn-close-drawer" id="btn-close-drawer">×</button>
+</div>
+<div class="drawer-grid" id="drawer-grid-container">
+<!-- Dynamically generated by app.js -->
+</div>
+</aside>
+<script src="app.js"></script>
+</body>
+</html>

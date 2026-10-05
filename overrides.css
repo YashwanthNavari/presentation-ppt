@@ -1,0 +1,303 @@
+/* Font Overrides to meet user standard */
+h1, h2, h3, .slide-title, .cover-main-title, .section-num-watermark {
+  font-family: "Aptos Display", "Aptos", sans-serif !important;
+}
+body, p, ul, li, div, span, td, th {
+  font-family: "Aptos", sans-serif !important;
+}
+
+/* UNIVERSAL PADDING REDUCTION FOR ACTUAL BOXES */
+.slide:not(.main-cover-slide) .intro-box,
+.slide:not(.main-cover-slide) .threat-metric-card,
+.slide:not(.main-cover-slide) .ed-card,
+.slide:not(.main-cover-slide) .acad-col,
+.slide:not(.main-cover-slide) .feature-card,
+.slide:not(.main-cover-slide) .glass-card,
+.slide:not(.main-cover-slide) .threat-matrix-box,
+.slide:not(.main-cover-slide) .acad-item,
+.slide:not(.main-cover-slide) .ds-module-card {
+  padding: 0.6rem 0.8rem !important;
+}
+
+/* FIX: Ensure both sides of comparisons have the exact same font weight and size! */
+.slide:not(.main-cover-slide) .matrix-ppt-list.good,
+.slide:not(.main-cover-slide) .matrix-ppt-list.bad,
+.slide:not(.main-cover-slide) .proposed-item .acad-item-desc,
+.slide:not(.main-cover-slide) .acad-item .acad-item-desc {
+  font-weight: 400 !important;
+}
+.slide:not(.main-cover-slide) .proposed-item .acad-item-title,
+.slide:not(.main-cover-slide) .acad-item .acad-item-title {
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+}
+
+/* Target Body Text: Enforce 18pt / 16pt minimum based on standard */
+.slide:not(.main-cover-slide) p, 
+.slide:not(.main-cover-slide) ul li,
+.slide:not(.main-cover-slide) div[class*="desc"] {
+  font-size: 1.05rem !important; /* Scaled slightly down to ensure fit across all slides */
+  line-height: 1.2 !important;
+}
+
+/* Slide Safe Margins */
+.slide:not(.main-cover-slide) {
+  padding: 0.50in !important; /* Safe margin */
+}
+.slide:not(.main-cover-slide) .slide-header {
+  padding-left: 0 !important;
+}
+.slide:not(.main-cover-slide) h2.slide-title {
+  font-size: 1.8rem !important; /* Scaled 28pt */
+  font-weight: bold !important;
+  text-align: left !important;
+}
+
+/* SPECIFIC EXCEPTIONS FOR EXTREMELY PACKED GRIDS (LIKE PROJECT JOURNEY) */
+.slide:not(.main-cover-slide) .ed-card .ed-card-title {
+  font-size: 0.95rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 2px !important;
+  line-height: 1.1 !important;
+}
+.slide:not(.main-cover-slide) .ed-card .ed-sub-label,
+.slide:not(.main-cover-slide) .ed-card .ed-card-head,
+.slide:not(.main-cover-slide) .ed-card .compare-group {
+  margin-bottom: 2px !important;
+  margin-top: 2px !important;
+  padding-bottom: 0 !important;
+}
+.slide:not(.main-cover-slide) .ed-card .ed-goal-box {
+  padding: 4px !important;
+  margin-top: 2px !important;
+}
+.slide:not(.main-cover-slide) .ed-card p,
+.slide:not(.main-cover-slide) .ed-card ul li,
+.slide:not(.main-cover-slide) .ed-card div:not(.ed-card-title):not(.ed-card-head),
+.slide:not(.main-cover-slide) .ed-card span:not(.ed-card-num) {
+  font-size: 0.75rem !important; 
+  line-height: 1.05 !important;
+  margin: 0 !important;
+}
+
+/* Force elements in cards 5-8 to be tiny so they don't overflow vertically */
+.slide:not(.main-cover-slide) .ed-flow-chain,
+.slide:not(.main-cover-slide) .ed-arch-chain,
+.slide:not(.main-cover-slide) .ed-milestones-chain {
+    align-items: flex-start !important;
+}
+.slide:not(.main-cover-slide) .ed-tech-pills {
+    justify-content: flex-start !important;
+}
+.slide:not(.main-cover-slide) .ed-impl-flow {
+    text-align: left !important;
+}
+
+.slide:not(.main-cover-slide) .ed-card .chain-node,
+.slide:not(.main-cover-slide) .ed-card .arch-box,
+.slide:not(.main-cover-slide) .ed-card .tech-pill,
+.slide:not(.main-cover-slide) .ed-card .ms-node {
+    padding: 2px 6px !important;
+    font-size: 0.7rem !important;
+    margin: 0 !important;
+    min-height: 0 !important;
+    text-align: left !important;
+}
+.slide:not(.main-cover-slide) .ed-card .chain-arr,
+.slide:not(.main-cover-slide) .ed-card .arch-arr,
+.slide:not(.main-cover-slide) .ed-card .ms-arr {
+    font-size: 0.65rem !important;
+    margin: 0 !important;
+    padding: 0 0 0 10px !important;
+    line-height: 1 !important;
+}
+.slide:not(.main-cover-slide) .ed-card .ed-tech-pills {
+    gap: 2px !important;
+    margin-bottom: 2px !important;
+}
+
+
+/* Slide 11 Local Data Storage Architecture Fixes */
+.slide:not(.main-cover-slide) .ds-modules-grid {
+    gap: 0.6rem !important;
+}
+.slide:not(.main-cover-slide) .ds-module-header {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.2rem !important;
+}
+.slide:not(.main-cover-slide) .ds-module-list li {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.2rem !important;
+    line-height: 1.15 !important;
+}
+
+
+/* Slide 17 Expected Outcomes Fixes */
+.slide:not(.main-cover-slide) .po-grid-6cards ul li,
+.slide:not(.main-cover-slide) .po-grid-6cards div[class*="desc"] {
+    font-size: 0.85rem !important;
+    line-height: 1.15 !important;
+}
+.slide:not(.main-cover-slide) .po-grid-6cards .po-card-header {
+    font-size: 0.95rem !important;
+    margin-bottom: 4px !important;
+}
+.slide:not(.main-cover-slide) .po-grid-6cards .po-card-benefit {
+    font-size: 0.75rem !important;
+    margin-top: 4px !important;
+    padding-top: 4px !important;
+}
+
+/* Slide 19 References Fixes */
+.slide:not(.main-cover-slide) .ref-cards-grid {
+    gap: 0.8rem !important;
+    flex-grow: 0 !important;
+    align-items: stretch !important;
+}
+.slide:not(.main-cover-slide) .ref-paper-card {
+    padding: 0.8rem 1rem !important;
+    text-align: left !important;
+    flex-grow: 0 !important;
+}
+.slide:not(.main-cover-slide) .ref-contribution-box {
+    flex-grow: 0 !important;
+}
+.slide:not(.main-cover-slide) .ref-paper-header {
+    margin-bottom: 4px !important;
+    padding-bottom: 4px !important;
+}
+.slide:not(.main-cover-slide) .ref-paper-category {
+    font-size: 0.8rem !important;
+    letter-spacing: 0.5px !important;
+}
+.slide:not(.main-cover-slide) .ref-paper-title {
+    font-size: 0.95rem !important;
+    line-height: 1.2 !important;
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+}
+.slide:not(.main-cover-slide) .ref-meta-row {
+    margin-bottom: 4px !important;
+}
+.slide:not(.main-cover-slide) .ref-meta-item {
+    font-size: 0.75rem !important;
+    line-height: 1.2 !important;
+    font-weight: 400 !important;
+}
+.slide:not(.main-cover-slide) .ref-contribution-box {
+    font-size: 0.8rem !important;
+    line-height: 1.3 !important;
+    padding: 0.6rem 0.8rem !important;
+    margin: 4px 0 !important;
+    text-align: left !important;
+}
+.slide:not(.main-cover-slide) .ref-contribution-box div {
+    font-size: 0.8rem !important;
+    line-height: 1.3 !important;
+}
+.slide:not(.main-cover-slide) .ref-summary-footer {
+    font-size: 0.8rem !important;
+    padding: 8px 12px !important;
+    margin-top: 5px !important;
+    text-align: left !important;
+    line-height: 1.3 !important;
+}
+.slide:not(.main-cover-slide) .ref-link-btn {
+    padding: 5px 10px !important;
+    font-size: 0.75rem !important;
+    margin-top: 4px !important;
+}
+
+/* Slide 20 Fixes */
+.slide:not(.main-cover-slide) .cfs-container-2col {
+    gap: 1rem !important;
+}
+.slide:not(.main-cover-slide) .cs-card {
+    padding: 0.8rem 1.2rem !important;
+}
+.slide:not(.main-cover-slide) .cs-card-title {
+    font-size: 1.05rem !important;
+    margin-bottom: 2px !important;
+}
+.slide:not(.main-cover-slide) .cs-item-name {
+    font-size: 0.95rem !important;
+    margin-bottom: 0 !important;
+}
+.slide:not(.main-cover-slide) .cs-item-desc {
+    font-size: 0.85rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 4px !important;
+}
+.slide:not(.main-cover-slide) .cs-feature-list,
+.slide:not(.main-cover-slide) .cs-roadmap-grid {
+    gap: 4px !important;
+}
+.slide:not(.main-cover-slide) .cs-summary-footer {
+    font-size: 0.9rem !important;
+    padding: 0.8rem !important;
+    margin-top: 5px !important;
+}
+.slide:not(.main-cover-slide) .cs-feature-item {
+    padding: 0.3rem 0.6rem !important;
+}
+.slide:not(.main-cover-slide) .cs-card-header-row {
+    margin-bottom: 0.2rem !important;
+    padding-bottom: 0.2rem !important;
+}
+.slide:not(.main-cover-slide) .cfs-container-2col,
+.slide:not(.main-cover-slide) .cs-card {
+    height: auto !important;
+}
+
+/* Slide 4 (Evolution of Desktop Authentication) Fixes */
+.slide[data-slide-index="3"] p {
+    font-size: 0.9rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 4px !important;
+}
+.slide[data-slide-index="3"] ul li {
+    font-size: 0.85rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 2px !important;
+}
+.slide[data-slide-index="3"] .obj-defense-footer span {
+    font-size: 0.9rem !important;
+}
+
+/* Slide 15 End-to-End Authentication Fixes */
+.slide:not(.main-cover-slide) .e2e-title {
+    font-size: 0.95rem !important;
+    margin-bottom: 8px !important;
+}
+.slide:not(.main-cover-slide) .e2e-num {
+    margin-bottom: 8px !important;
+}
+.slide:not(.main-cover-slide) .e2e-desc {
+    font-size: 0.85rem !important;
+}
+
+
+/* Slide 8 Comparative Analysis Table Fixes */
+.slide:not(.main-cover-slide) .lit-compare-table {
+    width: 100% !important;
+    table-layout: fixed !important;
+}
+.slide:not(.main-cover-slide) .lit-compare-table th,
+.slide:not(.main-cover-slide) .lit-compare-table td {
+    padding: 0.35rem 0.2rem !important;
+    text-align: center !important;
+    font-size: 0.75rem !important;
+}
+.slide:not(.main-cover-slide) .lit-compare-table th:first-child,
+.slide:not(.main-cover-slide) .lit-compare-table td:first-child {
+    text-align: left !important;
+    width: 25% !important;
+}
+.slide:not(.main-cover-slide) .lit-compare-table thead th {
+    font-size: 0.8rem !important;
+}
+.slide:not(.main-cover-slide) .lit-observation-box {
+    font-size: 0.85rem !important;
+    max-width: 100% !important;
+    padding: 0.6rem 1rem !important;
+}

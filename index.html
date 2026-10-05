@@ -1,0 +1,3063 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SecureDesktop Shield - Academic Defense Presentation">
+  <title>SecureDesktop Shield - Academic Defense Presentation</title>
+
+  <!-- Google Fonts: Outfit, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css?v=2">
+
+  <!-- ============================================================
+       REDESIGNED MAIN COVER TITLE SLIDE COMPONENT STYLES
+       ============================================================ -->
+  <style id="cover-slide-styles">
+    /* 1. Layout & Full Slide Container with Cybersecurity Cover Background */
+    .slide.main-cover-slide {
+      padding: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      overflow: hidden !important;
+      background-color: #070c18 !important;
+      background-image:
+        linear-gradient(135deg, rgba(7, 12, 24, 0.65) 0%, rgba(15, 23, 42, 0.82) 100%),
+        url('images/cover_bg_v2_1784699885589.png'),
+        url('cover_bg.png') !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .cover-grid-container {
+      display: grid !important;
+      grid-template-columns: 1.15fr 0.85fr !important;
+      gap: 5rem !important;
+      width: 95% !important;
+      max-width: 1780px !important;
+      padding: 0 4rem !important;
+      align-items: center !important;
+      z-index: 2 !important;
+      box-sizing: border-box !important;
+    }
+
+    /* 2. Typography & Hierarchy (Modern Crisp Sans-Serif) */
+    .cover-left-col {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+    }
+
+    .cover-pill-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      background: rgba(37, 99, 235, 0.25) !important;
+      color: #93c5fd !important;
+      border: 1px solid rgba(59, 130, 246, 0.5) !important;
+      font-family: 'Courier New', monospace !important;
+      font-size: 0.95rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 2px !important;
+      text-transform: uppercase !important;
+      padding: 10px 28px !important;
+      border-radius: 40px !important;
+      margin-bottom: 2.2rem !important;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.15) !important;
+    }
+
+    .cover-main-title {
+      font-family: Georgia, serif !important;
+      font-size: clamp(3.2rem, 4.5vw, 4.8rem) !important;
+      font-weight: 800 !important;
+      line-height: 1.15 !important;
+      color: #ffffff !important;
+      letter-spacing: -0.8px !important;
+      margin: 0 0 1.8rem 0 !important;
+      text-align: left !important;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    .cover-accent-line {
+      width: 160px !important;
+      height: 5px !important;
+      background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%) !important;
+      border-radius: 4px !important;
+      margin-bottom: 1.8rem !important;
+    }
+
+    .cover-tagline {
+      font-family: 'Times New Roman', serif !important;
+      font-size: 1.25rem !important;
+      color: #cbd5e1 !important;
+      line-height: 1.6 !important;
+      font-weight: 400 !important;
+      max-width: 680px !important;
+      text-align: left !important;
+    }
+
+    /* 3. Visual Polish & Dark Glassmorphism Card */
+    .cover-right-col {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+
+    .cover-glass-card {
+      background: rgba(15, 23, 42, 0.82) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 24px !important;
+      padding: 3rem 3.5rem !important;
+      width: 100% !important;
+      max-width: 650px !important;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .card-header-tag {
+      color: #60a5fa !important;
+      font-family: 'Courier New', monospace !important;
+      font-size: 0.9rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 2px !important;
+      text-transform: uppercase !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+      padding-bottom: 16px !important;
+      margin-bottom: 16px !important;
+      text-align: left !important;
+    }
+
+    .team-members-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0 !important;
+      margin-bottom: 1.8rem !important;
+    }
+
+    .team-member-row {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 14px 0 !important;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.1) !important;
+      font-family: 'Times New Roman', serif !important;
+    }
+
+    .team-member-row:last-child {
+      border-bottom: none !important;
+    }
+
+    .member-name {
+      color: #f1f5f9 !important;
+      font-size: 1.12rem !important;
+      font-weight: 500 !important;
+      font-family: 'Times New Roman', serif !important;
+      text-align: left !important;
+    }
+
+    .member-id {
+      color: #93c5fd !important;
+      font-size: 1.12rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.5px !important;
+      font-family: 'Courier New', monospace !important;
+      text-align: right !important;
+    }
+
+    /* Mentor Section Inside Card */
+    .mentor-badge-card {
+      background: rgba(37, 99, 235, 0.18) !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 18px 24px !important;
+      border-radius: 10px !important;
+      font-family: 'Times New Roman', serif !important;
+      text-align: left !important;
+    }
+
+    .mentor-label {
+      color: #60a5fa !important;
+      font-weight: 700 !important;
+      font-size: 0.78rem !important;
+      text-transform: uppercase !important;
+      letter-spacing: 1.5px !important;
+      font-family: 'Courier New', monospace !important;
+      margin-bottom: 6px !important;
+    }
+
+    .mentor-name {
+      color: #ffffff !important;
+      font-size: 1.18rem !important;
+      font-weight: 700 !important;
+      line-height: 1.35 !important;
+      font-family: Georgia, serif !important;
+    }
+
+    /* 4. Slide Navigation Dots (Fixed & Vertically Centered) */
+    .side-dots {
+      position: fixed !important;
+      right: 28px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 10px !important;
+      z-index: 100 !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================
+       MINIMAL SLIDE NUMBER WATERMARK DISPLAY
+       ========================================== -->
+  <div class="slide-number-display">
+    SLIDE <span id="current-slide-num">1</span> / <span id="total-slides-num">22</span>
+  </div>
+
+  <!-- Navigation Side Dots (21 Slides) -->
+  <div class="side-dots">
+    <div class="dot active" data-slide-target="0"></div>
+    <div class="dot" data-slide-target="1"></div>
+    <div class="dot" data-slide-target="2"></div>
+    <div class="dot" data-slide-target="3"></div>
+    <div class="dot" data-slide-target="4"></div>
+    <div class="dot" data-slide-target="5"></div>
+    <div class="dot" data-slide-target="6"></div>
+    <div class="dot" data-slide-target="7"></div>
+    <div class="dot" data-slide-target="8"></div>
+    <div class="dot" data-slide-target="9"></div>
+    <div class="dot" data-slide-target="10"></div>
+    <div class="dot" data-slide-target="11"></div>
+    <div class="dot" data-slide-target="12"></div>
+    <div class="dot" data-slide-target="13"></div>
+    <div class="dot" data-slide-target="14"></div>
+    <div class="dot" data-slide-target="15"></div>
+    <div class="dot" data-slide-target="16"></div>
+    <div class="dot" data-slide-target="17"></div>
+    <div class="dot" data-slide-target="18"></div>
+    <div class="dot" data-slide-target="19"></div>
+    <div class="dot" data-slide-target="20"></div>
+    <div class="dot" data-slide-target="21"></div>
+  </div>
+
+  <!-- Main Presentation Widescreen Canvas -->
+  <main id="presentation-viewport">
+    <div class="light-grid-bg"></div>
+
+    <!-- ==========================================
+         SLIDE 1: MAIN COVER TITLE SLIDE
+         ========================================== -->
+    <section class="slide active main-cover-slide" data-slide-index="0">
+      <div class="cover-grid-container">
+        <!-- LEFT COLUMN: Presentation Title & Accent Elements -->
+        <div class="cover-left-col">
+          <!-- Top Tag Badge -->
+          <div class="cover-pill-badge">
+            ACADEMIC REVIEW 1 PRESENTATION
+          </div>
+
+          <!-- Main Title (Georgia Serif) -->
+          <h1 class="cover-main-title">
+            Secure Desktop<br>
+            Authentication and System<br>
+            Protection Application
+          </h1>
+
+          <!-- Bottom Blue Accent Line -->
+          <div class="cover-accent-line"></div>
+          
+          <!-- Navigation to Review 2 -->
+          <a href="review_2.html" style="display: inline-block; margin-top: 2rem; padding: 12px 28px; background: rgba(37, 99, 235, 0.25); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.5); font-family: 'Courier New', monospace; font-size: 0.95rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 40px; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.15); transition: all 0.3s ease;">View Review 2 PPT ➔</a>
+        </div>
+
+        <!-- RIGHT COLUMN: Team Members & Mentor Glassmorphism Card -->
+        <div class="cover-right-col">
+          <div class="cover-glass-card">
+            <!-- Card Header Tag -->
+            <div class="card-header-tag">
+              PROJECT DEVELOPMENT TEAM
+            </div>
+
+            <!-- Team Members List with Right-Aligned Register IDs -->
+            <div class="team-members-list">
+              <div class="team-member-row">
+                <span class="member-name">Erolla Rishvin Reddy</span>
+                <span class="member-id">24WU0103006</span>
+              </div>
+              <div class="team-member-row">
+                <span class="member-name">Yogamruth Reddy Guggilla</span>
+                <span class="member-id">24WU0103019</span>
+              </div>
+              <div class="team-member-row">
+                <span class="member-name">Navari Yashwanth Reddy</span>
+                <span class="member-id">24WU0104009</span>
+              </div>
+              <div class="team-member-row">
+                <span class="member-name">Gayathri Pocharam</span>
+                <span class="member-id">24WU0104034</span>
+              </div>
+              <div class="team-member-row">
+                <span class="member-name">Chakradhar Muppuri</span>
+                <span class="member-id">24WU0103020</span>
+              </div>
+            </div>
+
+            <!-- Project Mentor Section -->
+            <div class="mentor-badge-card">
+              <div class="mentor-label">PROJECT MENTOR</div>
+              <div class="mentor-name">Professor Meher Gayatri Devi Tiwari</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 2: SECTION 01 DIVIDER
+         ========================================== -->
+    <section class="slide section-divider-slide" data-slide-index="1">
+      <div class="slide-content slide-layout-hero" style="position: relative;">
+        <!-- Section 01 Header Block -->
+        <div class="slide-text" style="z-index: 2; position: relative; align-items: flex-start;">
+          <div class="section-num-watermark">01</div>
+          <h2 class="slide-title"
+            style="font-size: 3.5rem; font-weight: 800; color: #000000; font-family: Georgia, serif; margin-top: 0.6rem; line-height: 1.1;">
+            Theory &amp;<br>Problem Statement</h2>
+          <div class="cover-divider" style="margin-top: 20px;"></div>
+        </div>
+        <div class="slide-visual" style="display: flex; align-items: center; justify-content: center; z-index: 2;">
+          <div class="animate-float"
+            style="width: 75%; max-width: 340px; aspect-ratio: 1; border-radius: 50%; background: #ffffff; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 50px rgba(37,99,235,0.15); padding: 20px;">
+            <!-- Premium Glowing Shield Graphic -->
+            <svg viewBox="0 0 200 200" width="100%" height="100%"
+              style="filter: drop-shadow(0 10px 20px rgba(37, 99, 235, 0.25));">
+              <defs>
+                <radialGradient id="shieldGlowPart1" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="rgba(37, 99, 235, 0.15)" />
+                  <stop offset="100%" stop-color="rgba(37, 99, 235, 0)" />
+                </radialGradient>
+                <linearGradient id="shieldGradPart1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#3b82f6" />
+                  <stop offset="100%" stop-color="#1d4ed8" />
+                </linearGradient>
+              </defs>
+              <!-- Background Glow -->
+              <circle cx="100" cy="100" r="90" fill="url(#shieldGlowPart1)" />
+              <!-- Hexagon grid lines -->
+              <path d="M100 25 L160 55 L160 125 L100 175 L40 125 L40 55 Z" fill="none" stroke="rgba(37, 99, 235, 0.12)"
+                stroke-width="2" />
+              <path d="M100 35 L150 62 L150 120 L100 162 L50 120 L50 62 Z" fill="none" stroke="rgba(37, 99, 235, 0.2)"
+                stroke-width="1.5" />
+              <!-- Main Shield Shape -->
+              <path
+                d="M100 45 C130 45 145 55 145 85 C145 125 100 155 100 155 C100 155 55 125 55 85 C55 55 70 45 100 45 Z"
+                fill="url(#shieldGradPart1)" stroke="#60a5fa" stroke-width="2.5" />
+              <!-- Inner accent -->
+              <path
+                d="M100 55 C120 55 130 63 130 85 C130 115 100 138 100 138 C100 138 70 115 70 85 C70 63 80 55 100 55 Z"
+                fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="3,3" />
+              <!-- Padlock inside shield -->
+              <rect x="90" y="88" width="20" height="16" rx="3" fill="#ffffff" />
+              <path d="M94 88 V82 C94 78 97 75 100 75 C103 75 106 78 106 82 V88" fill="none" stroke="#ffffff"
+                stroke-width="2" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 3: PROJECT JOURNEY ROADMAP (MCKINSEY / APPLE EDITORIAL)
+         ========================================== -->
+    <!-- ==========================================
+         SLIDE 3: PROJECT JOURNEY ROADMAP (EDITORIAL STORYTELLING)
+         ========================================== -->
+    <section class="slide" data-slide-index="2">
+      <div class="slide-content flex-column" style="justify-content: space-between; height: 100%;">
+        <!-- Slide Header -->
+        <div class="slide-header" style="margin-bottom: 0.3rem;">
+          <h2 class="slide-title"
+            style="font-size: 2.1rem; font-weight: 800; color: #000000; font-family: Georgia, serif; line-height: 1.25; margin-top: 0.3rem; letter-spacing: -0.5px;">
+            Project Journey: From Problem to Solution</h2>
+        </div>
+
+        <div class="editorial-roadmap-container">
+          <div class="editorial-timeline-wrapper">
+
+            <!-- Phase 1: Research & Problem Identification -->
+            <div class="editorial-grid-flow">
+              <!-- Card 01: Project Introduction (Short) -->
+              <div class="ed-card ed-card-short">
+                <div class="ed-card-head">
+                  <span class="ed-card-num">01</span>
+                </div>
+                <div class="ed-card-title">Project Introduction</div>
+                <ul class="ed-bullet-list">
+                  <li>Desktop Authentication</li>
+                  <li>System Protection</li>
+                  <li>Local-First Security</li>
+                </ul>
+                <div class="ed-goal-box">
+                  Goal: Protect desktop sessions from unauthorized access.
+                </div>
+              </div>
+
+              <div class="ed-flow-arrow">➔</div>
+
+              <!-- Card 02: Problem Statement (Medium) -->
+              <div class="ed-card ed-card-medium">
+                <div class="ed-card-head">
+                  <span class="ed-card-num">02</span>
+                </div>
+                <div class="ed-card-title">Problem Statement</div>
+                <div class="ed-sub-label">Problems</div>
+                <ul class="ed-check-list">
+                  <li><span class="chk-icon">•</span> Session Hijacking</li>
+                  <li><span class="chk-icon">•</span> Weak Authentication</li>
+                  <li><span class="chk-icon">•</span> No Monitoring</li>
+                  <li><span class="chk-icon">•</span> Insider Threat</li>
+                </ul>
+              </div>
+
+              <div class="ed-flow-arrow">➔</div>
+
+              <!-- Card 03: Existing Solutions (Medium) -->
+              <div class="ed-card ed-card-medium">
+                <div class="ed-card-head">
+                  <span class="ed-card-num">03</span>
+                </div>
+                <div class="ed-card-title">Existing Solutions</div>
+                <div class="ed-compare-box">
+                  <div class="compare-group">
+                    <div class="compare-name">Windows Hello</div>
+                    <div class="cmp-row pos">• Login</div>
+                    <div class="cmp-row neg">• Continuous Protection</div>
+                  </div>
+                  <div class="compare-group" style="margin-top: 6px;">
+                    <div class="compare-name">Linux PAM</div>
+                    <div class="cmp-row pos">• Authentication</div>
+                    <div class="cmp-row neg">• Monitoring</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ed-flow-arrow">➔</div>
+
+              <!-- Card 04: Research Gap (Short) -->
+              <div class="ed-card ed-card-short">
+                <div class="ed-card-head">
+                  <span class="ed-card-num">04</span>
+                </div>
+                <div class="ed-card-title">Research Gap</div>
+                <div class="ed-sub-label">Missing Features</div>
+                <ul class="ed-missing-list">
+                  <li><span class="box-icon">•</span> Local Monitoring</li>
+                  <li><span class="box-icon">•</span> Runtime Protection</li>
+                  <li><span class="box-icon">•</span> Tamper Detection</li>
+                  <li><span class="box-icon">•</span> Audit Logging</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Editorial Section Divider -->
+            <div class="editorial-divider">
+              <span class="divider-double-line"></span>
+              <span class="divider-title">Proposed Solution</span>
+              <span class="divider-double-line"></span>
+            </div>
+
+            <!-- Phase 2: Technical Design & Execution -->
+            <div class="editorial-grid-flow">
+              <!-- Card 05: Proposed Solution (Large) -->
+              <div class="ed-card ed-card-large">
+                <div class="ed-card-head">
+                  <span class="ed-card-num">05</span>
+                </div>
+                <div class="ed-card-title">Proposed Solution</div>
+                <div class="ed-flow-chain">
+                  <div class="chain-node">Desktop Lock</div>
+                  <div class="chain-arr">↓</div>
+                  <div class="chain-node">Authentication</div>
+                  <div class="chain-arr">↓</div>
+                  <div class="chain-node">Monitoring</div>
+                  <div class="chain-arr">↓</div>
+                  <div class="chain-node">Logging</div>
+                  <div class="chain-arr">↓</div>
+                  <div class="chain-node active">Protection</div>
+                </div>
+              </div>
+
+              <div class="ed-flow-arrow">➔</div>
+
+              <!-- Card 06: Architecture (Large) -->
+              <div class="ed-card ed-card-large">
+                <div class="ed-card-head">
+                  <span class="ed-card-num">06</span>
+                </div>
+                <div class="ed-card-title">System Architecture</div>
+                <div class="ed-arch-chain">
+                  <div class="arch-box">GUI Layer</div>
+                  <div class="arch-arr">↓</div>
+                  <div class="arch-box">Authentication Engine</div>
+                  <div class="arch-arr">↓</div>
+                  <div class="arch-box">Watchdog Service</div>
+                  <div class="arch-arr">↓</div>
+                  <div class="arch-box active">Encrypted DB</div>
+                </div>
+              </div>
+
+              <div class="ed-flow-arrow">➔</div>
+
+              <!-- Card 07: Implementation (Medium) -->
+              <div class="ed-card ed-card-medium">
+                <div class="ed-card-head">
+                  <span class="ed-card-num">07</span>
+                </div>
+                <div class="ed-card-title">Implementation</div>
+                <div class="ed-tech-pills">
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">Watchdog</span>
+                  <span class="tech-pill">SQLite</span>
+                  <span class="tech-pill">Argon2</span>
+                  <span class="tech-pill">SQLCipher</span>
+                </div>
+                <div class="ed-impl-flow">
+                  <span>Auth</span> ➔ <span>Monitor</span> ➔ <span>Log</span>
+                </div>
+              </div>
+
+              <div class="ed-flow-arrow">➔</div>
+
+              <!-- Card 08: Future Scope (Short) -->
+              <div class="ed-card ed-card-short">
+                <div class="ed-card-head">
+                  <span class="ed-card-num">08</span>
+                </div>
+                <div class="ed-card-title">Future Scope</div>
+                <div class="ed-milestones-chain">
+                  <div class="ms-node current">• Current Base</div>
+                  <div class="ms-arr">↓</div>
+                  <div class="ms-node">MFA Integration</div>
+                  <div class="ms-arr">↓</div>
+                  <div class="ms-node">Behavior Analytics</div>
+                  <div class="ms-arr">↓</div>
+                  <div class="ms-node">AI Detection</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 4: INTRODUCTION: EVOLUTION OF DESKTOP AUTHENTICATION & SECURITY
+         ========================================== -->
+    <section class="slide" data-slide-index="3">
+      <div class="slide-content flex-column"
+        style="justify-content: space-between; height: 100%; padding-bottom: 28px;">
+        <!-- Header Zone -->
+        <div class="slide-header" style="margin-bottom: 1.2rem;">
+          <h2 class="slide-title"
+            style="font-size: 2.1rem; font-weight: 800; color: #000000; font-family: Georgia, serif; line-height: 1.25; margin-top: 0.3rem; letter-spacing: -0.5px;">
+            Introduction: Evolution of Desktop Authentication &amp; Security
+          </h2>
+          <div style="width: 50px; height: 4px; background-color: #000000; margin-top: 12px; margin-bottom: 16px;">
+          </div>
+          <p
+            style="font-size: 1.15rem; color: #475569; font-family: 'Times New Roman', serif; margin-top: 4px; font-style: italic;">
+            Desktop security has evolved from protecting the login point to protecting the entire active session.
+          </p>
+        </div>
+
+        <!-- Center Zone: Evolution Timeline -->
+        <div class="evolution-timeline"
+          style="display: flex; align-items: flex-start; justify-content: space-between; position: relative; padding: 0 0.5rem; margin-top: 0.5rem; margin-bottom: 1.5rem;">
+          <!-- Connective Line -->
+          <div
+            style="position: absolute; top: 25px; left: 10%; right: 10%; height: 2px; background: #cbd5e1; z-index: 1;">
+          </div>
+
+          <div class="timeline-step" style="position: relative; z-index: 2; text-align: center; width: 24%;">
+            <div
+              style="width: 50px; height: 50px; border-radius: 50%; background: #f8fafc; border: 2px solid #94a3b8; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-weight: bold; color: #64748b; font-size: 1.1rem;">
+              1</div>
+            <div
+              style="font-family: Georgia, serif; font-weight: 800; color: #000000; margin-bottom: 6px; font-size: 0.95rem; text-transform: uppercase;">
+              Password-Based</div>
+            <div style="font-size: 0.9rem; color: #0f172a; font-weight: 600; margin-bottom: 4px;">Username + Password
+            </div>
+            <div style="font-size: 0.85rem; color: #475569; font-style: italic; line-height: 1.3;">Identity verification
+              at login</div>
+          </div>
+
+          <div class="timeline-step" style="position: relative; z-index: 2; text-align: center; width: 24%;">
+            <div
+              style="width: 50px; height: 50px; border-radius: 50%; background: #f1f5f9; border: 2px solid #64748b; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-weight: bold; color: #475569; font-size: 1.1rem;">
+              2</div>
+            <div
+              style="font-family: Georgia, serif; font-weight: 800; color: #000000; margin-bottom: 6px; font-size: 0.95rem; text-transform: uppercase;">
+              Strong Auth</div>
+            <div style="font-size: 0.9rem; color: #0f172a; font-weight: 600; margin-bottom: 4px;">MFA + Biometrics</div>
+            <div style="font-size: 0.85rem; color: #475569; font-style: italic; line-height: 1.3;">Stronger identity
+              verification</div>
+          </div>
+
+          <div class="timeline-step" style="position: relative; z-index: 2; text-align: center; width: 24%;">
+            <div
+              style="width: 50px; height: 50px; border-radius: 50%; background: #e2e8f0; border: 2px solid #475569; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-weight: bold; color: #334155; font-size: 1.1rem;">
+              3</div>
+            <div
+              style="font-family: Georgia, serif; font-weight: 800; color: #000000; margin-bottom: 6px; font-size: 0.95rem; text-transform: uppercase;">
+              Continuous Security</div>
+            <div style="font-size: 0.9rem; color: #0f172a; font-weight: 600; margin-bottom: 4px;">Continuous Monitoring
+              + Zero Trust</div>
+            <div style="font-size: 0.85rem; color: #475569; font-style: italic; line-height: 1.3;">Trust is continuously
+              evaluated</div>
+          </div>
+
+          <div class="timeline-step" style="position: relative; z-index: 2; text-align: center; width: 24%;">
+            <div
+              style="width: 60px; height: 60px; border-radius: 50%; background: #000000; border: 3px solid #000000; display: flex; align-items: center; justify-content: center; margin: -5px auto 12px; font-weight: bold; color: #ffffff; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+              4</div>
+            <div
+              style="font-family: Georgia, serif; font-weight: 800; color: #000000; margin-bottom: 6px; font-size: 0.95rem; text-transform: uppercase;">
+              Our Proposed System</div>
+            <div style="font-size: 0.85rem; color: #0f172a; font-weight: 700; margin-bottom: 4px;">Auth + Monitor +
+              Detect + Respond + Log</div>
+            <div style="font-size: 0.85rem; color: #475569; font-style: italic; line-height: 1.3;">Protection throughout
+              the active session</div>
+          </div>
+        </div>
+
+        <!-- Lower Zone: Side-by-Side Boxes -->
+        <div style="display: flex; gap: 1.5rem; flex-grow: 1; align-items: stretch; margin-bottom: 1.5rem;">
+          <!-- Security Gap Box -->
+          <div
+            style="flex: 1; background: #fafafa; border-left: 4px solid #000000; padding: 1.5rem; border-radius: 0 12px 12px 0; border-top: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; display: flex; flex-direction: column;">
+            <div
+              style="color: #000000; font-family: 'Courier New', monospace; font-weight: 700; letter-spacing: 1.5px; font-size: 0.9rem; margin-bottom: 12px; text-transform: uppercase;">
+              Security Gap</div>
+            <p
+              style="font-size: 1.05rem; color: #000000; font-family: Georgia, serif; font-weight: 600; margin: 0 0 12px 0; line-height: 1.4;">
+              Strong authentication alone does not guarantee that the session remains secure after login.
+            </p>
+            <ul
+              style="margin: 0 0 12px 0; padding-left: 1.2rem; font-size: 0.95rem; color: #334155; line-height: 1.5; flex-grow: 1;">
+              <li style="margin-bottom: 6px;"><strong>Unauthorized session access</strong> — another person may access
+                an already unlocked system.</li>
+              <li style="margin-bottom: 6px;"><strong>Suspicious process activity</strong> — potentially harmful or
+                unexpected processes may execute after login.</li>
+              <li style="margin-bottom: 6px;"><strong>Repeated authentication attacks</strong> — failed attempts and
+                abnormal login patterns may indicate an attack.</li>
+              <li><strong>Limited unified visibility</strong> — security events handled by separate mechanisms.</li>
+            </ul>
+            <div style="font-size: 0.95rem; font-weight: 700; color: #000000; font-family: Georgia, serif;">
+              Key Gap: Security must continue after authentication—not stop at successful login.
+            </div>
+          </div>
+
+          <!-- Project Direction Box -->
+          <div
+            style="flex: 1; background: #ffffff; border: 2px solid #000000; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); display: flex; flex-direction: column; justify-content: space-between;">
+            <div
+              style="color: #000000; font-family: 'Courier New', monospace; font-weight: 800; letter-spacing: 1.5px; font-size: 1.2rem; margin-bottom: 16px; text-transform: uppercase;">
+              Our Project Direction</div>
+            <p
+              style="font-size: 1.4rem; color: #000000; font-family: Georgia, serif; font-weight: 600; margin: 0 0 20px 0; line-height: 1.5;">
+              A local-first desktop security application combining authentication with post-login monitoring.
+            </p>
+            <div
+              style="display: flex; flex-direction: column; gap: 16px; font-size: 1.3rem; color: #334155; flex-grow: 1; margin-top: 10px;">
+              <div><strong style="color:#000000;">Authenticate</strong> — Verify identity</div>
+              <div><strong style="color:#000000;">Monitor</strong> — Observe activity</div>
+              <div><strong style="color:#000000;">Detect</strong> — Identify threats</div>
+              <div><strong style="color:#000000;">Respond</strong> — Trigger protection</div>
+              <div><strong style="color:#000000;">Log</strong> — Maintain encrypted audit records</div>
+            </div>
+            <div
+              style="font-size: 1.1rem; font-weight: 800; color: #475569; text-align: center; margin-top: 25px; letter-spacing: 1px; padding-top: 15px; border-top: 1px dashed #cbd5e1;">
+              Local-First • Privacy-Focused • Modular • Future-Ready
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Banner -->
+        <div class="obj-defense-footer"
+          style="width: 100%; display: flex; justify-content: flex-start; align-items: center; padding: 1.2rem 2.5rem; background-color: #ffffff; border-radius: 12px; border: 1.5px solid #cbd5e1;">
+          <div style="display: flex; flex-direction: row; align-items: center; gap: 1.5rem; width: 100%;">
+            <span style="font-weight: 800; font-size: 1.05rem; color: #000000; letter-spacing: 0.5px;">CORE IDEA:</span>
+            <span
+              style="font-weight: 500; font-size: 1.15rem; color: #1e293b; font-family: Georgia, serif; font-style: italic;">
+              Login establishes trust. Continuous protection helps maintain it.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 5: THREAT LANDSCAPE & DIFFERENTIATION
+         ========================================== -->
+    <section class="slide" data-slide-index="4">
+      <div class="slide-content flex-column" style="justify-content: space-between; height: 100%;">
+        <!-- Header with Powerful Sub-Statement -->
+        <div class="slide-header" style="margin-bottom: 0.8rem;">
+          <h2 class="slide-title">Understanding Today's Desktop Security Threats</h2>
+          <p style="font-size: 0.96rem; color: var(--color-text-sec); font-weight: 500; margin-top: 4px;">
+            Traditional desktop authentication protects the login, but not the system after access is granted.
+          </p>
+        </div>
+
+        <div class="threat-container-full"
+          style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+          <div class="threat-timeline-wrapper"
+            style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between; gap: 1.2rem;">
+            <!-- 2x2 Grid of Threat Presentation Cards -->
+            <div class="threat-grid-2x2">
+              <div class="threat-metric-card">
+                <div class="threat-card-title">Credential Theft</div>
+                <div class="threat-desc">Most security breaches stem from stolen passwords or compromised user
+                  credentials.</div>
+              </div>
+
+              <div class="threat-metric-card">
+                <div class="threat-card-title">Automated Brute Force</div>
+                <div class="threat-desc">High-frequency password cracking scripts hammering offline hashes and weak
+                  login PINs.</div>
+              </div>
+
+              <div class="threat-metric-card">
+                <div class="threat-card-title">Physical Desktop Hijacking</div>
+                <div class="threat-desc">Unauthorized local execution and data tampering following unattended terminal
+                  sessions.</div>
+              </div>
+
+              <div class="threat-metric-card">
+                <div class="threat-card-title">Network Credential Sniffing</div>
+                <div class="threat-desc">Remote cloud endpoint syncs exposing unencrypted authentication traffic to
+                  local listeners.</div>
+              </div>
+            </div>
+
+            <!-- System Comparison Matrix Box (PPT Style) -->
+            <div class="threat-matrix-box">
+              <div class="matrix-column">
+                <div class="matrix-column-title">Existing Systems Limitations</div>
+                <ul class="matrix-ppt-list bad">
+                  <li>Cloud Dependent &amp; Network Exposed</li>
+                  <li>Single Password Authentication Factor</li>
+                  <li>Minimal Post-Login Security Monitoring</li>
+                </ul>
+              </div>
+
+              <div class="matrix-column">
+                <div class="matrix-column-title">Proposed System Protection</div>
+                <ul class="matrix-ppt-list good">
+                  <li>100% Local-First Privacy Architecture</li>
+                  <li>Continuous Real-Time Watchdog Observer</li>
+                  <li>Encrypted Local Audit Event Logging</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 5: SECURITY SYSTEM COMPARISON (EDITORIAL ACADEMIC)
+         ========================================== -->
+    <section class="slide" data-slide-index="5">
+      <div class="slide-content flex-column" style="justify-content: flex-start; gap: 1rem; height: 100%;">
+        <!-- Header -->
+        <div class="slide-header" style="margin-bottom: 0.3rem;">
+          <h2 class="slide-title"
+            style="font-size: 2.1rem; font-weight: 800; color: #000000; font-family: Georgia, serif; line-height: 1.25; margin-top: 0.3rem; letter-spacing: -0.5px;">
+            Existing System vs Proposed Secure Desktop Solution</h2>
+          <p style="font-size: 0.95rem; color: #475569; font-family: 'Times New Roman', serif; margin-top: 4px;">
+            A comparative evaluation highlighting conventional authentication limitations and the advantages of
+            local-first security.
+          </p>
+        </div>
+
+        <div class="academic-comp-container">
+          <!-- Column 1: Existing Desktop Authentication -->
+          <div class="acad-col acad-col-existing">
+            <div class="acad-header-existing">
+              <h3 class="acad-title-existing">Existing Desktop Authentication</h3>
+              <div class="acad-divider-thin"></div>
+            </div>
+
+            <div class="acad-list">
+              <div class="acad-item">
+                <div class="acad-item-title">Password Only</div>
+                <div class="acad-item-desc">Single-factor authentication.</div>
+              </div>
+              <div class="acad-item">
+                <div class="acad-item-title">No Continuous Monitoring</div>
+                <div class="acad-item-desc">Protection stops after login.</div>
+              </div>
+              <div class="acad-item">
+                <div class="acad-item-title">Limited Security Logging</div>
+                <div class="acad-item-desc">Minimal event tracking.</div>
+              </div>
+              <div class="acad-item">
+                <div class="acad-item-title">Vulnerable to Credential Theft</div>
+                <div class="acad-item-desc">Stolen passwords grant full access.</div>
+              </div>
+              <div class="acad-item">
+                <div class="acad-item-title">Cloud Network Dependency</div>
+                <div class="acad-item-desc">Requires active internet connection.</div>
+              </div>
+              <div class="acad-item">
+                <div class="acad-item-title">Fragmented Security</div>
+                <div class="acad-item-desc">Logs &amp; monitoring handled separately.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2 (MIDDLE): Center Stacked Illustration Column (Top & Bottom Images) -->
+          <div class="acad-illustration-center-col">
+            <div class="acad-img-box top-box">
+              <img src="images/insecure_legacy_desktop_graphic_1784896597265.png"
+                alt="Legacy Insecure Desktop Workstation Graphic" class="acad-stack-img" />
+            </div>
+
+            <div class="acad-center-flow-arrow">↓</div>
+
+            <div class="acad-img-box bottom-box">
+              <img src="images/secure_protected_desktop_graphic_1784896610667.png"
+                alt="Secure Protected Desktop Workstation Graphic" class="acad-stack-img" />
+            </div>
+          </div>
+
+          <!-- Column 3: Proposed Secure Desktop System -->
+          <div class="acad-col acad-col-proposed">
+            <div class="acad-header-proposed">
+              <h3 class="acad-title-proposed">Proposed Secure Desktop System</h3>
+              <div class="acad-divider-strong"></div>
+            </div>
+
+            <div class="acad-list">
+              <div class="acad-item proposed-item">
+                <div class="acad-item-title"><span class="chk-icon"></span> Multi-Layer Auth</div>
+                <div class="acad-item-desc">Multi-factor security layers.</div>
+              </div>
+              <div class="acad-item proposed-item">
+                <div class="acad-item-title"><span class="chk-icon"></span> Continuous Monitoring</div>
+                <div class="acad-item-desc">Real-time post-login watchdog.</div>
+              </div>
+              <div class="acad-item proposed-item">
+                <div class="acad-item-title"><span class="chk-icon"></span> Centralized Dashboard</div>
+                <div class="acad-item-desc">Unified real-time event view.</div>
+              </div>
+              <div class="acad-item proposed-item">
+                <div class="acad-item-title">Secure Event Logging</div>
+                <div class="acad-item-desc">Encrypted local audit logs.</div>
+              </div>
+              <div class="acad-item proposed-item">
+                <div class="acad-item-title">100% Local-First Privacy</div>
+                <div class="acad-item-desc">Zero cloud dependency.</div>
+              </div>
+              <div class="acad-item proposed-item">
+                <div class="acad-item-title">Modular Architecture</div>
+                <div class="acad-item-desc">Built for MFA &amp; AI modules.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6: PROJECT GOALS & OBJECTIVES
+         ========================================== -->
+    <section class="slide" data-slide-index="6">
+      <div class="slide-content flex-column"
+        style="justify-content: space-between; height: 100%; padding-bottom: 28px;">
+        <!-- Header -->
+        <div class="slide-header" style="margin-bottom: 1.5rem;">
+          <h2 class="slide-title">Project Goals &amp; Objectives</h2>
+          <div style="width: 50px; height: 4px; background-color: #000000; margin-top: 15px; margin-bottom: 20px;">
+          </div>
+          <p class="slide-subtitle" style="margin-top: 6px; font-size: 1.35rem; line-height: 1.5;">
+            Build a secure, privacy-focused desktop authentication system with continuous security monitoring, reliable
+            event logging, and a modular architecture.
+          </p>
+        </div>
+
+        <!-- 3 Objective Group Cards (Unified) -->
+        <div class="objectives-container-3col" style="margin-bottom: 2.5rem; flex-grow: 1;">
+          <div class="objectives-cards-column" style="height: 100%;">
+            <!-- Group 1: Authentication & Security -->
+            <div class="obj-group-card"
+              style="padding: 2.5rem 2rem; display: flex; flex-direction: column; height: 100%;">
+              <div
+                style="font-family: Georgia, serif; font-size: 3.5rem; font-weight: 400; color: #cbd5e1; line-height: 0.8; margin-bottom: 1rem;">
+                01</div>
+              <div class="obj-group-title"
+                style="font-size: 1.8rem; padding-bottom: 1rem; margin-bottom: 1.8rem; border-bottom: 2px solid #cbd5e1;">
+                Authentication &amp; Security</div>
+
+              <div style="display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1;">
+                <div>
+                  <div style="font-weight: 400; font-size: 1.45rem; color: #000000; margin-bottom: 0.4rem;">Secure
+                    Authentication</div>
+                  <div style="font-size: 1.3rem; color: #1e293b; line-height: 1.45;">Secure authentication and access
+                    control.</div>
+                </div>
+
+                <div>
+                  <div style="font-weight: 400; font-size: 1.45rem; color: #000000; margin-bottom: 0.4rem;">Access
+                    Protection</div>
+                  <div style="font-size: 1.3rem; color: #1e293b; line-height: 1.45;">Prevent unauthorized access &amp;
+                    attacks.</div>
+                </div>
+
+                <div>
+                  <div style="font-weight: 400; font-size: 1.45rem; color: #000000; margin-bottom: 0.4rem;">Threat
+                    Detection</div>
+                  <div style="font-size: 1.3rem; color: #1e293b; line-height: 1.45;">Detect suspicious login attempts.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group 2: Monitoring & Privacy -->
+            <div class="obj-group-card"
+              style="padding: 2.5rem 2rem; display: flex; flex-direction: column; height: 100%;">
+              <div
+                style="font-family: Georgia, serif; font-size: 3.5rem; font-weight: 400; color: #cbd5e1; line-height: 0.8; margin-bottom: 1rem;">
+                02</div>
+              <div class="obj-group-title"
+                style="font-size: 1.8rem; padding-bottom: 1rem; margin-bottom: 1.8rem; border-bottom: 2px solid #cbd5e1;">
+                Monitoring &amp; Privacy</div>
+
+              <div style="display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1;">
+                <div>
+                  <div style="font-weight: 400; font-size: 1.45rem; color: #000000; margin-bottom: 0.4rem;">Security
+                    Monitoring</div>
+                  <div style="font-size: 1.3rem; color: #1e293b; line-height: 1.45;">Monitor selected activities
+                    post-login.</div>
+                </div>
+
+                <div>
+                  <div style="font-weight: 400; font-size: 1.45rem; color: #000000; margin-bottom: 0.4rem;">Secure Event
+                    Logs</div>
+                  <div style="font-size: 1.3rem; color: #1e293b; line-height: 1.45;">Tamper-resistant local audit logs.
+                  </div>
+                </div>
+
+                <div>
+                  <div style="font-weight: 400; font-size: 1.45rem; color: #000000; margin-bottom: 0.4rem;">Privacy
+                    First</div>
+                  <div style="font-size: 1.3rem; color: #1e293b; line-height: 1.45;">Sensitive data stays 100% local.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group 3: System Design & Scalability -->
+            <div class="obj-group-card"
+              style="padding: 2.5rem 2rem; display: flex; flex-direction: column; height: 100%;">
+              <div
+                style="font-family: Georgia, serif; font-size: 3.5rem; font-weight: 400; color: #cbd5e1; line-height: 0.8; margin-bottom: 1rem;">
+                03</div>
+              <div class="obj-group-title"
+                style="font-size: 1.8rem; padding-bottom: 1rem; margin-bottom: 1.8rem; border-bottom: 2px solid #cbd5e1;">
+                System Design &amp; Scalability</div>
+
+              <div style="display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1;">
+                <div>
+                  <div style="font-weight: 400; font-size: 1.45rem; color: #000000; margin-bottom: 0.4rem;">Intuitive
+                    Dashboard</div>
+                  <div style="font-size: 1.3rem; color: #1e293b; line-height: 1.45;">Simple desktop security interface.
+                  </div>
+                </div>
+
+                <div>
+                  <div style="font-weight: 400; font-size: 1.45rem; color: #000000; margin-bottom: 0.4rem;">Modular
+                    Architecture</div>
+                  <div style="font-size: 1.3rem; color: #1e293b; line-height: 1.45;">Extensible security architecture.
+                  </div>
+                </div>
+
+                <div>
+                  <div style="font-weight: 400; font-size: 1.45rem; color: #000000; margin-bottom: 0.4rem;">Future Ready
+                  </div>
+                  <div style="font-size: 1.3rem; color: #1e293b; line-height: 1.45;">Support new auth and security
+                    modules.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Very Bottom Section: Core Purpose Footer -->
+        <div class="obj-defense-footer"
+          style="width: 100%; display: flex; justify-content: flex-start; align-items: center; padding: 1.2rem 2.5rem; background-color: #ffffff; border-radius: 12px; margin-top: auto; border: 1.5px solid #cbd5e1;">
+          <div style="display: flex; flex-direction: row; align-items: center; gap: 1.5rem; width: 100%;">
+            <span style="font-weight: 400; font-size: 1.15rem; color: #000000;">CORE PURPOSE:</span>
+            <span
+              style="font-weight: 400; font-size: 1.15rem; display: flex; align-items: center; gap: 0.8rem; color: #1e293b;">
+              Secure Authentication
+              <span style="color: #64748b; font-size: 1.2rem; font-weight: 400;">→</span>
+              Continuous Monitoring
+              <span style="color: #64748b; font-size: 1.2rem; font-weight: 400;">→</span>
+              Local Event Logging
+              <span style="color: #64748b; font-size: 1.2rem; font-weight: 400;">→</span>
+              Privacy
+              <span style="color: #64748b; font-size: 1.2rem; font-weight: 400;">→</span>
+              Modular Expansion
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 7: PROPOSED METHODOLOGY
+         ========================================== -->
+    <section class="slide" data-slide-index="7">
+      <div class="slide-content flex-column"
+        style="justify-content: space-between; height: 100%; padding-bottom: 28px;">
+        <!-- Header -->
+        <div class="slide-header" style="margin-bottom: 1.5rem;">
+          <h2 class="slide-title">Proposed Methodology</h2>
+          <div style="width: 50px; height: 4px; background-color: #000000; margin-top: 15px; margin-bottom: 20px;">
+          </div>
+          <p class="slide-subtitle" style="margin-top: 6px; font-size: 1.25rem; line-height: 1.5;">
+            The project follows a <strong>modular security-oriented development methodology</strong>, progressing from
+            problem analysis and system design to implementation, security testing, and evaluation.
+          </p>
+        </div>
+
+        <!-- Methodology Pipeline (6 Stages) -->
+        <div class="methodology-pipeline"
+          style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; margin: 4rem 0 2rem 0; width: 100%; flex-grow: 1;">
+          <!-- Connective Line Behind Nodes -->
+          <div
+            style="position: absolute; top: 35px; left: 8%; right: 8%; height: 4px; background: #cbd5e1; z-index: 0;">
+          </div>
+
+          <!-- Node 1 -->
+          <div class="method-node"
+            style="z-index: 1; flex: 1; display: flex; flex-direction: column; align-items: center; padding: 0 10px; text-align: center;">
+            <div class="node-circle"
+              style="width: 70px; height: 70px; border-radius: 50%; background: #ffffff; border: 4px solid #3b82f6; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #3b82f6; font-size: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 6px 12px rgba(59,130,246,0.2);">
+              01</div>
+            <div class="node-title"
+              style="font-weight: 800; font-size: 1.1rem; color: #0f172a; margin-bottom: 0.8rem; letter-spacing: 0.5px;">
+              THREAT ANALYSIS</div>
+            <div class="node-desc" style="font-size: 0.95rem; color: #475569; line-height: 1.5;">
+              Security needs<br>Attack scenarios<br>Requirements
+            </div>
+          </div>
+
+          <!-- Node 2 -->
+          <div class="method-node"
+            style="z-index: 1; flex: 1; display: flex; flex-direction: column; align-items: center; padding: 0 10px; text-align: center;">
+            <div class="node-circle"
+              style="width: 70px; height: 70px; border-radius: 50%; background: #ffffff; border: 4px solid #3b82f6; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #3b82f6; font-size: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 6px 12px rgba(59,130,246,0.2);">
+              02</div>
+            <div class="node-title"
+              style="font-weight: 800; font-size: 1.1rem; color: #0f172a; margin-bottom: 0.8rem; letter-spacing: 0.5px;">
+              SYSTEM DESIGN</div>
+            <div class="node-desc" style="font-size: 0.95rem; color: #475569; line-height: 1.5;">
+              Local-first focus<br>Module separation<br>Data-flow logic
+            </div>
+          </div>
+
+          <!-- Node 3 -->
+          <div class="method-node"
+            style="z-index: 1; flex: 1; display: flex; flex-direction: column; align-items: center; padding: 0 10px; text-align: center;">
+            <div class="node-circle"
+              style="width: 70px; height: 70px; border-radius: 50%; background: #ffffff; border: 4px solid #3b82f6; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #3b82f6; font-size: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 6px 12px rgba(59,130,246,0.2);">
+              03</div>
+            <div class="node-title"
+              style="font-weight: 800; font-size: 1.1rem; color: #0f172a; margin-bottom: 0.8rem; letter-spacing: 0.5px;">
+              AUTHENTICATION</div>
+            <div class="node-desc" style="font-size: 0.95rem; color: #475569; line-height: 1.5;">
+              Secure access<br>Argon2id hashing<br>Session lockouts
+            </div>
+          </div>
+
+          <!-- Node 4 -->
+          <div class="method-node"
+            style="z-index: 1; flex: 1; display: flex; flex-direction: column; align-items: center; padding: 0 10px; text-align: center;">
+            <div class="node-circle"
+              style="width: 70px; height: 70px; border-radius: 50%; background: #ffffff; border: 4px solid #3b82f6; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #3b82f6; font-size: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 6px 12px rgba(59,130,246,0.2);">
+              04</div>
+            <div class="node-title"
+              style="font-weight: 800; font-size: 1.1rem; color: #0f172a; margin-bottom: 0.8rem; letter-spacing: 0.5px;">
+              MONITORING</div>
+            <div class="node-desc" style="font-size: 0.95rem; color: #475569; line-height: 1.5;">
+              Post-login checks<br>Event telemetry<br>Suspicious metrics
+            </div>
+          </div>
+
+          <!-- Node 5 -->
+          <div class="method-node"
+            style="z-index: 1; flex: 1; display: flex; flex-direction: column; align-items: center; padding: 0 10px; text-align: center;">
+            <div class="node-circle"
+              style="width: 70px; height: 70px; border-radius: 50%; background: #ffffff; border: 4px solid #3b82f6; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #3b82f6; font-size: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 6px 12px rgba(59,130,246,0.2);">
+              05</div>
+            <div class="node-title"
+              style="font-weight: 800; font-size: 1.1rem; color: #0f172a; margin-bottom: 0.8rem; letter-spacing: 0.5px;">
+              RESPONSE &amp; LOGS</div>
+            <div class="node-desc" style="font-size: 0.95rem; color: #475569; line-height: 1.5;">
+              Rule validation<br>Defensive alerts<br>Encrypted storage
+            </div>
+          </div>
+
+          <!-- Node 6 -->
+          <div class="method-node"
+            style="z-index: 1; flex: 1; display: flex; flex-direction: column; align-items: center; padding: 0 10px; text-align: center;">
+            <div class="node-circle"
+              style="width: 70px; height: 70px; border-radius: 50%; background: #ffffff; border: 4px solid #3b82f6; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #3b82f6; font-size: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 6px 12px rgba(59,130,246,0.2);">
+              06</div>
+            <div class="node-title"
+              style="font-weight: 800; font-size: 1.1rem; color: #0f172a; margin-bottom: 0.8rem; letter-spacing: 0.5px;">
+              TESTING</div>
+            <div class="node-desc" style="font-size: 0.95rem; color: #475569; line-height: 1.5;">
+              Attack simulation<br>System validation<br>Evaluation criteria
+            </div>
+          </div>
+        </div>
+
+        <!-- Very Bottom Section: Principle Footer -->
+        <div class="obj-defense-footer"
+          style="width: 100%; display: flex; justify-content: flex-start; align-items: center; padding: 1.2rem 2.5rem; background-color: #ffffff; border-radius: 12px; margin-top: auto; border: 1.5px solid #cbd5e1;">
+          <div style="display: flex; flex-direction: row; align-items: center; gap: 1.5rem; width: 100%;">
+            <span style="font-weight: 700; font-size: 1.15rem; color: #000000;">METHODOLOGICAL PRINCIPLE:</span>
+            <span
+              style="font-weight: 500; font-size: 1.15rem; display: flex; align-items: center; gap: 0.8rem; color: #334155;">
+              Design
+              <span style="color: #94a3b8; font-size: 1.2rem; font-weight: 400;">→</span>
+              Implement
+              <span style="color: #94a3b8; font-size: 1.2rem; font-weight: 400;">→</span>
+              Monitor
+              <span style="color: #94a3b8; font-size: 1.2rem; font-weight: 400;">→</span>
+              Detect
+              <span style="color: #94a3b8; font-size: 1.2rem; font-weight: 400;">→</span>
+              Protect
+              <span style="color: #94a3b8; font-size: 1.2rem; font-weight: 400;">→</span>
+              Evaluate
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 8: SECTION 02 DIVIDER
+         ========================================== -->
+    <section class="slide section-divider-slide" data-slide-index="8">
+      <div class="slide-content slide-layout-hero" style="position: relative;">
+        <!-- Section 02 Header Block -->
+        <div class="slide-text" style="z-index: 2; position: relative; align-items: flex-start;">
+          <div class="section-num-watermark">02</div>
+          <h2 class="slide-title"
+            style="font-size: 3.5rem; font-weight: 800; color: #000000; font-family: Georgia, serif; margin-top: 0.6rem; line-height: 1.1;">
+            Proposed Solution &amp;<br>System Architecture</h2>
+          <div class="cover-divider" style="margin-top: 20px;"></div>
+        </div>
+        <div class="slide-visual" style="display: flex; align-items: center; justify-content: center; z-index: 2;">
+          <div class="animate-float"
+            style="width: 75%; max-width: 340px; aspect-ratio: 1; border-radius: 50%; background: #ffffff; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 50px rgba(16,185,129,0.15); padding: 20px;">
+            <!-- Premium Glowing System Architecture Node Network Graphic -->
+            <svg viewBox="0 0 200 200" width="100%" height="100%"
+              style="filter: drop-shadow(0 10px 20px rgba(16, 185, 129, 0.25));">
+              <defs>
+                <radialGradient id="archGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="rgba(16, 185, 129, 0.18)" />
+                  <stop offset="100%" stop-color="rgba(16, 185, 129, 0)" />
+                </radialGradient>
+                <linearGradient id="archGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#10b981" />
+                  <stop offset="100%" stop-color="#047857" />
+                </linearGradient>
+              </defs>
+              <!-- Background Glow -->
+              <circle cx="100" cy="100" r="90" fill="url(#archGlow)" />
+              <!-- Outer Interconnected Layer Rings -->
+              <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(16, 185, 129, 0.25)" stroke-width="1.5"
+                stroke-dasharray="4,4" />
+              <!-- Node Connection Lines -->
+              <line x1="100" y1="100" x2="100" y2="45" stroke="#10b981" stroke-width="2" />
+              <line x1="100" y1="100" x2="152" y2="130" stroke="#10b981" stroke-width="2" />
+              <line x1="100" y1="100" x2="48" y2="130" stroke="#10b981" stroke-width="2" />
+              <!-- Outer Nodes -->
+              <circle cx="100" cy="45" r="14" fill="#ffffff" stroke="#10b981" stroke-width="3" />
+              <circle cx="152" cy="130" r="14" fill="#ffffff" stroke="#10b981" stroke-width="3" />
+              <circle cx="48" cy="130" r="14" fill="#ffffff" stroke="#10b981" stroke-width="3" />
+              <circle cx="100" cy="45" r="6" fill="#10b981" />
+              <circle cx="152" cy="130" r="6" fill="#10b981" />
+              <circle cx="48" cy="130" r="6" fill="#10b981" />
+              <!-- Center Core Architecture Node -->
+              <circle cx="100" cy="100" r="32" fill="url(#archGrad)" stroke="#34d399" stroke-width="2.5" />
+              <!-- Core Icon (Layers Stack) -->
+              <path d="M86 94 L100 87 L114 94 L100 101 Z" fill="#ffffff" />
+              <path d="M86 100 L100 107 L114 100" fill="none" stroke="#ffffff" stroke-width="2"
+                stroke-linecap="round" />
+              <path d="M86 106 L100 113 L114 106" fill="none" stroke="#ffffff" stroke-width="2"
+                stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 8: LITERATURE REVIEW & COMPARISON
+         ========================================== -->
+    <section class="slide" data-slide-index="9">
+      <div class="slide-content flex-column"
+        style="justify-content: space-between; height: 100%; padding-bottom: 28px;">
+        <!-- Header with Subtitle -->
+        <div class="slide-header" style="margin-bottom: 0.5rem;">
+          <h2 class="slide-title">Comparative Analysis of Existing Authentication Solutions</h2>
+          <p style="font-size: 0.94rem; color: var(--color-text-sec); font-weight: 500; margin-top: 4px;">
+            Comparison of commonly used authentication approaches with the proposed desktop authentication and system
+            protection application.
+          </p>
+        </div>
+
+        <div class="lit-review-container" style="grid-template-columns: 1.55fr 0.45fr;">
+          <!-- Left Column: Literature Review Table -->
+          <div class="lit-table-box">
+            <table class="lit-compare-table" style="font-size: 1.25rem;">
+              <thead style="font-size: 1.25rem;">
+                <tr>
+                  <th style="text-align: left;">Security Feature</th>
+                  <th>Password</th>
+                  <th>MFA</th>
+                  <th>Biometric</th>
+                  <th>OS Security</th>
+                  <th>Endpoint Sec</th>
+                  <th class="proposed-col-header">Proposed System</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="feature-label">User Authentication</td>
+                  <td><span class="status-tag yes">Yes</span></td>
+                  <td><span class="status-tag yes">Yes</span></td>
+                  <td><span class="status-tag yes">Yes</span></td>
+                  <td><span class="status-tag yes">Yes</span></td>
+                  <td><span class="status-tag yes">Yes</span></td>
+                  <td class="proposed-cell"><span class="status-tag yes">Yes</span></td>
+                </tr>
+                <tr>
+                  <td class="feature-label">Additional Security Layer</td>
+                  <td><span class="status-tag no">No</span></td>
+                  <td><span class="status-tag yes">Yes</span></td>
+                  <td><span class="status-tag yes">Yes</span></td>
+                  <td><span class="status-tag partial">Partial</span></td>
+                  <td><span class="status-tag yes">Yes</span></td>
+                  <td class="proposed-cell"><span class="status-tag yes">Yes</span></td>
+                </tr>
+                <tr>
+                  <td class="feature-label">Security Monitoring</td>
+                  <td><span class="status-tag no">No</span></td>
+                  <td><span class="status-tag no">No</span></td>
+                  <td><span class="status-tag no">No</span></td>
+                  <td><span class="status-tag partial">Partial</span></td>
+                  <td><span class="status-tag yes">Yes</span></td>
+                  <td class="proposed-cell"><span class="status-tag yes">Yes</span></td>
+                </tr>
+                <tr>
+                  <td class="feature-label">Suspicious Activity Detection</td>
+                  <td><span class="status-tag no">No</span></td>
+                  <td><span class="status-tag no">No</span></td>
+                  <td><span class="status-tag no">No</span></td>
+                  <td><span class="status-tag partial">Partial</span></td>
+                  <td><span class="status-tag yes">Yes</span></td>
+                  <td class="proposed-cell"><span class="status-tag yes">Yes</span></td>
+                </tr>
+                <tr>
+                  <td class="feature-label">Event Logging</td>
+                  <td><span class="status-tag no">No</span></td>
+                  <td><span class="status-tag no">No</span></td>
+                  <td><span class="status-tag no">No</span></td>
+                  <td><span class="status-tag partial">Partial</span></td>
+                  <td><span class="status-tag yes">Yes</span></td>
+                  <td class="proposed-cell"><span class="status-tag yes">Yes</span></td>
+                </tr>
+                <tr>
+                  <td class="feature-label">Local-First Architecture</td>
+                  <td><span class="status-tag yes">Yes</span></td>
+                  <td><span class="status-tag partial">Partial</span></td>
+                  <td><span class="status-tag yes">Yes</span></td>
+                  <td><span class="status-tag yes">Yes</span></td>
+                  <td><span class="status-tag partial">Partial</span></td>
+                  <td class="proposed-cell"><span class="status-tag yes">Yes</span></td>
+                </tr>
+                <tr>
+                  <td class="feature-label">Unified Dashboard</td>
+                  <td><span class="status-tag no">No</span></td>
+                  <td><span class="status-tag no">No</span></td>
+                  <td><span class="status-tag no">No</span></td>
+                  <td><span class="status-tag no">No</span></td>
+                  <td><span class="status-tag partial">Partial</span></td>
+                  <td class="proposed-cell"><span class="status-tag yes">Yes</span></td>
+                </tr>
+                <tr>
+                  <td class="feature-label">Future Scalability</td>
+                  <td><span class="status-tag no">No</span></td>
+                  <td><span class="status-tag partial">Partial</span></td>
+                  <td><span class="status-tag partial">Partial</span></td>
+                  <td><span class="status-tag partial">Partial</span></td>
+                  <td><span class="status-tag yes">Yes</span></td>
+                  <td class="proposed-cell"><span class="status-tag yes">Yes</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Right Column: Corporate Security Access Protection Graphic -->
+          <div class="roadmap-hero-card lit-hero-card">
+            <img src="images/corporate_security_vault_graphic_1784885278609.png"
+              alt="Enterprise Access Protection Framework" />
+          </div>
+        </div>
+
+        <!-- Bottom Key Observation Box -->
+        <div class="lit-observation-box"
+          style="font-size: 0.65rem; justify-content: center; text-align: center; max-width: 85%; margin: 1rem auto 0 auto; flex-direction: column; gap: 0.3rem;">
+          <span style="font-weight: 800;">Key Observation:</span>
+          <span>Existing authentication approaches focus primarily on user verification, whereas the proposed system
+            integrates authentication, monitoring, event logging, and privacy-focused local storage into a unified
+            desktop application.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 9: SYSTEM ARCHITECTURE
+         ========================================== -->
+    <!-- ==========================================
+         SLIDE 9: SYSTEM ARCHITECTURE (9-MODULE PIPELINE)
+         ========================================== -->
+    <section class="slide" data-slide-index="10">
+      <div class="slide-content flex-column"
+        style="justify-content: center; align-items: center; height: 100%; padding-bottom: 40px;">
+        <!-- Header -->
+        <div class="slide-header" style="margin-bottom: 30px; text-align: center; width: 100%;">
+          <h2 class="slide-title"
+            style="font-size: 2.1rem; font-weight: 800; color: #000000; font-family: Georgia, serif; line-height: 1.2;">
+            Proposed System Architecture
+          </h2>
+          <div style="width: 60px; height: 4px; background-color: #000000; margin: 8px auto 12px auto;"></div>
+          <p style="font-size: 1.1rem; color: #475569; font-family: 'Times New Roman', serif; font-style: italic;">
+            A local-first architecture for continuous authentication and adaptive Zero-Trust security.
+          </p>
+        </div>
+
+        <!-- 2-Row System Architecture Flowchart -->
+        <div class="arch-flowchart"
+          style="display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+
+          <style>
+            .arch-box {
+              background: #ffffff;
+              border: 2px solid #000000;
+              border-radius: 8px;
+              padding: 6px 8px;
+              text-align: center;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              box-sizing: border-box;
+            }
+
+            .arch-box.dark {
+              background: #ffffff !important;
+              color: #0f172a !important;
+              border: 2px solid #94a3b8 !important;
+              box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08) !important;
+            }
+
+            .arch-box-title {
+              font-weight: 700;
+              font-size: 1.15rem;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+              word-break: break-word;
+            }
+
+            .arch-box.dark .arch-box-title {
+              color: #0f172a !important;
+            }
+
+            .arch-box.dark .arch-box-subtitle {
+              color: #475569 !important;
+              font-weight: 600;
+            }
+
+            .arch-box-subtitle {
+              font-size: 0.95rem;
+              color: #475569;
+              margin-top: 6px;
+            }
+
+            .arch-connector-arrow {
+              border-width: 5px 5px 0;
+              border-style: solid;
+              border-color: #64748b transparent transparent transparent;
+              position: absolute;
+              bottom: -4px;
+              left: -4px;
+            }
+          </style>
+
+          <!-- Top Row (Main Pipeline) using Grid to prevent horizontal stretching -->
+          <div
+            style="display: grid; grid-template-columns: 17% 3% 18% 3% 29% 3% 27%; width: 100%; max-width: 1200px; margin-top: 25px; align-items: end;">
+
+            <!-- Stage 1: USER -> DESKTOP APP (17%) -->
+            <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+              <div class="arch-box"
+                style="width: 80%; border-style: dashed; border-color: #64748b; background: #f8fafc; padding: 8px;">
+                <div class="arch-box-title" style="color: #334155; font-size: 1.05rem;">USER</div>
+              </div>
+              <div style="width: 2px; height: 25px; background: #64748b; position: relative;">
+                <div class="arch-connector-arrow"></div>
+              </div>
+              <div class="arch-box"
+                style="width: 100%; border-color: #334155; padding: 16px 8px; height: 150px; justify-content: center;">
+                <div class="arch-box-title" style="color: #0f172a;">DESKTOP APP</div>
+                <div class="arch-box-subtitle" style="font-weight: 600;">React / Tauri</div>
+              </div>
+            </div>
+
+            <!-- Arrow 1 -> 2 (3%) -->
+            <div style="display: flex; align-items: center; height: 150px; width: 100%;">
+              <div style="width: 100%; height: 2px; background: #64748b; position: relative;">
+                <div
+                  style="border-width: 6px 0 6px 7px; border-style: solid; border-color: transparent transparent transparent #64748b; position: absolute; right: -6px; top: -5px;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 2: AUTHENTICATION (18%) -->
+            <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+              <div class="arch-box dark"
+                style="width: 100%; padding: 16px 8px; height: 150px; justify-content: center;">
+                <div class="arch-box-title">AUTHENTICATION<br>ENGINE</div>
+                <div class="arch-box-subtitle" style="margin-top: 10px;">Argon2id<br>Session</div>
+              </div>
+            </div>
+
+            <!-- Arrow 2 -> 3 (3%) -->
+            <div style="display: flex; align-items: center; height: 150px; width: 100%;">
+              <div style="width: 100%; height: 2px; background: #64748b; position: relative;">
+                <div
+                  style="border-width: 6px 0 6px 7px; border-style: solid; border-color: transparent transparent transparent #64748b; position: absolute; right: -6px; top: -5px;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 3: CONTINUOUS SECURITY (29%) -->
+            <div style="display: flex; flex-direction: column; align-items: center; width: 100%; position: relative;">
+              <div class="arch-box"
+                style="width: 100%; border: 2px dashed #94a3b8; padding: 12px 4px; height: 150px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff;">
+                <div class="arch-box-title" style="color: #0f172a;">CONTINUOUS SECURITY</div>
+                <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <div style="font-size: 0.85rem; font-weight: 600; color: #475569; text-align: center; width: 33%;">
+                    Behavior</div>
+                  <div style="font-size: 0.85rem; font-weight: 600; color: #475569; text-align: center; width: 33%;">
+                    Device</div>
+                  <div style="font-size: 0.85rem; font-weight: 600; color: #475569; text-align: center; width: 33%;">
+                    Threat</div>
+                </div>
+                <div style="display: flex; justify-content: center; margin: 6px 0;">
+                  <div style="width: 2px; height: 14px; background: #94a3b8; position: relative;">
+                    <div
+                      style="border-width: 5px 5px 0; border-style: solid; border-color: #94a3b8 transparent transparent transparent; position: absolute; bottom: -4px; left: -4px;">
+                    </div>
+                  </div>
+                </div>
+                <div class="arch-box dark"
+                  style="background: #ffffff !important; border: 2px solid #cbd5e1 !important; padding: 8px; border-radius: 6px;">
+                  <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a !important;">RISK SCORE</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Arrow 3 -> 4 (3%) -->
+            <div style="display: flex; align-items: center; height: 150px; width: 100%;">
+              <div style="width: 100%; height: 2px; background: #64748b; position: relative;">
+                <div
+                  style="border-width: 6px 0 6px 7px; border-style: solid; border-color: transparent transparent transparent #64748b; position: absolute; right: -6px; top: -5px;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 4: ZERO-TRUST & RESPONSE (27%) -->
+            <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+              <div class="arch-box dark"
+                style="width: 100%; padding: 16px 8px; height: 150px; justify-content: center;">
+                <div class="arch-box-title">ZERO-TRUST &<br>RESPONSE</div>
+                <div class="arch-box-subtitle" style="margin-top: 10px;">Allow / Re-auth<br>Restrict / Lock</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Row: Feedback Loop + Storage -->
+          <div style="width: 100%; max-width: 1200px; position: relative; height: 150px; margin-top: 8px;">
+
+            <!-- Continuous Verification Loop (Width 31%, anchors from center of Zero Trust (13.5% from right) to center of Continuous Sec (44.5% from right)) -->
+            <div
+              style="position: absolute; right: 13.5%; top: 0; width: 31%; height: 28px; border-bottom: 2px dashed #3b82f6; border-left: 2px dashed #3b82f6; border-right: 2px dashed #3b82f6; border-radius: 0 0 12px 12px;">
+              <div
+                style="position: absolute; top: -5px; left: -5px; border-width: 0 5px 6px 5px; border-style: solid; border-color: transparent transparent #3b82f6 transparent;">
+              </div>
+              <div
+                style="position: absolute; bottom: -28px; width: 100%; text-align: center; font-size: 1rem; font-weight: 700; color: #3b82f6;">
+                Continuous Verification</div>
+            </div>
+
+            <!-- Down connection from Zero Trust to Storage -->
+            <div style="position: absolute; right: 13.5%; top: 0; width: 2px; height: 65px; background: #64748b;"></div>
+
+            <!-- Storage & Cloud Container (Width 50%, anchored to right edge) -->
+            <div
+              style="position: absolute; right: 0; top: 65px; width: 50%; display: flex; flex-direction: column; align-items: center;">
+
+              <!-- Split Connector -->
+              <div style="width: 100%; height: 2px; position: relative;">
+                <div style="position: absolute; right: 27%; top: 0; width: 48%; height: 2px; background: #64748b;">
+                  <!-- Left down arrow -->
+                  <div style="position: absolute; left: 0; top: 0; width: 2px; height: 18px; background: #64748b;">
+                    <div class="arch-connector-arrow"></div>
+                  </div>
+                  <!-- Right down arrow -->
+                  <div style="position: absolute; right: 0; top: 0; width: 2px; height: 18px; background: #64748b;">
+                    <div class="arch-connector-arrow"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Storage Boxes -->
+              <div style="display: flex; justify-content: space-around; width: 100%; margin-top: 18px;">
+                <div class="arch-box" style="width: 46%; border-radius: 8px; padding: 14px 8px;">
+                  <div class="arch-box-title" style="color: #000000; font-size: 1.05rem;">LOCAL STORAGE</div>
+                  <div class="arch-box-subtitle"
+                    style="font-size: 0.85rem; color: #1e293b; font-weight: 600; margin-top: 6px;">SQLite + Logs</div>
+                </div>
+                <div class="arch-box"
+                  style="width: 46%; border: 2px dashed #94a3b8; background: #f8fafc; padding: 14px 8px;">
+                  <div class="arch-box-title" style="color: #64748b; font-size: 1.05rem;">OPTIONAL CLOUD</div>
+                  <div class="arch-box-subtitle" style="font-size: 0.85rem; margin-top: 6px;">Future / Premium</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div
+          style="margin-top: 35px; padding: 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; text-align: center; font-size: 0.95rem; color: #334155; font-family: 'Courier New', monospace; width: 100%; max-width: 950px; margin-left: auto; margin-right: auto; line-height: 1.5; font-weight: 600; letter-spacing: 0.5px;">
+          Authenticate → Establish Session → Monitor → Evaluate Risk → Apply Policy → Respond → Log → Repeat
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 10: END-TO-END SECURITY EXECUTION FLOW (CONFERENCE 3-LAYER PIPELINE)
+         ========================================== -->
+    <section class="slide" data-slide-index="11">
+      <div class="slide-content flex-column" style="justify-content: space-between; height: 100%;">
+        <!-- Header with Subtitle -->
+        <div class="slide-header" style="margin-bottom: 2rem;">
+          <h2 class="slide-title"
+            style="font-size: 2.1rem; font-weight: 800; color: #000000; font-family: Georgia, serif; line-height: 1.25; margin-top: 0.2rem;">
+            End-to-End Security Execution Flow</h2>
+          <p style="font-size: 1.15rem; color: #475569; font-family: 'Times New Roman', serif; margin-top: 5px;">
+            How BioShield verifies identity, establishes trust, and continuously protects the active session.
+          </p>
+        </div>
+
+        <div
+          style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; position: relative;">
+
+          <!-- Curved Arrow for Continuous Trust Re-Evaluation (From Card 06 back to Card 04) -->
+          <div
+            style="position: absolute; top: 12%; left: 58.3%; right: 8.3%; height: 45px; border-top: 2.5px dashed #3b82f6; border-left: 2.5px dashed #3b82f6; border-right: 2.5px dashed #3b82f6; border-radius: 12px 12px 0 0;">
+            <div
+              style="position: absolute; top: -28px; width: 100%; text-align: center; font-size: 1rem; font-weight: 700; color: #3b82f6;">
+              Continuous Trust Re-Evaluation</div>
+            <!-- Arrow pointing down on the left side (Card 04) -->
+            <div
+              style="position: absolute; bottom: -2px; left: -6px; border-width: 7px 5px 0 5px; border-style: solid; border-color: #3b82f6 transparent transparent transparent;">
+            </div>
+          </div>
+
+          <div
+            style="display: flex; flex-direction: row; align-items: stretch; justify-content: space-between; width: 100%; gap: 1rem; margin-top: 40px;">
+
+            <!-- Card 1 -->
+            <div
+              style="flex: 1; border: 2px solid #cbd5e1; border-top: 4px solid #000000; border-radius: 8px; padding: 1.25rem 0.8rem; background: #ffffff; display: flex; flex-direction: column;">
+              <div
+                style="font-size: 0.85rem; font-weight: 800; color: #64748b; margin-bottom: 0.5rem; letter-spacing: 0.5px;">
+                01 &mdash; SECURE STARTUP</div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">Initialize
+                BioShield</div>
+              <div style="font-size: 1rem; color: #475569; line-height: 1.4;">Security modules &amp; local protection
+              </div>
+            </div>
+
+            <!-- Arrow -->
+            <div
+              style="display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 1.5rem;">➔
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              style="flex: 1; border: 2px solid #cbd5e1; border-top: 4px solid #000000; border-radius: 8px; padding: 1.25rem 0.8rem; background: #ffffff; display: flex; flex-direction: column;">
+              <div
+                style="font-size: 0.85rem; font-weight: 800; color: #64748b; margin-bottom: 0.5rem; letter-spacing: 0.5px;">
+                02 &mdash; LOCAL IDENTITY</div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">Identify User
+              </div>
+              <div style="font-size: 1rem; color: #475569; line-height: 1.4;">Select enrolled local profile</div>
+            </div>
+
+            <!-- Arrow -->
+            <div
+              style="display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 1.5rem;">➔
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              style="flex: 1; border: 2px solid #cbd5e1; border-top: 4px solid #000000; border-radius: 8px; padding: 1.25rem 0.8rem; background: #ffffff; display: flex; flex-direction: column;">
+              <div
+                style="font-size: 0.85rem; font-weight: 800; color: #64748b; margin-bottom: 0.5rem; letter-spacing: 0.5px;">
+                03 &mdash; BIOMETRIC VERIF.</div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">Verify Identity
+              </div>
+              <div style="font-size: 1rem; color: #475569; line-height: 1.4;">Face &bull; Voice &bull; Fingerprint*
+              </div>
+            </div>
+
+            <!-- Arrow -->
+            <div
+              style="display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 1.5rem;">➔
+            </div>
+
+            <!-- Card 4 -->
+            <div
+              style="flex: 1; border: 2px solid #cbd5e1; border-top: 4px solid #000000; border-radius: 8px; padding: 1.25rem 0.8rem; background: #ffffff; display: flex; flex-direction: column; position: relative;">
+              <div
+                style="font-size: 0.85rem; font-weight: 800; color: #64748b; margin-bottom: 0.5rem; letter-spacing: 0.5px;">
+                04 &mdash; TRUST EVALUATION</div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">Evaluate
+                Security</div>
+              <div style="font-size: 1rem; color: #475569; line-height: 1.4;">Identity &bull; Device &bull; Behavior
+                &bull; Risk</div>
+            </div>
+
+            <!-- Arrow -->
+            <div
+              style="display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 1.5rem;">➔
+            </div>
+
+            <!-- Card 5 -->
+            <div
+              style="flex: 1; border: 2px solid #cbd5e1; border-top: 4px solid #000000; border-radius: 8px; padding: 1.25rem 0.8rem; background: #ffffff; display: flex; flex-direction: column;">
+              <div
+                style="font-size: 0.85rem; font-weight: 800; color: #64748b; margin-bottom: 0.5rem; letter-spacing: 0.5px;">
+                05 &mdash; SECURE ACCESS</div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">Grant / Deny
+              </div>
+              <div style="font-size: 1rem; color: #475569; line-height: 1.4;">Establish protected session</div>
+            </div>
+
+            <!-- Arrow -->
+            <div
+              style="display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 1.5rem;">➔
+            </div>
+
+            <!-- Card 6 -->
+            <div
+              style="flex: 1; border: 2px solid #cbd5e1; border-top: 4px solid #000000; border-radius: 8px; padding: 1.25rem 0.8rem; background: #ffffff; display: flex; flex-direction: column; position: relative;">
+              <div
+                style="font-size: 0.85rem; font-weight: 800; color: #64748b; margin-bottom: 0.5rem; letter-spacing: 0.5px;">
+                06 &mdash; CONTINUOUS PROT.</div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">Monitor Session
+              </div>
+              <div style="font-size: 1rem; color: #475569; line-height: 1.4;">Detect &bull; Respond &bull; Audit</div>
+            </div>
+
+          </div>
+
+          <div
+            style="margin-top: 3.5rem; margin-bottom: 1rem; text-align: center; font-size: 1.15rem; font-weight: 800; color: #0f172a; letter-spacing: 1px;">
+            LOCAL-FIRST SECURITY &bull; CONTINUOUS VERIFICATION &bull; REAL-TIME RESPONSE &bull; ENCRYPTED AUDIT
+          </div>
+
+        </div>
+
+        <div style="font-size: 0.85rem; color: #64748b; font-style: italic; margin-top: auto;">
+          * Fingerprint integration planned through supported hardware/OS interfaces.
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 11: LOCAL DATA STORAGE ARCHITECTURE (IEEE RICH ARCHITECTURE)
+         ========================================== -->
+    <section class="slide" data-slide-index="12">
+      <div class="slide-content flex-column" style="justify-content: space-between; height: 100%;">
+        <!-- Header with Subtitle -->
+        <div class="slide-header" style="margin-bottom: 0.3rem;">
+          <h2 class="slide-title"
+            style="font-size: 2.1rem; font-weight: 800; color: #000000; font-family: Georgia, serif; line-height: 1.25; margin-top: 0.2rem;">
+            Local Data Storage Architecture</h2>
+          <p style="font-size: 0.94rem; color: #475569; font-family: 'Times New Roman', serif; margin-top: 3px;">
+            A local-first, zero-cloud data management schema organizing user records, authentication state, real-time
+            events, and encrypted audit trails.
+          </p>
+        </div>
+
+        <div class="ds-container-3col"
+          style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+          <!-- 5 Logical Database Design Modules Grid -->
+          <div class="ds-modules-grid">
+            <!-- Module 1: User Records -->
+            <div class="ds-module-card" style="border: 2px solid #000000; border-top: 4px solid #3b82f6;">
+              <div class="ds-card-top">
+                <span class="ds-step-num">MODULE 01</span>
+
+              </div>
+              <div class="ds-module-header">User Records</div>
+              <ul class="ds-module-list">
+                <li>User Unique Hash ID &amp; Profile Metadata</li>
+                <li>Id Salted Credential Hashes</li>
+                <li>Encrypted User Settings &amp; Roles</li>
+                <li>Session Access &amp; Expiry Tokens</li>
+              </ul>
+              <div class="ds-tech-footer">[ SQLite / AES-256 ]</div>
+            </div>
+
+            <!-- Module 2: Authentication Records -->
+            <div class="ds-module-card" style="border: 2px solid #000000; border-top: 4px solid #2563eb;">
+              <div class="ds-card-top">
+                <span class="ds-step-num">MODULE 02</span>
+
+              </div>
+              <div class="ds-module-header">Authentication Records</div>
+              <ul class="ds-module-list">
+                <li>Timestamped Login Attempt History</li>
+                <li>Authentication Status &amp; Decision Logs</li>
+                <li>Failed Attempt Lockout Counter</li>
+                <li>Environment &amp; Session State Hashes</li>
+              </ul>
+              <div class="ds-tech-footer">[ Id / HMAC ]</div>
+            </div>
+
+            <!-- Module 3: Security Event Logs -->
+            <div class="ds-module-card" style="border: 2px solid #000000; border-top: 4px solid #10b981;">
+              <div class="ds-card-top">
+                <span class="ds-step-num">MODULE 03</span>
+
+              </div>
+              <div class="ds-module-header">Security Event Logs</div>
+              <ul class="ds-module-list">
+                <li>Real-Time Watchdog Observer Alerts</li>
+                <li>Suspicious Process Activity Triggers</li>
+                <li>Win32 Lockout &amp; Defense Events</li>
+                <li>System Anomaly Security Warnings</li>
+              </ul>
+              <div class="ds-tech-footer">[ Watchdog / Win32 ]</div>
+            </div>
+
+            <!-- Module 4: Application Settings -->
+            <div class="ds-module-card" style="border: 2px solid #000000; border-top: 4px solid #f59e0b;">
+              <div class="ds-card-top">
+                <span class="ds-step-num">MODULE 04</span>
+
+              </div>
+              <div class="ds-module-header">Application Settings</div>
+              <ul class="ds-module-list">
+                <li>Local Security Policy Configuration</li>
+                <li>Failed Login Lockout Delay Rules</li>
+                <li>Watchdog Scan Interval &amp; Thresholds</li>
+                <li>GUI Interface &amp; Key File Paths</li>
+              </ul>
+              <div class="ds-tech-footer">[ Local JSON / Policy ]</div>
+            </div>
+
+            <!-- Module 5: Audit Logs & Tamper-Resistant Storage -->
+            <div class="ds-module-card wide-card"
+              style="border: 2px solid #000000; border-top: 4px solid #64748b; grid-column: span 2;">
+              <div class="ds-card-top">
+                <span class="ds-step-num">MODULE 05</span>
+
+              </div>
+              <div class="ds-module-header">Audit Logs &amp; Encrypted Persistence</div>
+              <div class="ds-audit-two-col">
+                <ul class="ds-module-list">
+                  <li>Cryptographically Signed Event Chain</li>
+                  <li>Tamper-Evident SHA-256 Audit Hashes</li>
+                  <li>Immutable Forensic Auth History</li>
+                </ul>
+                <ul class="ds-module-list">
+                  <li>SQLCipher 256-bit AES Local Database</li>
+                  <li>Zero-Knowledge Verification</li>
+                  <li>System Integrity Backup Manifest</li>
+                </ul>
+              </div>
+              <div class="ds-tech-footer">[ SQLCipher 256-bit AES ]</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Data Flow Pipeline Bar -->
+        <div class="ds-single-line-legend">
+          <div class="legend-pill"><span class="lg-sym">PIPELINE</span> User Login ➔ Credentials Verification ➔ Event
+            Monitoring ➔ Local Database ➔ Dashboard</div>
+          <div class="legend-pill bold">100% LOCAL-FIRST ENCLAVE</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 12: SECTION 03 DIVIDER
+         ========================================== -->
+    <section class="slide section-divider-slide" data-slide-index="13">
+      <div class="slide-content slide-layout-hero" style="position: relative;">
+        <!-- Section 03 Header Block -->
+        <div class="slide-text" style="z-index: 2; position: relative; align-items: flex-start;">
+          <div class="section-num-watermark">03</div>
+          <h2 class="slide-title"
+            style="font-size: 3.2rem; font-weight: 800; color: #000000; font-family: Georgia, serif; margin-top: 0.6rem; line-height: 1.1;">
+            Workflow, Technology<br>Stack &amp; Core Features</h2>
+          <div class="cover-divider" style="margin-top: 20px;"></div>
+        </div>
+        <div class="slide-visual" style="display: flex; align-items: center; justify-content: center; z-index: 2;">
+          <div class="animate-float"
+            style="width: 75%; max-width: 340px; aspect-ratio: 1; border-radius: 50%; background: #ffffff; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 50px rgba(37,99,235,0.15); padding: 20px;">
+            <!-- Premium Glowing Settings/Gear Graphic -->
+            <svg viewBox="0 0 200 200" width="100%" height="100%"
+              style="filter: drop-shadow(0 10px 20px rgba(124, 58, 237, 0.25));">
+              <defs>
+                <radialGradient id="gearGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="rgba(124, 58, 237, 0.15)" />
+                  <stop offset="100%" stop-color="rgba(124, 58, 237, 0)" />
+                </radialGradient>
+                <linearGradient id="gearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#8b5cf6" />
+                  <stop offset="100%" stop-color="#6d28d9" />
+                </linearGradient>
+              </defs>
+              <!-- Background Glow -->
+              <circle cx="100" cy="100" r="90" fill="url(#gearGlow)" />
+              <!-- Central Gear Geometry -->
+              <g transform="translate(100, 100)">
+                <g fill="url(#gearGrad)" stroke="#a78bfa" stroke-width="2">
+                  <rect x="-12" y="-45" width="24" height="90" rx="4" />
+                  <rect x="-12" y="-45" width="24" height="90" rx="4" transform="rotate(45)" />
+                  <rect x="-12" y="-45" width="24" height="90" rx="4" transform="rotate(90)" />
+                  <rect x="-12" y="-45" width="24" height="90" rx="4" transform="rotate(135)" />
+                  <circle cx="0" cy="0" r="36" />
+                </g>
+                <circle cx="0" cy="0" r="16" fill="#ffffff" />
+                <circle cx="0" cy="0" r="6" fill="#8b5cf6" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 13: END-TO-END AUTHENTICATION PROCESS
+         ========================================== -->
+    <section class="slide" data-slide-index="14">
+      <div class="slide-content flex-column" style="justify-content: space-between; height: 100%;">
+        <!-- Header with Subtitle -->
+        <div class="slide-header" style="margin-bottom: 4rem;">
+          <h2 class="slide-title"
+            style="font-size: 2.5rem; font-weight: 800; color: #000000; font-family: Georgia, serif; line-height: 1.25; margin-top: 0.2rem;">
+            End-to-End Authentication Process</h2>
+          <p
+            style="font-size: 1.35rem; color: #475569; font-family: 'Times New Roman', serif; font-style: italic; margin-top: 8px;">
+            From secure login to continuous verification and adaptive session security.
+          </p>
+        </div>
+
+        <!-- New Simplified E2E Process Container -->
+        <div
+          style="flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-start; padding-top: 30px; width: 100%; max-width: 1250px; margin: 0 auto;">
+
+          <!-- Phase Headers -->
+          <div style="display: flex; width: 100%; margin-bottom: 50px;">
+            <div style="width: 65.8%; border-bottom: 3px solid #94a3b8; padding-bottom: 15px; text-align: center;">
+              <span style="font-size: 1.25rem; font-weight: 700; color: #475569; letter-spacing: 2px;">INITIAL
+                AUTHENTICATION</span>
+            </div>
+            <div style="width: 2.7%;"></div>
+            <div style="width: 31.5%; border-bottom: 3px solid #3b82f6; padding-bottom: 15px; text-align: center;">
+              <span style="font-size: 1.25rem; font-weight: 700; color: #3b82f6; letter-spacing: 2px;">ACTIVE SESSION
+                SECURITY</span>
+            </div>
+          </div>
+
+          <!-- Main Flow (6 Boxes) -->
+          <div style="display: flex; justify-content: space-between; align-items: center; position: relative;">
+
+            <style>
+              .e2e-box {
+                background: #ffffff;
+                border: 2px solid #cbd5e1;
+                border-radius: 8px;
+                padding: 24px 12px;
+                display: flex;
+                flex-direction: column;
+                width: 180px;
+                height: 240px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+                position: relative;
+                box-sizing: border-box;
+              }
+
+              .e2e-num {
+                font-size: 1.1rem;
+                font-weight: 700;
+                color: #94a3b8;
+                margin-bottom: 18px;
+                text-align: center;
+              }
+
+              .e2e-title {
+                font-size: 1.3rem;
+                font-weight: 800;
+                color: #0f172a;
+                text-align: center;
+                line-height: 1.25;
+                margin-bottom: 22px;
+                text-transform: uppercase;
+              }
+
+              .e2e-desc {
+                font-size: 1.1rem;
+                color: #475569;
+                text-align: center;
+                line-height: 1.4;
+              }
+
+              .e2e-arrow {
+                font-size: 2rem;
+                color: #cbd5e1;
+              }
+
+              .e2e-box.highlight {
+                border-color: #3b82f6;
+                box-shadow: 0 6px 15px rgba(59, 130, 246, 0.12);
+              }
+
+              .e2e-box.highlight .e2e-title {
+                color: #1d4ed8;
+              }
+            </style>
+
+            <!-- Box 01 -->
+            <div class="e2e-box">
+              <div class="e2e-num">01</div>
+              <div class="e2e-title">System<br>Start</div>
+              <div class="e2e-desc">Initialize services</div>
+            </div>
+            <div class="e2e-arrow">➔</div>
+
+            <!-- Box 02 -->
+            <div class="e2e-box">
+              <div class="e2e-num">02</div>
+              <div class="e2e-title">User<br>Login</div>
+              <div class="e2e-desc">Submit credentials</div>
+            </div>
+            <div class="e2e-arrow">➔</div>
+
+            <!-- Box 03 -->
+            <div class="e2e-box">
+              <div class="e2e-num">03</div>
+              <div class="e2e-title">Identity<br>Verification</div>
+              <div class="e2e-desc">Verify credentials</div>
+            </div>
+            <div class="e2e-arrow">➔</div>
+
+            <!-- Box 04 -->
+            <div class="e2e-box">
+              <div class="e2e-num">04</div>
+              <div class="e2e-title">Session<br>Established</div>
+              <div class="e2e-desc">Grant secure access</div>
+            </div>
+            <div class="e2e-arrow">➔</div>
+
+            <!-- Box 05 -->
+            <div class="e2e-box highlight">
+              <div class="e2e-num">05</div>
+              <div class="e2e-title">Continuous<br>Security</div>
+              <div class="e2e-desc">
+                Behavior &bull; Device &bull; Threat<br>
+                <div style="font-weight: 700; margin-top: 4px; color: #1d4ed8;">Risk Evaluation</div>
+              </div>
+            </div>
+            <div class="e2e-arrow" style="color: #3b82f6;">➔</div>
+
+            <!-- Box 06 -->
+            <div class="e2e-box highlight">
+              <div class="e2e-num">06</div>
+              <div class="e2e-title">Adaptive<br>Response</div>
+              <div class="e2e-desc">
+                <div style="margin-bottom: 4px;">Allow &bull; Re-auth</div>
+                <div>Restrict &bull; Lock &bull; Log</div>
+              </div>
+            </div>
+
+            <!-- Continuous Feedback Loop (from Box 06 back to Box 05) -->
+            <div
+              style="position: absolute; right: 90px; bottom: -55px; width: 214px; height: 40px; box-sizing: border-box; border-bottom: 3px dashed #3b82f6; border-left: 3px dashed #3b82f6; border-right: 3px dashed #3b82f6; border-radius: 0 0 10px 10px;">
+              <!-- Arrow pointing up to box 05 -->
+              <div
+                style="position: absolute; left: -8px; top: -7px; border-width: 0 7px 8px 7px; border-style: solid; border-color: transparent transparent #3b82f6 transparent;">
+              </div>
+              <!-- Text -->
+              <div
+                style="position: absolute; bottom: -32px; width: 100%; text-align: center; font-size: 1.1rem; font-weight: 700; color: #3b82f6;">
+                Continuous Verification</div>
+            </div>
+          </div>
+
+          <!-- Bottom Legend -->
+          <div
+            style="margin-top: 150px; text-align: center; font-size: 1.5rem; font-weight: 800; color: #1e293b; letter-spacing: 2px; text-transform: uppercase;">
+            AUTHENTICATE <span style="color: #94a3b8; margin: 0 12px;">➔</span>
+            ESTABLISH SESSION <span style="color: #94a3b8; margin: 0 12px;">➔</span>
+            MONITOR <span style="color: #3b82f6; margin: 0 12px;">➔</span>
+            <span style="color: #3b82f6;">ADAPT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 14: PROPOSED TECHNOLOGY STACK (ARCHITECTURE LAYERS)
+         ========================================== -->
+    <section class="slide" data-slide-index="15">
+      <div class="slide-content flex-column" style="justify-content: space-between; height: 100%;">
+        <!-- Header with Subtitle -->
+        <div class="slide-header" style="margin-bottom: 0.2rem;">
+          <h2 class="slide-title"
+            style="font-size: 2.1rem; font-weight: 800; color: #000000; font-family: Georgia, serif; line-height: 1.25; margin-top: 0.2rem;">
+            Proposed Technology Stack</h2>
+          <p
+            style="font-size: 1.05rem; color: #475569; font-family: 'Times New Roman', serif; font-style: italic; margin-top: 8px;">
+            A local-first technology stack for secure biometric authentication, behavioral intelligence, and desktop
+            protection.
+          </p>
+        </div>
+
+        <div class="ts-arch-container"
+          style="display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; align-items: stretch !important; justify-content: space-between !important; gap: 0.75rem !important; width: 100% !important; margin: 2rem auto 2.5rem !important;">
+          <!-- 5 Horizontal Architecture Pillar Cards -->
+
+          <!-- Layer 1: Frontend -->
+          <div class="ts-layer-card"
+            style="flex: 1 1 0% !important; min-width: 0 !important; display: flex !important; flex-direction: column !important; align-items: center !important; padding: 2rem 0.75rem !important; background: #ffffff !important; border: 2px solid #e2e8f0 !important; border-radius: 12px !important; box-shadow: 0 4px 6px rgba(0,0,0,0.02) !important;">
+            <div
+              style="margin-bottom: 1.5rem; padding: 1.25rem; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="9" y1="21" x2="9" y2="9"></line>
+              </svg>
+            </div>
+            <div
+              style="font-size: 0.9rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; text-align: center; word-break: break-word;">
+              01 &mdash; Frontend</div>
+            <div
+              style="font-size: 1.35rem; font-weight: 800; color: #0f172a; text-align: center; margin-bottom: 1.5rem; line-height: 1.6; word-break: break-word;">
+              React<br>TypeScript<br>Tailwind CSS
+            </div>
+            <div
+              style="width: 3.5rem; height: 2px; background-color: #cbd5e1; margin: 0 auto 1.5rem; border-radius: 1px;">
+            </div>
+            <div
+              style="font-size: 1.1rem; font-weight: 500; color: #64748b; text-align: center; line-height: 1.5; margin-bottom: 1.5rem; word-break: break-word;">
+              Responsive UI<br>Security Dashboard
+            </div>
+            <div
+              style="font-size: 1rem; color: #475569; text-align: center; line-height: 1.4; margin-top: auto; font-weight: 700; word-break: break-word;">
+              User Interface &amp; Dashboard
+            </div>
+          </div>
+
+          <div
+            style="display: flex !important; align-items: flex-start !important; justify-content: center !important; font-size: 2rem !important; color: #3b82f6 !important; flex-shrink: 0 !important; padding-top: 11.5rem !important;">
+            ➔</div>
+
+          <!-- Layer 2: Desktop Application -->
+          <div class="ts-layer-card"
+            style="flex: 1 1 0% !important; min-width: 0 !important; display: flex !important; flex-direction: column !important; align-items: center !important; padding: 2rem 0.75rem !important; background: #ffffff !important; border: 2px solid #e2e8f0 !important; border-radius: 12px !important; box-shadow: 0 4px 6px rgba(0,0,0,0.02) !important;">
+            <div
+              style="margin-bottom: 1.5rem; padding: 1.25rem; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div
+              style="font-size: 0.9rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; text-align: center; word-break: break-word;">
+              02 &mdash; Desktop Runtime</div>
+            <div
+              style="font-size: 1.35rem; font-weight: 800; color: #0f172a; text-align: center; margin-bottom: 1.5rem; line-height: 1.6; word-break: break-word;">
+              Tauri
+            </div>
+            <div
+              style="width: 3.5rem; height: 2px; background-color: #cbd5e1; margin: 0 auto 1.5rem; border-radius: 1px;">
+            </div>
+            <div
+              style="font-size: 1.1rem; font-weight: 500; color: #64748b; text-align: center; line-height: 1.5; margin-bottom: 1.5rem; word-break: break-word;">
+              Native OS Access<br>Lightweight Runtime
+            </div>
+            <div
+              style="font-size: 1rem; color: #475569; text-align: center; line-height: 1.4; margin-top: auto; font-weight: 700; word-break: break-word;">
+              Native Desktop Integration
+            </div>
+          </div>
+
+          <div
+            style="display: flex !important; align-items: flex-start !important; justify-content: center !important; font-size: 2rem !important; color: #3b82f6 !important; flex-shrink: 0 !important; padding-top: 11.5rem !important;">
+            ➔</div>
+
+          <!-- Layer 3: Security & Intelligence -->
+          <div class="ts-layer-card"
+            style="flex: 1 1 0% !important; min-width: 0 !important; display: flex !important; flex-direction: column !important; align-items: center !important; padding: 2rem 0.75rem !important; background: #ffffff !important; border: 2px solid #e2e8f0 !important; border-radius: 12px !important; box-shadow: 0 4px 6px rgba(0,0,0,0.02) !important;">
+            <div
+              style="margin-bottom: 1.5rem; padding: 1.25rem; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <div
+              style="font-size: 0.9rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; text-align: center; word-break: break-word;">
+              03 &mdash; Intelligence Engine</div>
+            <div
+              style="font-size: 1.35rem; font-weight: 800; color: #0f172a; text-align: center; margin-bottom: 1.5rem; line-height: 1.6; word-break: break-word;">
+              Python<br>scikit-learn
+            </div>
+            <div
+              style="width: 3.5rem; height: 2px; background-color: #cbd5e1; margin: 0 auto 1.5rem; border-radius: 1px;">
+            </div>
+            <div
+              style="font-size: 1.1rem; font-weight: 500; color: #64748b; text-align: center; line-height: 1.5; margin-bottom: 1.5rem; word-break: break-word;">
+              Biometric Processing<br>Behavioral Analysis<br>Risk Detection
+            </div>
+            <div
+              style="font-size: 1rem; color: #475569; text-align: center; line-height: 1.4; margin-top: auto; font-weight: 700; word-break: break-word;">
+              Biometrics &amp; Risk Analysis
+            </div>
+          </div>
+
+          <div
+            style="display: flex !important; align-items: flex-start !important; justify-content: center !important; font-size: 2rem !important; color: #3b82f6 !important; flex-shrink: 0 !important; padding-top: 11.5rem !important;">
+            ➔</div>
+
+          <!-- Layer 4: Security & Cryptography -->
+          <div class="ts-layer-card"
+            style="flex: 1 1 0% !important; min-width: 0 !important; display: flex !important; flex-direction: column !important; align-items: center !important; padding: 2rem 0.75rem !important; background: #ffffff !important; border: 2px solid #e2e8f0 !important; border-radius: 12px !important; box-shadow: 0 4px 6px rgba(0,0,0,0.02) !important;">
+            <div
+              style="margin-bottom: 1.5rem; padding: 1.25rem; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <div
+              style="font-size: 0.9rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; text-align: center; word-break: break-word;">
+              04 &mdash; Cryptography</div>
+            <div
+              style="font-size: 1.35rem; font-weight: 800; color: #0f172a; text-align: center; margin-bottom: 1.5rem; line-height: 1.6; word-break: break-word;">
+              Argon2id<br>AES-256-GCM
+            </div>
+            <div
+              style="width: 3.5rem; height: 2px; background-color: #cbd5e1; margin: 0 auto 1.5rem; border-radius: 1px;">
+            </div>
+            <div
+              style="font-size: 1.1rem; font-weight: 500; color: #64748b; text-align: center; line-height: 1.5; margin-bottom: 1.5rem; word-break: break-word;">
+              Credential Derivation<br>Local Data Encryption
+            </div>
+            <div
+              style="font-size: 1rem; color: #475569; text-align: center; line-height: 1.4; margin-top: auto; font-weight: 700; word-break: break-word;">
+              Credential &amp; Data Protection
+            </div>
+          </div>
+
+          <div
+            style="display: flex !important; align-items: flex-start !important; justify-content: center !important; font-size: 2rem !important; color: #3b82f6 !important; flex-shrink: 0 !important; padding-top: 11.5rem !important;">
+            ➔</div>
+
+          <!-- Layer 5: Local Data & Monitoring -->
+          <div class="ts-layer-card"
+            style="flex: 1 1 0% !important; min-width: 0 !important; display: flex !important; flex-direction: column !important; align-items: center !important; padding: 2rem 0.75rem !important; background: #ffffff !important; border: 2px solid #e2e8f0 !important; border-radius: 12px !important; box-shadow: 0 4px 6px rgba(0,0,0,0.02) !important;">
+            <div
+              style="margin-bottom: 1.5rem; padding: 1.25rem; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <div
+              style="font-size: 0.9rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; text-align: center; word-break: break-word;">
+              05 &mdash; Data &amp; Monitoring</div>
+            <div
+              style="font-size: 1.35rem; font-weight: 800; color: #0f172a; text-align: center; margin-bottom: 1.5rem; line-height: 1.6; word-break: break-word;">
+              SQLite<br>psutil<br>pynput
+            </div>
+            <div
+              style="width: 3.5rem; height: 2px; background-color: #cbd5e1; margin: 0 auto 1.5rem; border-radius: 1px;">
+            </div>
+            <div
+              style="font-size: 1.1rem; font-weight: 500; color: #64748b; text-align: center; line-height: 1.5; margin-bottom: 1.5rem; word-break: break-word;">
+              Local Persistence<br>System Telemetry<br>Input Monitoring
+            </div>
+            <div
+              style="font-size: 1rem; color: #475569; text-align: center; line-height: 1.4; margin-top: auto; font-weight: 700; word-break: break-word;">
+              Local Storage &amp; Telemetry
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Architecture Summary Bar -->
+        <div class="ts-summary-footer"
+          style="display: flex !important; justify-content: center !important; align-items: center !important; padding: 1rem !important; background-color: #f8fafc !important; border-radius: 12px !important; border: 1.5px solid #e2e8f0 !important; width: 100% !important; margin-top: auto !important;">
+          <div
+            style="font-size: 1rem !important; font-weight: 800 !important; color: #475569 !important; letter-spacing: 2px !important;">
+            LOCAL-FIRST &bull; PRIVACY-PRESERVING &bull; MODULAR &bull; CROSS-PLATFORM
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 15: SECURITY MONITORING & EVENT LOGGING
+         ========================================== -->
+    <section class="slide" data-slide-index="16">
+      <div class="slide-content flex-column" style="justify-content: space-between; height: 100%;">
+        <!-- Header with Subtitle -->
+        <div class="slide-header" style="margin-bottom: 1.5rem;">
+          <h2 class="slide-title"
+            style="font-size: 2.1rem; font-weight: 800; color: #000000; font-family: Georgia, serif; line-height: 1.25; margin-top: 0.2rem;">
+            Continuous Security Monitoring &amp; Response</h2>
+          <p style="font-size: 1.15rem; color: #475569; font-family: 'Times New Roman', serif; margin-top: 5px;">
+            BioShield continuously observes user and system activity, evaluates security risk, and responds to
+            suspicious behavior in real time.
+          </p>
+        </div>
+
+        <div
+          style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; gap: 2rem; width: 100%;">
+
+          <!-- CONTINUOUS SECURITY PIPELINE -->
+          <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+            <div
+              style="font-size: 0.95rem; font-weight: 800; color: #94a3b8; letter-spacing: 2px; margin-bottom: 1.5rem;">
+              CONTINUOUS SECURITY PIPELINE</div>
+
+            <div
+              style="display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; width: 100%; position: relative;">
+              <!-- The horizontal connector line -->
+              <div
+                style="position: absolute; top: 37px; left: 10%; right: 10%; height: 4px; background: #cbd5e1; z-index: 1;">
+              </div>
+
+              <!-- 5 Nodes -->
+              <!-- Node 1: OBSERVE -->
+              <div
+                style="flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2;">
+                <div
+                  style="font-size: 0.9rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; text-align: center;">
+                  OBSERVE</div>
+                <div
+                  style="width: 24px; height: 24px; border-radius: 50%; background: #ffffff; border: 5px solid #000000; margin-bottom: 1.2rem;">
+                </div>
+                <div
+                  style="font-size: 1rem; font-weight: 500; color: #475569; text-align: center; line-height: 1.4; padding: 0 5px;">
+                  User + System<br>Activity</div>
+              </div>
+
+              <!-- Node 2: ANALYZE -->
+              <div
+                style="flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2;">
+                <div
+                  style="font-size: 0.9rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; text-align: center;">
+                  ANALYZE</div>
+                <div
+                  style="width: 24px; height: 24px; border-radius: 50%; background: #ffffff; border: 5px solid #000000; margin-bottom: 1.2rem;">
+                </div>
+                <div
+                  style="font-size: 1rem; font-weight: 500; color: #475569; text-align: center; line-height: 1.4; padding: 0 5px;">
+                  Detect unusual<br>behavior</div>
+              </div>
+
+              <!-- Node 3: ASSESS RISK -->
+              <div
+                style="flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2;">
+                <div
+                  style="font-size: 0.9rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; text-align: center;">
+                  ASSESS RISK</div>
+                <div
+                  style="width: 24px; height: 24px; border-radius: 50%; background: #ffffff; border: 5px solid #000000; margin-bottom: 1.2rem;">
+                </div>
+                <div
+                  style="font-size: 1rem; font-weight: 500; color: #475569; text-align: center; line-height: 1.4; padding: 0 5px;">
+                  Dynamic trust<br>evaluation</div>
+              </div>
+
+              <!-- Node 4: RESPOND -->
+              <div
+                style="flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2;">
+                <div
+                  style="font-size: 0.9rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; text-align: center;">
+                  RESPOND</div>
+                <div
+                  style="width: 24px; height: 24px; border-radius: 50%; background: #ffffff; border: 5px solid #000000; margin-bottom: 1.2rem;">
+                </div>
+                <div
+                  style="font-size: 1rem; font-weight: 500; color: #475569; text-align: center; line-height: 1.4; padding: 0 5px;">
+                  Alert / Re-verify<br>Restrict / Lock</div>
+              </div>
+
+              <!-- Node 5: RECORD -->
+              <div
+                style="flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2;">
+                <div
+                  style="font-size: 0.9rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; text-align: center;">
+                  RECORD</div>
+                <div
+                  style="width: 24px; height: 24px; border-radius: 50%; background: #ffffff; border: 5px solid #000000; margin-bottom: 1.2rem;">
+                </div>
+                <div
+                  style="font-size: 1rem; font-weight: 500; color: #475569; text-align: center; line-height: 1.4; padding: 0 5px;">
+                  Encrypted local<br>audit trail</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DYNAMIC RESPONSE -->
+          <div style="display: flex; flex-direction: column; align-items: center; width: 100%; margin-top: 1rem;">
+            <div
+              style="font-size: 0.95rem; font-weight: 800; color: #94a3b8; letter-spacing: 2px; margin-bottom: 1rem;">
+              DYNAMIC RESPONSE</div>
+
+            <div
+              style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 1.5rem; width: 100%;">
+              <!-- LOW RISK -->
+              <div
+                style="border: 2px solid #cbd5e1; border-top: 4px solid #000000; border-radius: 8px; padding: 1rem 2rem; background: #f8fafc; text-align: center; width: 220px;">
+                <div style="font-size: 0.9rem; font-weight: 800; color: #000000; margin-bottom: 0.5rem;">LOW RISK</div>
+                <div style="font-size: 1.15rem; font-weight: 700; color: #0f172a;">Continue</div>
+              </div>
+
+              <div style="font-size: 1.5rem; color: #94a3b8;">➔</div>
+
+              <!-- MEDIUM RISK -->
+              <div
+                style="border: 2px solid #cbd5e1; border-top: 4px solid #000000; border-radius: 8px; padding: 1rem 2rem; background: #f8fafc; text-align: center; width: 220px;">
+                <div style="font-size: 0.9rem; font-weight: 800; color: #000000; margin-bottom: 0.5rem;">MEDIUM RISK
+                </div>
+                <div style="font-size: 1.15rem; font-weight: 700; color: #0f172a;">Re-Verify</div>
+              </div>
+
+              <div style="font-size: 1.5rem; color: #94a3b8;">➔</div>
+
+              <!-- HIGH RISK -->
+              <div
+                style="border: 2px solid #cbd5e1; border-top: 4px solid #000000; border-radius: 8px; padding: 1rem 2rem; background: #f8fafc; text-align: center; width: 220px;">
+                <div style="font-size: 0.9rem; font-weight: 800; color: #000000; margin-bottom: 0.5rem;">HIGH RISK</div>
+                <div style="font-size: 1.15rem; font-weight: 700; color: #0f172a;">Restrict / Lock</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WHAT BIOSHIELD MONITORS -->
+          <div style="display: flex; flex-direction: column; align-items: center; width: 100%; margin-top: 1rem;">
+            <div
+              style="font-size: 0.95rem; font-weight: 800; color: #94a3b8; letter-spacing: 2px; margin-bottom: 1rem;">
+              WHAT BIOSHIELD MONITORS</div>
+
+            <div style="display: flex; flex-direction: row; gap: 1.25rem; width: 100%;">
+              <!-- Box 1 -->
+              <div
+                style="flex: 1; border: 2px solid #cbd5e1; border-radius: 8px; padding: 1.25rem; background: #ffffff; display: flex; flex-direction: column;">
+                <div
+                  style="font-size: 0.95rem; font-weight: 800; color: #000000; margin-bottom: 1rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; letter-spacing: 1px;">
+                  IDENTITY</div>
+                <ul
+                  style="list-style-type: none; padding: 0; margin: 0; color: #475569; font-size: 1.05rem; line-height: 1.8;">
+                  <li><span style="color: #cbd5e1; margin-right: 8px;">&bull;</span>Login attempts</li>
+                  <li><span style="color: #cbd5e1; margin-right: 8px;">&bull;</span>Biometrics</li>
+                  <li><span style="color: #cbd5e1; margin-right: 8px;">&bull;</span>Auth failures</li>
+                </ul>
+              </div>
+
+              <!-- Box 2 -->
+              <div
+                style="flex: 1; border: 2px solid #cbd5e1; border-radius: 8px; padding: 1.25rem; background: #ffffff; display: flex; flex-direction: column;">
+                <div
+                  style="font-size: 0.95rem; font-weight: 800; color: #000000; margin-bottom: 1rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; letter-spacing: 1px;">
+                  BEHAVIOR</div>
+                <ul
+                  style="list-style-type: none; padding: 0; margin: 0; color: #475569; font-size: 1.05rem; line-height: 1.8;">
+                  <li><span style="color: #cbd5e1; margin-right: 8px;">&bull;</span>Keystrokes</li>
+                  <li><span style="color: #cbd5e1; margin-right: 8px;">&bull;</span>Mouse activity</li>
+                  <li><span style="color: #cbd5e1; margin-right: 8px;">&bull;</span>Input patterns</li>
+                </ul>
+              </div>
+
+              <!-- Box 3 -->
+              <div
+                style="flex: 1; border: 2px solid #cbd5e1; border-radius: 8px; padding: 1.25rem; background: #ffffff; display: flex; flex-direction: column;">
+                <div
+                  style="font-size: 0.95rem; font-weight: 800; color: #000000; margin-bottom: 1rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; letter-spacing: 1px;">
+                  SYSTEM</div>
+                <ul
+                  style="list-style-type: none; padding: 0; margin: 0; color: #475569; font-size: 1.05rem; line-height: 1.8;">
+                  <li><span style="color: #cbd5e1; margin-right: 8px;">&bull;</span>Processes</li>
+                  <li><span style="color: #cbd5e1; margin-right: 8px;">&bull;</span>Resources</li>
+                  <li><span style="color: #cbd5e1; margin-right: 8px;">&bull;</span>Privileges</li>
+                </ul>
+              </div>
+
+              <!-- Box 4 -->
+              <div
+                style="flex: 1; border: 2px solid #cbd5e1; border-radius: 8px; padding: 1.25rem; background: #ffffff; display: flex; flex-direction: column;">
+                <div
+                  style="font-size: 0.95rem; font-weight: 800; color: #000000; margin-bottom: 1rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; letter-spacing: 1px;">
+                  SECURITY EVENTS</div>
+                <ul
+                  style="list-style-type: none; padding: 0; margin: 0; color: #475569; font-size: 1.05rem; line-height: 1.8;">
+                  <li><span style="color: #cbd5e1; margin-right: 8px;">&bull;</span>Risk changes</li>
+                  <li><span style="color: #cbd5e1; margin-right: 8px;">&bull;</span>Violations</li>
+                  <li><span style="color: #cbd5e1; margin-right: 8px;">&bull;</span>Responses</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="margin-top: 2rem; margin-bottom: 1rem; text-align: center; font-size: 1.15rem; font-weight: 800; color: #0f172a; letter-spacing: 1.5px;">
+          CONTINUOUS MONITORING &bull; DYNAMIC RISK &bull; AUTOMATED RESPONSE &bull; LOCAL AUDIT
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 16: SECURE USER AUTHENTICATION
+         ========================================== -->
+    <section class="slide" data-slide-index="17">
+      <div class="slide-content flex-column" style="justify-content: space-between; height: 100%;">
+        <!-- Header with Subtitle -->
+        <div class="slide-header" style="margin-bottom: 1.5rem;">
+          <h2 class="slide-title"
+            style="font-size: 2.1rem; font-weight: 800; color: #000000; font-family: Georgia, serif; line-height: 1.25; margin-top: 0.2rem;">
+            Secure User Authentication</h2>
+          <p style="font-size: 1.15rem; color: #475569; font-family: 'Times New Roman', serif; margin-top: 5px;">
+            BioShield verifies local identity and evaluates trust before granting protected access.
+          </p>
+        </div>
+
+        <div
+          style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; gap: 3rem; width: 100%;">
+
+          <!-- AUTHENTICATION FLOW SECTION -->
+          <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+            <div
+              style="font-size: 0.95rem; font-weight: 800; color: #94a3b8; letter-spacing: 2px; margin-bottom: 2rem;">
+              AUTHENTICATION FLOW</div>
+
+            <div
+              style="display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; width: 100%; position: relative;">
+              <!-- The horizontal connector line -->
+              <div
+                style="position: absolute; top: 37px; left: 8.3%; right: 8.3%; height: 4px; background: #cbd5e1; z-index: 1;">
+              </div>
+
+              <!-- 6 Nodes -->
+              <!-- Node 1 -->
+              <div
+                style="flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2;">
+                <div
+                  style="font-size: 0.9rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; text-align: center;">
+                  LOCAL PROFILE</div>
+                <div
+                  style="width: 24px; height: 24px; border-radius: 50%; background: #ffffff; border: 5px solid #3b82f6; margin-bottom: 1.2rem;">
+                </div>
+                <div
+                  style="font-size: 1rem; font-weight: 500; color: #475569; text-align: center; line-height: 1.4; padding: 0 5px;">
+                  Select enrolled<br>local identity</div>
+              </div>
+
+              <!-- Node 2 -->
+              <div
+                style="flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2;">
+                <div
+                  style="font-size: 0.9rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; text-align: center;">
+                  BIOMETRICS</div>
+                <div
+                  style="width: 24px; height: 24px; border-radius: 50%; background: #ffffff; border: 5px solid #0ea5e9; margin-bottom: 1.2rem;">
+                </div>
+                <div
+                  style="font-size: 1rem; font-weight: 500; color: #475569; text-align: center; line-height: 1.4; padding: 0 5px;">
+                  Face &bull; Voice<br>Fingerprint*</div>
+              </div>
+
+              <!-- Node 3 -->
+              <div
+                style="flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2;">
+                <div
+                  style="font-size: 0.9rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; text-align: center;">
+                  DEVICE TRUST</div>
+                <div
+                  style="width: 24px; height: 24px; border-radius: 50%; background: #ffffff; border: 5px solid #8b5cf6; margin-bottom: 1.2rem;">
+                </div>
+                <div
+                  style="font-size: 1rem; font-weight: 500; color: #475569; text-align: center; line-height: 1.4; padding: 0 5px;">
+                  Security<br>posture</div>
+              </div>
+
+              <!-- Node 4 -->
+              <div
+                style="flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2;">
+                <div
+                  style="font-size: 0.9rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; text-align: center;">
+                  RISK ENGINE</div>
+                <div
+                  style="width: 24px; height: 24px; border-radius: 50%; background: #ffffff; border: 5px solid #f59e0b; margin-bottom: 1.2rem;">
+                </div>
+                <div
+                  style="font-size: 1rem; font-weight: 500; color: #475569; text-align: center; line-height: 1.4; padding: 0 5px;">
+                  Identity +<br>behavior</div>
+              </div>
+
+              <!-- Node 5 -->
+              <div
+                style="flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2;">
+                <div
+                  style="font-size: 0.9rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; text-align: center;">
+                  ACCESS DECISION</div>
+                <div
+                  style="width: 24px; height: 24px; border-radius: 50%; background: #ffffff; border: 5px solid #10b981; margin-bottom: 1.2rem;">
+                </div>
+                <div
+                  style="font-size: 1rem; font-weight: 500; color: #475569; text-align: center; line-height: 1.4; padding: 0 5px;">
+                  Grant / Deny<br>/ Re-verify</div>
+              </div>
+
+              <!-- Node 6 -->
+              <div
+                style="flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2;">
+                <div
+                  style="font-size: 0.9rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; text-align: center;">
+                  SECURE SESSION</div>
+                <div
+                  style="width: 24px; height: 24px; border-radius: 50%; background: #ffffff; border: 5px solid #e11d48; margin-bottom: 1.2rem;">
+                </div>
+                <div
+                  style="font-size: 1rem; font-weight: 500; color: #475569; text-align: center; line-height: 1.4; padding: 0 5px;">
+                  Dashboard +<br>monitoring</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECURITY BEHIND EVERY AUTHENTICATION SECTION -->
+          <div style="display: flex; flex-direction: column; align-items: center; width: 100%; margin-top: 1.5rem;">
+            <div
+              style="font-size: 0.95rem; font-weight: 800; color: #94a3b8; letter-spacing: 2px; margin-bottom: 1.5rem;">
+              SECURITY BEHIND EVERY AUTHENTICATION</div>
+
+            <div style="display: flex; flex-direction: row; gap: 1.5rem; width: 100%;">
+              <!-- Box 1 -->
+              <div
+                style="flex: 1; border: 2px solid #cbd5e1; border-top: 4px solid #334155; border-radius: 8px; padding: 1.5rem; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div
+                    style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 1rem; text-align: center;">
+                    LOCAL SECURITY</div>
+                  <div style="font-size: 1.05rem; color: #475569; line-height: 1.6; text-align: center;">Credentials
+                    &amp; biometric references stay protected on the local device.</div>
+                </div>
+                <div
+                  style="margin-top: 1.5rem; text-align: center; font-size: 1rem; font-weight: 700; color: #334155; border-top: 1px dashed #cbd5e1; padding-top: 1rem;">
+                  Argon2id &bull; AES-256-GCM
+                </div>
+              </div>
+
+              <!-- Box 2 -->
+              <div
+                style="flex: 1; border: 2px solid #cbd5e1; border-top: 4px solid #334155; border-radius: 8px; padding: 1.5rem; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div
+                    style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 1rem; text-align: center;">
+                    FAIL-CLOSED ACCESS</div>
+                  <div style="font-size: 1.05rem; color: #475569; line-height: 1.6; text-align: center;">Suspicious or
+                    failed verification is rejected and rate-limited.</div>
+                </div>
+                <div
+                  style="margin-top: 1.5rem; text-align: center; font-size: 1rem; font-weight: 700; color: #334155; border-top: 1px dashed #cbd5e1; padding-top: 1rem;">
+                  Deny &bull; Lockout &bull; Recheck
+                </div>
+              </div>
+
+              <!-- Box 3 -->
+              <div
+                style="flex: 1; border: 2px solid #cbd5e1; border-top: 4px solid #334155; border-radius: 8px; padding: 1.5rem; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div
+                    style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 1rem; text-align: center;">
+                    AUDIT &amp; MONITORING</div>
+                  <div style="font-size: 1.05rem; color: #475569; line-height: 1.6; text-align: center;">Authentication
+                    decisions and security events are securely recorded.</div>
+                </div>
+                <div
+                  style="margin-top: 1.5rem; text-align: center; font-size: 1rem; font-weight: 700; color: #334155; border-top: 1px dashed #cbd5e1; padding-top: 1rem;">
+                  Events &bull; Integrity &bull; Logs
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="margin-top: 2rem; margin-bottom: 1rem; text-align: center; font-size: 1.15rem; font-weight: 800; color: #0f172a; letter-spacing: 1.5px;">
+          LOCAL-FIRST &bull; MULTI-FACTOR &bull; FAIL-CLOSED &bull; CONTINUOUSLY VERIFIED
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 17: EXPECTED OUTCOMES & BENEFITS
+         ========================================== -->
+    <section class="slide" data-slide-index="18">
+      <div class="slide-content flex-column"
+        style="justify-content: space-between; height: 100%; padding-bottom: 28px;">
+        <!-- Header -->
+        <div class="slide-header" style="margin-bottom: 0.5rem;">
+          <h2 class="slide-title">Expected Outcomes &amp; Benefits</h2>
+          <p style="font-size: 0.94rem; color: var(--color-text-sec); font-weight: 500; margin-top: 4px;">
+            The proposed system is expected to strengthen desktop security by combining secure authentication,
+            continuous monitoring, threat detection, encrypted event logging, and local-first data protection within a
+            unified application.
+          </p>
+        </div>
+
+        <div class="po-container-3col"
+          style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+          <!-- 6 Proposal-Aligned Expected Outcome Cards (2x3 Grid) -->
+          <div class="po-grid-6cards" style="gap: 1.2rem;">
+
+            <!-- Outcome 1: Secure Authentication -->
+            <div class="po-outcome-card c1" style="display: flex; flex-direction: column; padding: 1.2rem;">
+              <div class="po-card-header" style="margin-bottom: 10px; font-size: 1.15rem;">01 Authentication</div>
+              <div class="po-card-desc" style="flex-grow: 1;">
+                <ul class="ed-check-list" style="margin: 0; padding: 0; list-style: none;">
+                  <li style="margin-bottom: 8px; font-size: 0.95rem;"><span class="chk-icon"
+                      style="color: #2563eb; margin-right: 5px;">•</span> Prevent unauthorized access using Argon2id.
+                  </li>
+                  <li style="margin-bottom: 8px; font-size: 0.95rem;"><span class="chk-icon"
+                      style="color: #2563eb; margin-right: 5px;">•</span> Track all successful and failed access
+                    attempts.</li>
+                </ul>
+              </div>
+              <div class="po-card-benefit"
+                style="margin-top: 10px; font-size: 0.85rem; padding-top: 8px; border-top: 1px dashed rgba(0,0,0,0.1);">
+                <strong>Expected Benefit:</strong> Reduces risk of unauthorized sessions and credential attacks.
+              </div>
+            </div>
+
+            <!-- Outcome 2: Monitoring -->
+            <div class="po-outcome-card c2" style="display: flex; flex-direction: column; padding: 1.2rem;">
+              <div class="po-card-header" style="margin-bottom: 10px; font-size: 1.15rem;">02 Monitoring</div>
+              <div class="po-card-desc" style="flex-grow: 1;">
+                <ul class="ed-check-list" style="margin: 0; padding: 0; list-style: none;">
+                  <li style="margin-bottom: 8px; font-size: 0.95rem;"><span class="chk-icon"
+                      style="color: #2563eb; margin-right: 5px;">•</span> Continuously monitor post-login activities.
+                  </li>
+                  <li style="margin-bottom: 8px; font-size: 0.95rem;"><span class="chk-icon"
+                      style="color: #2563eb; margin-right: 5px;">•</span> Generate real-time alerts for suspicious
+                    processes.</li>
+                </ul>
+              </div>
+              <div class="po-card-benefit"
+                style="margin-top: 10px; font-size: 0.85rem; padding-top: 8px; border-top: 1px dashed rgba(0,0,0,0.1);">
+                <strong>Expected Benefit:</strong> Improves visibility into active threats during authenticated
+                sessions.
+              </div>
+            </div>
+
+            <!-- Outcome 3: Threat Response -->
+            <div class="po-outcome-card c3" style="display: flex; flex-direction: column; padding: 1.2rem;">
+              <div class="po-card-header" style="margin-bottom: 10px; font-size: 1.15rem;">03 Threat Response</div>
+              <div class="po-card-desc" style="flex-grow: 1;">
+                <ul class="ed-check-list" style="margin: 0; padding: 0; list-style: none;">
+                  <li style="margin-bottom: 8px; font-size: 0.95rem;"><span class="chk-icon"
+                      style="color: #2563eb; margin-right: 5px;">•</span> Identify and evaluate abnormal security
+                    events.</li>
+                  <li style="margin-bottom: 8px; font-size: 0.95rem;"><span class="chk-icon"
+                      style="color: #2563eb; margin-right: 5px;">•</span> Trigger immediate defensive actions when
+                    required.</li>
+                </ul>
+              </div>
+              <div class="po-card-benefit"
+                style="margin-top: 10px; font-size: 0.85rem; padding-top: 8px; border-top: 1px dashed rgba(0,0,0,0.1);">
+                <strong>Expected Benefit:</strong> Enables faster detection and response to unauthorized activity.
+              </div>
+            </div>
+
+            <!-- Outcome 4: Audit & Privacy -->
+            <div class="po-outcome-card c4" style="display: flex; flex-direction: column; padding: 1.2rem;">
+              <div class="po-card-header" style="margin-bottom: 10px; font-size: 1.15rem;">04 Audit &amp; Privacy</div>
+              <div class="po-card-desc" style="flex-grow: 1;">
+                <ul class="ed-check-list" style="margin: 0; padding: 0; list-style: none;">
+                  <li style="margin-bottom: 8px; font-size: 0.95rem;"><span class="chk-icon"
+                      style="color: #2563eb; margin-right: 5px;">•</span> Maintain a tamper-evident authentication
+                    history.</li>
+                  <li style="margin-bottom: 8px; font-size: 0.95rem;"><span class="chk-icon"
+                      style="color: #2563eb; margin-right: 5px;">•</span> Store all sensitive data securely in local
+                    storage.</li>
+                </ul>
+              </div>
+              <div class="po-card-benefit"
+                style="margin-top: 10px; font-size: 0.85rem; padding-top: 8px; border-top: 1px dashed rgba(0,0,0,0.1);">
+                <strong>Expected Benefit:</strong> Ensures accountability and privacy without cloud dependency.
+              </div>
+            </div>
+
+            <!-- Outcome 5: Security Visibility -->
+            <div class="po-outcome-card c5" style="display: flex; flex-direction: column; padding: 1.2rem;">
+              <div class="po-card-header" style="margin-bottom: 10px; font-size: 1.15rem;">05 Security Visibility</div>
+              <div class="po-card-desc" style="flex-grow: 1;">
+                <ul class="ed-check-list" style="margin: 0; padding: 0; list-style: none;">
+                  <li style="margin-bottom: 8px; font-size: 0.95rem;"><span class="chk-icon"
+                      style="color: #2563eb; margin-right: 5px;">•</span> Present event history and status in one
+                    dashboard.</li>
+                  <li style="margin-bottom: 8px; font-size: 0.95rem;"><span class="chk-icon"
+                      style="color: #2563eb; margin-right: 5px;">•</span> Simplify overall security monitoring for the
+                    user.</li>
+                </ul>
+              </div>
+              <div class="po-card-benefit"
+                style="margin-top: 10px; font-size: 0.85rem; padding-top: 8px; border-top: 1px dashed rgba(0,0,0,0.1);">
+                <strong>Expected Benefit:</strong> Centralizes all security and audit information into a single
+                interface.
+              </div>
+            </div>
+
+            <!-- Outcome 6: Future Scalability -->
+            <div class="po-outcome-card c6" style="display: flex; flex-direction: column; padding: 1.2rem;">
+              <div class="po-card-header" style="margin-bottom: 10px; font-size: 1.15rem;">06 Future Scalability</div>
+              <div class="po-card-desc" style="flex-grow: 1;">
+                <ul class="ed-check-list" style="margin: 0; padding: 0; list-style: none;">
+                  <li style="margin-bottom: 8px; font-size: 0.95rem;"><span class="chk-icon"
+                      style="color: #2563eb; margin-right: 5px;">•</span> Designed with modular components for easy
+                    expansion.</li>
+                  <li style="margin-bottom: 8px; font-size: 0.95rem;"><span class="chk-icon"
+                      style="color: #2563eb; margin-right: 5px;">•</span> Ready to support future biometric and AI
+                    features.</li>
+                </ul>
+              </div>
+              <div class="po-card-benefit"
+                style="margin-top: 10px; font-size: 0.85rem; padding-top: 8px; border-top: 1px dashed rgba(0,0,0,0.1);">
+                <strong>Expected Benefit:</strong> Provides a scalable foundation for advanced security enhancements.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Expected Benefits Bar -->
+        <div class="obj-defense-footer" style="margin-top: 1.5rem; text-align: center;">
+          <span style="font-weight: 700; white-space: nowrap; color: #1e293b; letter-spacing: 1px;">EXPECTED
+            IMPACT:</span>
+          <span style="font-weight: 500; color: #334155;">Prevent Unauthorized Access • Detect Suspicious Activity •
+            Improve Security Visibility • Protect User Privacy • Maintain Secure Audit Trails • Support Future
+            Expansion</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 19: LITERATURE REFERENCES
+         ========================================== -->
+    <section class="slide" data-slide-index="19">
+      <div class="slide-content flex-column"
+        style="justify-content: space-between; height: 100%; padding-bottom: 28px;">
+        <!-- Header with Subtitle -->
+        <div class="slide-header" style="margin-bottom: 0.4rem;">
+          <h2 class="slide-title">Literature References</h2>
+          <p style="font-size: 0.94rem; color: var(--color-text-sec); font-weight: 500; margin-top: 4px;">
+            Primary research papers forming the foundation of the proposed Secure Desktop Authentication and System
+            Protection Application.
+          </p>
+        </div>
+
+        <!-- 2 Paper Cards Grid -->
+        <div class="ref-cards-grid" style="flex-grow: 1; display: flex; gap: 1.5rem; align-items: stretch;">
+          <!-- Paper 1: Continuous Authentication -->
+          <div class="ref-paper-card"
+            style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+            <div>
+              <div class="ref-paper-header">
+                <span class="ref-paper-category">Continuous Authentication</span>
+              </div>
+              <div class="ref-paper-title">A Review of Continuous Authentication Using Behavioral Biometrics</div>
+              <div class="ref-meta-row">
+                <span class="ref-meta-item">I. Stylios, O. Thanou, I. Androulidakis, E. Zaitseva • SEEDA-CECNSM 2016
+                  (ACM)
+                  • DOI: 10.1145/2984393.2984403</span>
+              </div>
+            </div>
+
+            <div class="ref-contribution-box"
+              style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; font-size: 1.85rem; line-height: 1.85; padding: 3rem; margin: 1rem 0; text-align: justify;">
+              <div><strong>Contribution to Project:</strong> Establishes that traditional one-time authentication is
+                insufficient and introduces continuous authentication through behavioral biometrics. This research
+                provides the foundational basis for our system's real-time monitoring of authenticated user sessions. By
+                continuously evaluating user behavior patterns, it enables our architecture to seamlessly detect
+                anomalies without interrupting the user experience.</div>
+            </div>
+            <a href="https://drive.google.com/file/d/19d2W32fXs6riH-hqf6i-rolG8cQ5nlpT/view?usp=drive_link"
+              target="_blank" class="ref-link-btn" style="margin-top: auto;">
+              View the paper ➔
+            </a>
+          </div>
+
+          <!-- Paper 2: Zero Trust Architecture -->
+          <div class="ref-paper-card"
+            style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+            <div>
+              <div class="ref-paper-header">
+                <span class="ref-paper-category">Zero Trust Architecture</span>
+              </div>
+              <div class="ref-paper-title">Zero Trust Architecture: A Systematic Literature Review</div>
+              <div class="ref-meta-row">
+                <span class="ref-meta-item">M. L. Gambo, A. Almulhem • Systematic Literature Review (PRISMA), 2025 •
+                  arXiv: 2503.12362</span>
+              </div>
+            </div>
+
+            <div class="ref-contribution-box"
+              style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; font-size: 1.85rem; line-height: 1.85; padding: 3rem; margin: 1rem 0; text-align: justify;">
+              <div><strong>Contribution to Project:</strong> Explains core Zero Trust principles such as continuous
+                verification,
+                least privilege, and dynamic trust evaluation. This review forms the architectural blueprint for our
+                proposed desktop security application. It justifies our integration of encrypted local audit trails,
+                strict resource isolation, and continuous state re-verification to ensure no internal activity is
+                implicitly trusted.</div>
+            </div>
+            <a href="https://drive.google.com/file/d/1Chw-f1rt3NFHHJKBK4Sncmv26Fnuzva-/view?usp=drive_link"
+              target="_blank" class="ref-link-btn" style="margin-top: auto;">
+              View on arXiv (2503.12362) ➔
+            </a>
+          </div>
+        </div>
+
+
+
+        <!-- Bottom Theoretical Foundation Footer Bar -->
+        <div class="ref-summary-footer">
+          <span style="font-weight: 400; font-family: Georgia, serif;">THEORETICAL FOUNDATION:</span> These research
+          papers provide the theoretical foundation for continuous authentication, Zero Trust security, and adaptive
+          desktop protection, which directly motivate the proposed system.
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 20: CONCLUSION & FUTURE SCOPE
+         ========================================== -->
+    <section class="slide" data-slide-index="20">
+      <div class="slide-content flex-column"
+        style="justify-content: space-between; height: 100%; padding-bottom: 28px;">
+        <!-- Header with Subtitle -->
+        <div class="slide-header" style="margin-bottom: 0.5rem;">
+          <h2 class="slide-title">Conclusion &amp; Future Scope</h2>
+          <p style="font-size: 0.94rem; color: var(--color-text-sec); font-weight: 500; margin-top: 4px;">
+            A privacy-focused desktop authentication solution designed to enhance security, improve monitoring, and
+            support future extensibility.
+          </p>
+        </div>
+
+        <div class="cfs-container-2col">
+          <!-- Left Column: Project Summary & Highlights -->
+          <div class="cs-card">
+            <div class="cs-card-header-row">
+              <span class="cs-card-title">Project Summary &amp; Highlights</span>
+
+            </div>
+            <div class="cs-feature-list">
+              <div class="cs-feature-item">
+                <div class="cs-item-name">1. Secure Authentication Engine</div>
+                <div class="cs-item-desc">Prevents unauthorized access using Argon2id key derivation.</div>
+              </div>
+              <div class="cs-feature-item">
+                <div class="cs-item-name">2. Local-First Privacy Architecture</div>
+                <div class="cs-item-desc">Stores all logs and telemetry locally in an encrypted SQLCipher vault.</div>
+              </div>
+              <div class="cs-feature-item">
+                <div class="cs-item-name">3. Real-Time Telemetry &amp; Watchdog</div>
+                <div class="cs-item-desc">Monitors system processes and input events to quickly detect suspicious
+                  activity.</div>
+              </div>
+              <div class="cs-feature-item">
+                <div class="cs-item-name">4. Centralized Security Dashboard</div>
+                <div class="cs-item-desc">Provides an interactive GUI for monitoring threat indicators and audit logs.
+                </div>
+              </div>
+              <div class="cs-feature-item">
+                <div class="cs-item-name">5. Modular Multi-Layer Architecture</div>
+                <div class="cs-item-desc">Decouples the UI, runtime, and backend into isolated, secure layers.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Future Roadmap & Enhancements -->
+          <div class="cs-card">
+            <div class="cs-card-header-row">
+              <span class="cs-card-title">Future Roadmap &amp; Enhancements</span>
+
+            </div>
+            <div class="cs-roadmap-grid">
+              <div class="cs-feature-item">
+                <div class="cs-item-name">Multi-Factor Auth (MFA) &amp; Biometrics</div>
+                <div class="cs-item-desc">Integrates TOTP, hardware keys, and OS biometrics for multi-factor login.
+                </div>
+              </div>
+              <div class="cs-feature-item">
+                <div class="cs-item-name">AI Anomaly Detection Model</div>
+                <div class="cs-item-desc">Deploys machine learning classifiers to detect anomalies in user behavior.
+                </div>
+              </div>
+              <div class="cs-feature-item">
+                <div class="cs-item-name">Enterprise Remote Management</div>
+                <div class="cs-item-desc">Enables remote lockouts and centralized enterprise security policy
+                  enforcement.</div>
+              </div>
+              <div class="cs-feature-item">
+                <div class="cs-item-name">Encrypted Cloud Backup &amp; Fleet Sync</div>
+                <div class="cs-item-desc">Provides optional encrypted database backup and multi-device synchronization.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Summary Footer Bar -->
+        <div class="cs-summary-footer">
+          <span style="font-family: Georgia, serif;">DEFENSE CONCLUSION:</span> "The proposed system
+          provides secure desktop authentication, continuous security monitoring, and privacy protection through a
+          scalable local-first architecture." — <span>Academic Project Defense</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 21: STANDALONE THANK YOU & Q&A SLIDE
+         ========================================== -->
+    <section class="slide thank-you-slide" data-slide-index="21">
+      <div class="thank-you-grid-container">
+        <!-- Main Thank You Glass Card -->
+        <div class="thank-you-card">
+          <!-- Top Pill Badge -->
+          <div class="thank-you-badge">
+            ACADEMIC DEFENSE KEYNOTE COMPLETE
+          </div>
+
+          <!-- Main Title -->
+          <h1 class="thank-you-title">Thank You!</h1>
+
+          <!-- Subtitle -->
+          <p class="thank-you-sub">
+            For Your Time, Guidance, and Evaluation During This Project Presentation
+          </p>
+
+          <div class="thank-you-divider"></div>
+
+          <!-- Q&A Action Callout -->
+          <div class="thank-you-qa-box">
+            <div class="qa-badge"
+              style="background-color: transparent !important; color: #ffffff !important; border: none !important;">
+              QUESTIONS &amp; ANSWERS</div>
+            <div class="qa-desc">Open for Panel Evaluation, Discussion, and Feedback</div>
+          </div>
+
+          <!-- Navigation to Review 2 -->
+          <div style="text-align: center; margin-bottom: 2rem;">
+            <a href="review_2.html" style="display: inline-block; padding: 14px 32px; background: linear-gradient(90deg, #2563eb, #60a5fa); color: #ffffff; font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; border-radius: 30px; box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3); transition: transform 0.2s ease;">View Review 2 PPT ➔</a>
+          </div>
+
+          <!-- Team & Mentor Footer Info Grid -->
+          <div class="thank-you-info-grid">
+            <div class="info-col">
+              <div class="info-label">PROJECT DEVELOPMENT TEAM</div>
+              <div class="info-value">Erolla Rishvin Reddy • Yogamruth Reddy Guggilla • Navari Yashwanth Reddy •
+                Gayathri Pocharam • Chakradhar Muppuri</div>
+            </div>
+            <div class="info-col">
+              <div class="info-label">PROJECT MENTOR</div>
+              <div class="info-value">Professor Meher Gayatri Devi Tiwari</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       SLIDE OVERVIEW DRAWER (20 SLIDES)
+       ========================================== -->
+  <aside class="overview-drawer" id="slide-overview-drawer">
+    <div class="drawer-header">
+      <h3>Slide Deck Overview</h3>
+      <button class="btn-close-drawer" id="btn-close-drawer">&times;</button>
+    </div>
+    <div class="drawer-grid" id="drawer-grid-container">
+      <!-- Dynamically generated by app.js -->
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
