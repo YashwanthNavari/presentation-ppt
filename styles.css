@@ -13219,3 +13219,22 @@ h1, h2, h3, h4, h5, h6,
     font-size: 20px !important;
     padding: 0 10px !important;
 }
+
+/* ============================================================
+   FIX SLIDE 3 CONNECTORS
+   Remove old legacy pseudo-element and width constraints
+   ============================================================ */
+
+.slide[data-slide-index="2"] .architecture-connector {
+    width: 100% !important;
+    background-color: transparent !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+}
+
+.slide[data-slide-index="2"] .architecture-connector::after {
+    display: none !important;
+    content: none !important;
+}
