@@ -13238,3 +13238,99 @@ h1, h2, h3, h4, h5, h6,
     display: none !important;
     content: none !important;
 }
+
+
+/* ============================================================
+   SLIDE 3 - ENLARGE & FILL HEIGHT
+   ============================================================ */
+
+.architecture-shell {
+    justify-content: space-between !important;
+    padding: 30px 60px 24px !important;
+}
+
+.architecture-header h1 {
+    font-size: 58px !important;
+    margin: 8px 0 !important;
+}
+
+.architecture-header p {
+    font-size: 16px !important;
+}
+
+.architecture-pipeline {
+    justify-content: space-between !important;
+    flex: 1 !important;
+    margin: 18px 0 !important;
+}
+
+.architecture-stage {
+    min-height: 85px !important; /* was 74px */
+}
+
+.stage-main {
+    padding: 22px 30px !important; /* was 14px 20px */
+}
+
+.stage-index {
+    font-size: 14px !important; /* was 12px */
+    width: 65px !important; /* was 55px */
+}
+
+.stage-kicker {
+    font-size: 9.5px !important; /* was 8px */
+    margin-bottom: 6px !important; /* was 4px */
+}
+
+.stage-title-row h2 {
+    font-size: 26px !important; /* was 20px */
+}
+
+.stage-purpose {
+    font-size: 10px !important; /* was 8.5px */
+    padding: 6px 14px !important;
+}
+
+.stage-components span,
+.status-pill {
+    font-size: 10.5px !important; /* was 9px */
+    padding: 8px 14px !important;
+}
+
+.auth-factor {
+    padding: 7px 12px !important;
+}
+
+.auth-factor strong {
+    font-size: 10.5px !important; /* was 9px */
+}
+
+.auth-factor small {
+    font-size: 8px !important; /* was 7px */
+}
+
+.architecture-connector {
+    height: 32px !important; /* was 20px */
+    flex: 0 0 32px !important;
+}
+
+.security-principle {
+    padding: 16px 20px !important;
+    margin-top: 12px !important;
+}
+
+.security-principle .principle-label {
+    font-size: 10px !important; /* was 9px */
+}
+
+.security-principle .principle-core {
+    font-size: 16px !important; /* was 14px */
+}
+
+.security-principle .principle-sub {
+    font-size: 13px !important; /* was 11.5px */
+}
+
+.security-principle-right span {
+    font-size: 9px !important; /* was 7.5px */
+}
